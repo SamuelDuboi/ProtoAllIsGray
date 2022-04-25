@@ -1,0 +1,51 @@
+{
+    "name": "DefaultController",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "d852edd0-a4c3-4940-b9d0-93005830bbbb",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "d86be757-8eba-4ced-af6e-590c92883040",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "acab806d-9116-4f62-b6a3-68861bb52356",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keybord",
+            "bindingGroup": "Keybord",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
