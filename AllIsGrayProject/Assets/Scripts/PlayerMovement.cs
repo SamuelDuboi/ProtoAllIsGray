@@ -21,10 +21,10 @@ public class PlayerMovement : Movable
     public float jetpackMaxTime = 1;
     public float jetpackCooldown = 2;
     private float jetpackCurrentUse;
-    public float minjetPackValue = 0.1f;
     private bool isCoolingDown;
     private float currentCoolingValue;
     public Image CoolDownImage;
+    public bool doCoolDown;
     public void Rotation(InputAction.CallbackContext context)
     {
         rotation = context.ReadValue<Vector2>().x;
@@ -55,27 +55,35 @@ public class PlayerMovement : Movable
             jetpackCurrentUse += Time.deltaTime;
             
         }
-        else if (jetpackCurrentUse <1- minjetPackValue && jetpackCurrentUse>0)
+        else if(jetpackCurrentUse>0 && !doCoolDown)
+        {
             jetpackCurrentUse -= Time.deltaTime;
-        else if(isMoving)
-        {
-            isCoolingDown = true;
-            CoolDownImage.color = Color.red;
         }
-
-        if (isCoolingDown)
+        if (doCoolDown)
         {
-            currentCoolingValue += Time.deltaTime;
-            CoolDownImage.fillAmount = currentCoolingValue / jetpackCooldown;
-            if (currentCoolingValue>= jetpackCooldown)
+            if (jetpackCurrentUse < jetpackMaxTime && jetpackCurrentUse > 0.02f)
+                jetpackCurrentUse -= Time.deltaTime;
+            else if (isMoving && jetpackCurrentUse > jetpackMaxTime)
             {
-                isCoolingDown = false;
-                currentCoolingValue = 0;
-                CoolDownImage.color = Color.green;
-                jetpackCurrentUse = 0;
-            }    
+                isCoolingDown = true;
+                CoolDownImage.color = Color.red;
+            }
+
+            if (isCoolingDown)
+            {
+                currentCoolingValue += Time.deltaTime;
+                CoolDownImage.fillAmount = currentCoolingValue / jetpackCooldown;
+                if (currentCoolingValue >= jetpackCooldown)
+                {
+                    isCoolingDown = false;
+                    currentCoolingValue = 0;
+                    CoolDownImage.color = Color.green;
+                    jetpackCurrentUse = 0;
+                }
+            }
         }
         else
             CoolDownImage.fillAmount = 1 - jetpackCurrentUse / jetpackMaxTime;
+        
     }
 }
