@@ -12,42 +12,52 @@ public class WeaponManager : MonoBehaviour
     private Vector3 direction;
     public float throwWeaponForce=5;
     public Transform weaponHandler;
+    private bool isHold;
+
+    private void Update()
+    {
+        if (isHold)
+        {
+            direction = followPointTransform.position - transform.position;
+            direction.Normalize();
+            var isDrop = false;
+            var knockBackForce = 0.0f;
+            if (myWeapon)
+            {
+                isDrop = myWeapon.Fire(direction, followPointTransform.position, out knockBackForce);
+                KnockBack(knockBackForce);
+            }
+            else
+            {
+                isDrop = basicWeapon.Fire(direction, followPointTransform.position, out knockBackForce);
+                KnockBack(knockBackForce);
+            }
+            if (isDrop)
+                basicWeapon.gameObject.SetActive(true);
+        }
+    }
     public void Fire(InputAction.CallbackContext context)
     {
-        if (!context.performed)
-            return;
-        direction = followPointTransform.position - transform.position;
-        direction.Normalize();
-        var isDrop = false;
-        if(myWeapon)
-            isDrop= KnockBack( myWeapon.Fire(direction, followPointTransform.position));
-        else
-            isDrop= KnockBack(basicWeapon.Fire(direction, followPointTransform.position));
-        if (isDrop)
-            basicWeapon.gameObject.SetActive(true);
+        if (context.started)
+            isHold = true;
+        if (context.canceled)
+            isHold = false;
     }
-    /// <summary>
-    /// return if the wepon is dropped
-    /// </summary>
-    /// <param name="knockBackForce"></param>
-    /// <returns></returns>
-    private bool KnockBack(float knockBackForce)
+    private void KnockBack(float knockBackForce)
     {
         if (knockBackForce == 0)
         {
             if (!myWeapon)
-                return true;
-            myWeapon.GetComponent<Rigidbody>().isKinematic = false;
+                return ;
             myWeapon.GetComponent<Rigidbody>().velocity=direction * throwWeaponForce;
-            myWeapon.GetComponent<Collider>().enabled = true;
+            myWeapon.Throw(direction,throwWeaponForce);
             myWeapon.tag = "Untagged";
             myWeapon.transform.SetParent(null);
             myWeapon.transform.position = basicWeapon.transform.position;
             myWeapon = null;
-            return true;
+            return ;
         }
         myRigidbody.AddForce(-direction * knockBackForce, ForceMode.Impulse);
-        return false;
     }
 
     private void OnTriggerEnter(Collider other)
