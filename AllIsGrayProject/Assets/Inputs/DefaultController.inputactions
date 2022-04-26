@@ -2,13 +2,22 @@
     "name": "DefaultController",
     "maps": [
         {
-            "name": "Main",
-            "id": "d852edd0-a4c3-4940-b9d0-93005830bbbb",
+            "name": "PlayerMainActions",
+            "id": "f74d4ef8-1330-4e94-8cba-aa6db1cd7898",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "676e0f9d-0ed8-4f02-84b5-52949e5e20c0",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Impulse",
                     "type": "Button",
-                    "id": "d86be757-8eba-4ced-af6e-590c92883040",
+                    "id": "c068eeb9-2cc4-4628-b686-e58fd4f3f65d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -18,12 +27,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "acab806d-9116-4f62-b6a3-68861bb52356",
-                    "path": "",
+                    "id": "e252c844-8f1b-4dae-8def-c1129892e421",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Move",
+                    "groups": "PlayerControl",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7316ff58-1f05-4449-b87e-1b65ffe562d0",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PlayerControl",
+                    "action": "Impulse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -43,6 +63,27 @@
                 {
                     "devicePath": "<Mouse>",
                     "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "PlayerControl",
+            "bindingGroup": "PlayerControl",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
