@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     SceneManagementUI sceneManagementUI;
 
+    [Header("Game Instance References")]
+    [SerializeField, ReadOnly]
+    GameInstanceHandler currentGameInstance;
+
     private void Awake()
     {
         #region Singleton/DDOL
@@ -47,6 +51,15 @@ public class GameManager : MonoBehaviour
         print("Invoke Done");
         sceneManagementUI.FadeOutEnds -= TestInvoke;
     }
+    #endregion
+
+    #region Game Instance Management
+
+    public void ReferenceGameInstance(GameInstanceHandler instance)
+    {
+        currentGameInstance = instance;
+    }
+
     #endregion
 }
 
