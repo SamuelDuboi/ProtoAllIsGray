@@ -10,10 +10,11 @@ public class AnimAimAt : MonoBehaviour
     void Update()
     {
         Vector3 direction = target.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction);
+        Quaternion lookRot = Quaternion.LookRotation(direction);
 
-        float eulerY = rotation.eulerAngles.y;
+        float eulerY = lookRot.eulerAngles.y;
 
-        transform.rotation.y = rotation.y;
+        Quaternion rotation = Quaternion.Euler(0, eulerY, 0);
+        transform.localRotation = rotation;
     }
 }
