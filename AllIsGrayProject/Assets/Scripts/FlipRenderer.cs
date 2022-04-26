@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class FlipRenderer : MonoBehaviour
 {
     public Transform myTransform;
-    private bool isRight;
+    public bool isRight;
     private Vector2 rotation;
     public void RotationWeapon(InputAction.CallbackContext context)
     {
