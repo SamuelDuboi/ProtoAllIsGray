@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -123061539441290358, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed0dc67347b1ba14d842e39b36b5d7a3, type: 2}
     - target: {fileID: 7485956109114996163, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -81,9 +85,17 @@ MonoBehaviour:
   throwForce: 2
   projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
   knockBackForce: 3
-  projectileSpeed: 10
+  projectileSpeed: 25
   numberOfBullets: 5
   coolDown: 2
+  isCharging: 0
+  chargeTime: 2
+  accelerationDecharge: 2
+  shoot: 0
+  directionSnip: {x: 0, y: 0, z: 0}
+  positionSnip: {x: 0, y: 0, z: 0}
+  forceSnip: 0
+  decharging: 0
 --- !u!54 &8637462842215617781 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4931659181971833589, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
