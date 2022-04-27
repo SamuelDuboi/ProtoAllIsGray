@@ -8,6 +8,7 @@ public class PlayerMovement : Movable
     public Rigidbody rigidbody;
     public Transform myTransform;
     float rotation;
+    public float rotationSpeed = 1;
     bool IsRotating;
     [Range(0,0.5f)]
     public float rotationTreshold;
@@ -46,7 +47,7 @@ public class PlayerMovement : Movable
     void Update()
     {
         if(IsRotating)
-            transform.Rotate(0, 0, rotation, Space.Self);
+            transform.Rotate(0, 0, rotation*rotationSpeed, Space.Self);
         if (isMoving && jetpackCurrentUse <= jetpackMaxTime)
         {
             if (!CoolDownImage.gameObject.activeSelf)
