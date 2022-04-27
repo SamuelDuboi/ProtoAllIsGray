@@ -10,17 +10,20 @@ public class PlayerHandler : MonoBehaviour
     GameSettings CurrentSetting => currentGameInstance.currentSettings;
 
     public PlayerMovement playerMove;
+    public ShieldBehavior playerShield;
 
     public int deathCount;
     public int currentScore;
 
     public Action PlayerDead;
+    public Action PlayerBenched;
 
     public void InitPlayer(GameInstanceHandler instance)
     {
         currentGameInstance = instance;
         RespawnPlayer();
         //Assign Controler;
+        playerShield.ShieldInit();
     }
 
     public void ResetPlayer()
@@ -28,13 +31,24 @@ public class PlayerHandler : MonoBehaviour
         //Reset Weapon;
         //Reset Statut;
         //Reset Shield;
+        playerShield.ShieldReset();
         //Reset Rotation & Velocity;
+        playerMove.rigidbody.velocity = Vector3.zero;
+        playerMove.transform.rotation = Quaternion.identity;
+
         //Reset Fuel;
     }
 
     public void RespawnPlayer()
     {
-        transform.position = currentGameInstance.FindRespawnPoint(this).position;
+        playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
+    }
+
+    public void BenchPlayer()
+    {
+        PlayerBenched?.Invoke();
+        currentGameInstance.RemovePlayer(this);
+        gameObject.SetActive(false);
     }
 
     public void PlayerDeath()
@@ -46,7 +60,7 @@ public class PlayerHandler : MonoBehaviour
         {
             if (deathCount >= CurrentSetting.stockCount)
             {
-                currentGameInstance.EndSession();
+                BenchPlayer();
             }
             else
             {

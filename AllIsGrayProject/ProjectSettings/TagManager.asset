@@ -14,8 +14,13 @@ TagManager:
   - Water
   - UI
   - CamCollider
+<<<<<<< HEAD
   - Projectile
   - 
+=======
+  - Player
+  - KillZone
+>>>>>>> Remi
   - 
   - 
   - 

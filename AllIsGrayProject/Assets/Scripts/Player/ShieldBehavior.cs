@@ -6,7 +6,7 @@ using TMPro;
 public class ShieldBehavior : MonoBehaviour
 {
 
-    public float maxShieldAmount=100;
+    public float maxShieldAmount = 100;
     public float currentShieldAmount;
     private float propulsionForce = 1;
     public Rigidbody rgb;
@@ -17,19 +17,28 @@ public class ShieldBehavior : MonoBehaviour
     private Renderer rendererShield;
     private MaterialPropertyBlock propBlock;
 
-    public void Start()
+    public void ShieldInit()
+    public float invincibilityDuration;
     {
         currentShieldAmount = 0;
         rendererShield = Shield.GetComponent<Renderer>();
         propBlock = new MaterialPropertyBlock();
     }
+
+    public void ShieldReset()
+    {
+        StopAllCoroutines();
+        currentShieldAmount = maxShieldAmount;
+        StartCoroutine(StartInvicibility());
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        var colObject =collision.gameObject.GetComponent<Movable>();
-        
+        var colObject = collision.gameObject.GetComponent<Movable>();
+
         if (colObject)
         {
-            if (isInvicible)
+            if (isInvincible)
             {
                 Destroy(collision.gameObject);
                 return;
@@ -64,7 +73,7 @@ public class ShieldBehavior : MonoBehaviour
     }
     public float GetPropulsionForce()
     {
-        var propForce = currentShieldAmount / maxShieldAmount;
+        var propForce = 1 - currentShieldAmount / maxShieldAmount;
         propulsionForce = propForce/ 0.05f +1;
         return propulsionForce;
     }
@@ -88,8 +97,22 @@ public class ShieldBehavior : MonoBehaviour
         rendererShield.SetPropertyBlock(propBlock);
     }
 
-    public void SetInvicible(bool value)
+    public void SetInvincible(bool value)
     {
-        isInvicible = value;
+        isInvincible = value;
+    }
+
+    IEnumerator StartInvicibility()
+    {
+        float timer = invincibilityDuration;
+        SetInvincible(true);
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        SetInvincible(false);
     }
 }
