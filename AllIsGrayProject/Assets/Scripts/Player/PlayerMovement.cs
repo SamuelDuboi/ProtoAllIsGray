@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class PlayerMovement : Movable
 {
+    [Header("Movement")]
     public Rigidbody rigidbody;
     public Transform myTransform;
     float rotation;

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowObject : MonoBehaviour
+public class ThrowObject : Movable
 {
+    [Header("ThrowObject")]
     public BulletEffect myEffect;
     public Rigidbody rgb;
     public float throwForce;
