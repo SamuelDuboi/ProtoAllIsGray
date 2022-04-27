@@ -9,7 +9,7 @@ public class ShieldBehavior : MonoBehaviour
     public float currentShieldAmount;
     private float propulsionForce = 1;
     public Rigidbody rgb;
-
+    public bool isInvicible;
     public void Start()
     {
         currentShieldAmount = maxShieldAmount;
@@ -17,14 +17,22 @@ public class ShieldBehavior : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         var colObject =collision.gameObject.GetComponent<Movable>();
+        
         if (colObject)
         {
+            if (isInvicible)
+            {
+                Destroy(collision.gameObject);
+                return;
+            }
             currentShieldAmount -= colObject.damageOnPlayer;
             GetPropulsionForce();
             var direction = colObject.transform.position - transform.position;
             direction.Normalize();
-            rgb.AddForce(-direction * propulsionForce);
+            rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
             ShowShield();
+            if (colObject as ThrowObject)
+                Destroy(colObject.gameObject);
         }
     }
 
@@ -38,5 +46,10 @@ public class ShieldBehavior : MonoBehaviour
     public void ShowShield()
     {
         // here to displayDamageOnPlayer
+    }
+
+    public void SetInvicible(bool value)
+    {
+        isInvicible = value;
     }
 }

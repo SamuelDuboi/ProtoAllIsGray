@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81a67add37e36541a782cb45f0ecae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageOnPlayer: 1
   myEffect: {fileID: 0}
   rgb: {fileID: 7175174408968588468}
   throwForce: 2
