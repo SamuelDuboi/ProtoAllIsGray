@@ -11,6 +11,12 @@ public class Weapon : ThrowObject
     public int numberOfBullets = 5;
     public float coolDown;
     protected bool isOnCd;
+    private HomingMissileBehavior homing;
+    private List<PlayerMovement> players = new List<PlayerMovement>();
+    private void Start()
+    {
+        homing = projectile.GetComponent<HomingMissileBehavior>();
+    }
     /// <summary>
     /// return false if the weapon need to be thrown
     /// </summary>
@@ -49,5 +55,25 @@ public class Weapon : ThrowObject
     public virtual void Release()
     {
 
+    }
+
+    public void HomingDirection(Vector3 direction)
+    {
+        if (!homing)
+            return;
+
+        if(players.Count == 0)
+        {
+            foreach (var player in GameManager.currentGameInstance.allPlayer)
+            {
+                if (player != GetComponentInParent<PlayerMovement>())
+                    players.Add(player.playerMove);
+            }
+        }
+        var angle = 0;
+        foreach (var player in players)
+        {
+           /* if()*/
+        }
     }
 }
