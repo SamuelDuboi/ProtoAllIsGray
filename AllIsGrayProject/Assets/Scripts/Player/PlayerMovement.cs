@@ -27,6 +27,12 @@ public class PlayerMovement : Movable
     private float currentCoolingValue;
     public Image CoolDownImage;
     public bool doCoolDown;
+
+    public TrailRenderer jetpackTrail;
+    public ParticleSystem jetpackCircles;
+    public ParticleSystem jetpackFlames;
+    public GameObject jetpackBigFlame;
+
     public void Rotation(InputAction.CallbackContext context)
     {
         rotation = context.ReadValue<Vector2>().x;
@@ -36,12 +42,30 @@ public class PlayerMovement : Movable
     {
         movementValue = context.ReadValue<float>();
         isMoving = Mathf.Abs(movementValue) > movementTreshold;
+
+        if (context.started)
+        {
+            jetpackBigFlame.SetActive(true);
+            jetpackFlames.Play();
+            jetpackCircles.Play();
+            jetpackTrail.emitting = true;
+        }
+        else if (context.canceled)
+        {
+            jetpackBigFlame.SetActive(false);
+            jetpackFlames.Stop();
+            jetpackCircles.Stop();
+            jetpackTrail.emitting = false;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        jetpackBigFlame.SetActive(false);
+        jetpackFlames.Stop();
+        jetpackCircles.Stop();
+        jetpackTrail.emitting = false;
     }
 
     // Update is called once per frame
@@ -75,6 +99,8 @@ public class PlayerMovement : Movable
             {
                 currentCoolingValue += Time.deltaTime;
                 CoolDownImage.fillAmount = currentCoolingValue / jetpackCooldown;
+
+
                 if (currentCoolingValue >= jetpackCooldown)
                 {
                     isCoolingDown = false;
