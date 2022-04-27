@@ -8,11 +8,12 @@ public class ThrowObject : Movable
     public BulletEffect myEffect;
     public Rigidbody rgb;
     public float throwForce;
-    private Vector3 myDirection;
+    protected Vector3 myDirection;
+    public bool playerDestroy = true;
     private void OnCollisionEnter(Collision collision)
     {
         // myEffect.ApplyEffectOnCollision();
-        OnCollision();
+        OnCollision(collision);
     }
     public virtual void Throw(Vector3 direction)
     {
@@ -33,13 +34,19 @@ public class ThrowObject : Movable
       //  myEffect.ApplyEffectOnThrow();
     }
 
-    protected virtual void OnCollision()
+    protected virtual void OnCollision(Collision collision)
     {
         StartCoroutine(WaitToDie());
     }
-    IEnumerator WaitToDie()
+    protected IEnumerator WaitToDie(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        Destroy(gameObject);
+    }
+    protected IEnumerator WaitToDie()
     {
         yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
+
 }

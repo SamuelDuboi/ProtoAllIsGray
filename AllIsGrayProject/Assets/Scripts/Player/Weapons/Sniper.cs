@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sniper : Weapon
 {
     public float isCharging;
-    public override bool Fire(Vector3 direction, Vector3 position, out float force)
+   /* public override bool Fire(Vector3 direction, Vector3 position, out float force)
     {
 
         if (isCharging!= 0)
@@ -14,7 +14,7 @@ public class Sniper : Weapon
         }
 
 
-        /*
+        *//*
         force = 0.1f;
         if (!isOnCd)
         {
@@ -34,6 +34,6 @@ public class Sniper : Weapon
         numberOfBullets--;
 
         force = knockBackForce;
-        return true;*/
-    }
+        return true;*//*
+    }*/
 }

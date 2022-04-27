@@ -27,19 +27,34 @@ public class ShieldBehavior : MonoBehaviour
                 Destroy(collision.gameObject);
                 return;
             }
-            currentShieldAmount -= colObject.damageOnPlayer;
-            var propForce = currentShieldAmount / maxShieldAmount;
-            shieldPurcentage.text = propForce*100 + " %";
-            GetPropulsionForce(1-propForce);
-            var direction = colObject.transform.position - transform.position;
-            direction.Normalize();
-            rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
-            ShowShield();
-            if (colObject as ThrowObject)
+            TakeDamage(colObject);
+            var throwObject = colObject as ThrowObject;
+            if (throwObject && throwObject.playerDestroy)
                 Destroy(colObject.gameObject);
         }
     }
-
+    public void TakeDamage(Movable colObject)
+    {
+        currentShieldAmount -= colObject.damageOnPlayer;
+        var propForce = currentShieldAmount / maxShieldAmount;
+        shieldPurcentage.text = propForce * 100 + " %";
+        GetPropulsionForce(1 - propForce);
+        var direction = colObject.transform.position - transform.position;
+        direction.Normalize();
+        rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
+        ShowShield();
+    }
+    public void TakeDamage(float value, Movable colObject)
+    {
+        currentShieldAmount -= value;
+        var propForce = currentShieldAmount / maxShieldAmount;
+        shieldPurcentage.text = propForce * 100 + " %";
+        GetPropulsionForce(1 - propForce);
+        var direction = colObject.transform.position - transform.position;
+        direction.Normalize();
+        rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
+        ShowShield();
+    }
     public float GetPropulsionForce()
     {
         var propForce = 1 - currentShieldAmount / maxShieldAmount;

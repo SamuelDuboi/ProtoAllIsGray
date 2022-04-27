@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Instance References")]
     [SerializeField, ReadOnly]
-    GameInstanceHandler currentGameInstance;
+    public static GameInstanceHandler currentGameInstance;
 
     private void Awake()
     {
