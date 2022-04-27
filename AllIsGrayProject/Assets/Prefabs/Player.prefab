@@ -481,9 +481,10 @@ MonoBehaviour:
   maxShieldAmount: 100
   currentShieldAmount: 0
   rgb: {fileID: 2481340437093062121}
-  isInvicible: 0
+  isInvincible: 0
   shieldPurcentage: {fileID: 3490805348484148956}
   Shield: {fileID: 6045190606694882619}
+  invincibilityDuration: 0
 --- !u!1 &2481340437532877063
 GameObject:
   m_ObjectHideFlags: 0

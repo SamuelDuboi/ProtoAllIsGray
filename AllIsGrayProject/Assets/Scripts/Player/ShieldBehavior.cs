@@ -10,15 +10,15 @@ public class ShieldBehavior : MonoBehaviour
     public float currentShieldAmount;
     private float propulsionForce = 1;
     public Rigidbody rgb;
-    public bool isInvicible;
+    public bool isInvincible;
     public TextMeshProUGUI shieldPurcentage;
 
     public GameObject Shield;
     private Renderer rendererShield;
     private MaterialPropertyBlock propBlock;
 
-    public void ShieldInit()
     public float invincibilityDuration;
+    public void ShieldInit()
     {
         currentShieldAmount = 0;
         rendererShield = Shield.GetComponent<Renderer>();

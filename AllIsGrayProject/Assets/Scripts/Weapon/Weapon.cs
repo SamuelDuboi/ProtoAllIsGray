@@ -81,7 +81,7 @@ public class Weapon : ThrowObject
             target.gameObject.SetActive(true);
         if(players.Count == 0)
         {
-            foreach (var player in GameManager.currentGameInstance.allPlayer)
+            foreach (var player in GameManager.currentGameInstance.allActivePlayer)
             {
                 if (player != GetComponentInParent<PlayerMovement>())
                     players.Add(player.playerMove);
