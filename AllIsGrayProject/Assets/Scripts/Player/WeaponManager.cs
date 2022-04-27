@@ -13,7 +13,14 @@ public class WeaponManager : MonoBehaviour
     public float throwWeaponForce=5;
     public Transform weaponHandler;
     private bool isHold;
-
+    private Vector2 rotation;
+    public void RotationWeapon(InputAction.CallbackContext context)
+    {
+        if (!myWeapon)
+            return;
+        rotation = context.ReadValue<Vector2>();
+        myWeapon.HomingDirection(rotation);
+    }
     private void Update()
     {
         if (isHold)

@@ -14,9 +14,13 @@ public class Weapon : ThrowObject
     private HomingMissileBehavior homing;
     private List<PlayerMovement> players = new List<PlayerMovement>();
     public float angleMove;
+    PlayerMovement lockedPlayer;
+    public Transform target;
     private void Start()
     {
         homing = projectile.GetComponent<HomingMissileBehavior>();
+        //Set color here
+        target.GetComponent<SpriteRenderer>().color = Color.red;
     }
     /// <summary>
     /// return false if the weapon need to be thrown
@@ -44,7 +48,8 @@ public class Weapon : ThrowObject
         //instantiatedProjectile.GetComponent<Movable>().
         instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
         numberOfBullets--;
-
+        if (homing && lockedPlayer)
+            instantiatedProjectile.GetComponent<HomingMissileBehavior>().target = lockedPlayer.transform;
         force = knockBackForce;
         return true;
     }
@@ -57,12 +62,23 @@ public class Weapon : ThrowObject
     {
 
     }
+    private void Update()
+    {
+        if (!homing || !lockedPlayer)
+            return;
+        target.transform.position = lockedPlayer.transform.position;
+        target.transform.position += Vector3.back * 0.5f;
+    }
 
     public void HomingDirection(Vector3 direction)
     {
+
         if (!homing)
             return;
-
+        if (direction == Vector3.zero)
+            return;
+        if (!target.gameObject.activeSelf)
+            target.gameObject.SetActive(true);
         if(players.Count == 0)
         {
             foreach (var player in GameManager.currentGameInstance.allPlayer)
@@ -72,13 +88,17 @@ public class Weapon : ThrowObject
             }
         }
         var angle = 360.0f;
+            var firstAngle = Mathf.Atan2(direction.y, direction.x);
         foreach (var player in players)
         {
-            angleMove = Mathf.Abs(Vector3.Angle(direction + transform.position, player.transform.position));
+            var secondAngle = Mathf.Atan2(player.transform.position.y- transform.position.y, player.transform.position.x - transform.position.x);
+            angleMove =Mathf.Abs( firstAngle - secondAngle);
             if (angleMove < angle)
             {
                 angle = angleMove;
+                lockedPlayer = player;
             }
         }
+
     }
 }
