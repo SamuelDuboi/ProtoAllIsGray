@@ -18,7 +18,7 @@ public class Weapon : ThrowObject
     /// <param name="position"></param>
     /// <param name="force"></param>
     /// <returns></returns>
-    public bool Fire(Vector3 direction, Vector3 position, out float force)
+    public virtual bool Fire(Vector3 direction, Vector3 position, out float force)
     {
         force = 0.1f;
         if (!isOnCd)
@@ -34,6 +34,7 @@ public class Weapon : ThrowObject
             return false;
         }
         instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
+        //instantiatedProjectile.GetComponent<Movable>().
         instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
         numberOfBullets--;
 
