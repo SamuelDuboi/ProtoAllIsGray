@@ -1319,7 +1319,7 @@ Transform:
   - {fileID: 1131023786}
   - {fileID: 362675080}
   m_Father: {fileID: 543450651701967330}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1629949075
 GameObject:
@@ -1557,6 +1557,111 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1925571131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1925571132}
+  - component: {fileID: 1925571133}
+  m_Layer: 0
+  m_Name: PM3D_Sphere3D1_2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1925571132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925571131}
+  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02370787, y: -0.020869827, z: -0.03311386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651701967330}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1925571133
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925571131}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 283972e8487589b42a2a3f2c547be0c9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 2288851488686409129, guid: fdad1468494d7e341bf58814f1da8e2a, type: 3}
+  m_Bones:
+  - {fileID: 7250090513557864253}
+  - {fileID: 7931541199187173832}
+  - {fileID: 4290601880641172747}
+  - {fileID: 1141435083873433299}
+  - {fileID: 5148334418777822093}
+  - {fileID: 2636698354530177624}
+  - {fileID: 7142688516433117760}
+  - {fileID: 2267997509213716132}
+  - {fileID: 1943823954071041576}
+  - {fileID: 7840584263264937713}
+  - {fileID: 7899164569747208558}
+  - {fileID: 8340030380626785845}
+  - {fileID: 5600394389845399914}
+  - {fileID: 5539816852051789756}
+  - {fileID: 8302196409618512173}
+  - {fileID: 4580092013135880326}
+  - {fileID: 7217221290477184731}
+  - {fileID: 1790451253622730905}
+  - {fileID: 6235358770792957286}
+  - {fileID: 8088282098653662620}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 2636698354530177624}
+  m_AABB:
+    m_Center: {x: -0.11800742, y: 0.0064000487, z: -0.0011983067}
+    m_Extent: {x: 0.9046205, y: 0.68582416, z: 0.17562445}
+  m_DirtyAABB: 0
 --- !u!1 &1933932346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1802,7 @@ Transform:
   - {fileID: 1933932347}
   - {fileID: 229461836}
   m_Father: {fileID: 543450651701967330}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450651701967330
 Transform:
@@ -1713,6 +1818,7 @@ Transform:
   m_Children:
   - {fileID: 2636698354530177624}
   - {fileID: 4167298017594230957}
+  - {fileID: 1925571132}
   - {fileID: 2016616357}
   - {fileID: 1629159927}
   m_Father: {fileID: 0}
