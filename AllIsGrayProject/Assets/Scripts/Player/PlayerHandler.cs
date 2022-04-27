@@ -10,6 +10,7 @@ public class PlayerHandler : MonoBehaviour
     GameSettings CurrentSetting => currentGameInstance.currentSettings;
 
     public PlayerMovement playerMove;
+    public ShieldBehavior playerShield;
 
     public int deathCount;
     public int currentScore;
@@ -21,6 +22,7 @@ public class PlayerHandler : MonoBehaviour
         currentGameInstance = instance;
         RespawnPlayer();
         //Assign Controler;
+        playerShield.ShieldInit();
     }
 
     public void ResetPlayer()
@@ -28,6 +30,7 @@ public class PlayerHandler : MonoBehaviour
         //Reset Weapon;
         //Reset Statut;
         //Reset Shield;
+        playerShield.ShieldReset();
         //Reset Rotation & Velocity;
         playerMove.rigidbody.velocity = Vector3.zero;
         playerMove.transform.rotation = Quaternion.identity;
