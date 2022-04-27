@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageOnPlayer: 0
+  playerHandler: {fileID: 5276758018786306507}
   rigidbody: {fileID: 2481340437093062121}
   myTransform: {fileID: 2481340437093062103}
   rotationSpeed: 1
@@ -231,6 +232,8 @@ MonoBehaviour:
   maxShieldAmount: 100
   currentShieldAmount: 0
   rgb: {fileID: 2481340437093062121}
+  isInvincible: 0
+  invincibilityDuration: 0
 --- !u!1 &2481340437532877063
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGameInstance: {fileID: 0}
   playerMove: {fileID: 2481340437093062123}
+  playerShield: {fileID: 1088264442746836671}
   deathCount: 0
   currentScore: 0
 --- !u!1 &2481340438783618359

@@ -84,7 +84,6 @@ public class PlayerMovement : Movable
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hello");
         if(other.gameObject.layer == LayerMask.NameToLayer("KillZone"))
         {
             playerHandler.PlayerDeath();

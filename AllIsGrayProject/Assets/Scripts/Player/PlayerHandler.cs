@@ -16,6 +16,7 @@ public class PlayerHandler : MonoBehaviour
     public int currentScore;
 
     public Action PlayerDead;
+    public Action PlayerBenched;
 
     public void InitPlayer(GameInstanceHandler instance)
     {
@@ -43,9 +44,15 @@ public class PlayerHandler : MonoBehaviour
         playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
     }
 
+    public void BenchPlayer()
+    {
+        PlayerBenched?.Invoke();
+        currentGameInstance.RemovePlayer(this);
+        gameObject.SetActive(false);
+    }
+
     public void PlayerDeath()
     {
-        Debug.Log("Death");
         deathCount++;
         PlayerDead?.Invoke();
 
@@ -53,14 +60,12 @@ public class PlayerHandler : MonoBehaviour
         {
             if (deathCount >= CurrentSetting.stockCount)
             {
-                currentGameInstance.EndSession();
-                Debug.Log("EndSession");
+                BenchPlayer();
             }
             else
             {
                 ResetPlayer();
                 RespawnPlayer();
-                Debug.Log("Respawn");
             }
         }
     }
