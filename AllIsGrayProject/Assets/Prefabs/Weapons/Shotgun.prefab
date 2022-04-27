@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8755960310957785997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5612724809701688714, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b3ddf620cf699e4d9736698db67bdf4, type: 2}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386627, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074755837638386653, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_Name
+      value: Shotgun
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6074755837638386652, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+    - {fileID: 1477874519569038352, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+--- !u!54 &1034989202022537080 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8637462842215617781, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+  m_PrefabInstance: {fileID: 8755960310957785997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3300775399015080016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6074755837638386653, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+  m_PrefabInstance: {fileID: 8755960310957785997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &120575847586998465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300775399015080016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41e1a6de4cc5454b9155178d3249b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageOnPlayer: 0
+  myEffect: {fileID: 0}
+  rgb: {fileID: 1034989202022537080}
+  throwForce: 2
+  projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
+  knockBackForce: 4
+  projectileSpeed: 4
+  numberOfBullets: 7
+  coolDown: 1
+  numOfProjectile: 3
+  modDir: 0
+  spreadRate: 0.2

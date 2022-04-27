@@ -10,7 +10,7 @@ public class Weapon : ThrowObject
     protected GameObject instantiatedProjectile;
     public int numberOfBullets = 5;
     public float coolDown;
-    private bool isOnCd;
+    protected bool isOnCd;
     /// <summary>
     /// return false if the weapon need to be thrown
     /// </summary>
@@ -41,7 +41,7 @@ public class Weapon : ThrowObject
         force = knockBackForce;
         return true;
     }
-    IEnumerator CoolDown()
+    protected  IEnumerator CoolDown()
     {
         yield return new WaitForSeconds(coolDown);
         isOnCd = false;
