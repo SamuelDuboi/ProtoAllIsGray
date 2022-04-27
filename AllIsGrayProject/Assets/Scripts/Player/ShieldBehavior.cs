@@ -12,9 +12,16 @@ public class ShieldBehavior : MonoBehaviour
     public Rigidbody rgb;
     public bool isInvicible;
     public TextMeshProUGUI shieldPurcentage;
+
+    public GameObject Shield;
+    private Renderer rendererShield;
+    private MaterialPropertyBlock propBlock;
+
     public void Start()
     {
         currentShieldAmount = 0;
+        rendererShield = Shield.GetComponent<Renderer>();
+        propBlock = new MaterialPropertyBlock();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -69,6 +76,16 @@ public class ShieldBehavior : MonoBehaviour
     public void ShowShield()
     {
         // here to displayDamageOnPlayer
+        float currentShieldAmountShader = currentShieldAmount * 0.01f;
+
+        rendererShield.GetPropertyBlock(propBlock);
+        propBlock.SetFloat("_Damaged", currentShieldAmountShader);
+        if (currentShieldAmountShader > 1)
+        {
+            propBlock.SetFloat("_Over100", 1);
+        }
+        else { propBlock.SetFloat("_Over100", 0); }
+        rendererShield.SetPropertyBlock(propBlock);
     }
 
     public void SetInvicible(bool value)
