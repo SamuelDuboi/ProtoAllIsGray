@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowObject : MonoBehaviour
+public class ThrowObject : Movable
 {
+    [Header("ThrowObject")]
     public BulletEffect myEffect;
     public Rigidbody rgb;
     public float throwForce;
-    private Vector3 myDirection;
+    protected Vector3 myDirection;
+    public bool playerDestroy = true;
     private void OnCollisionEnter(Collision collision)
     {
-       // myEffect.ApplyEffectOnCollision();
+        // myEffect.ApplyEffectOnCollision();
+        OnCollision(collision);
     }
     public virtual void Throw(Vector3 direction)
     {
@@ -30,4 +33,20 @@ public class ThrowObject : MonoBehaviour
         GetComponent<Collider>().isTrigger = false;
       //  myEffect.ApplyEffectOnThrow();
     }
+
+    protected virtual void OnCollision(Collision collision)
+    {
+        StartCoroutine(WaitToDie());
+    }
+    protected IEnumerator WaitToDie(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        Destroy(gameObject);
+    }
+    protected IEnumerator WaitToDie()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+    }
+
 }
