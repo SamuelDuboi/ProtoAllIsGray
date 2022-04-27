@@ -82,7 +82,7 @@ public class GameInstanceHandler : MonoBehaviour
             {
                 if (player == null || player == playerToRespawn)
                     continue;
-                distanceFromPoint = Vector3.Distance(spawnPoint.position, player.transform.position);
+                distanceFromPoint = Vector3.Distance(spawnPoint.position, player.playerMove.transform.position);
                 if (allPossiblePoint[spawnPoint] > distanceFromPoint)
                 {
                     allPossiblePoint[spawnPoint] = distanceFromPoint;

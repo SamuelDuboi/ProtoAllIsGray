@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     SceneManagementUI sceneManagementUI;
 
     [Header("Game Instance References")]
-    [SerializeField, ReadOnly]
-    GameInstanceHandler currentGameInstance;
+    [ReadOnly]
+    public GameInstanceHandler currentGameInstance;
 
     private void Awake()
     {

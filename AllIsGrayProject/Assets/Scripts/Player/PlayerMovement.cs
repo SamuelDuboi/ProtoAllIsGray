@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class PlayerMovement : Movable
 {
+    public PlayerHandler playerHandler;
     [Header("Movement")]
     public Rigidbody rigidbody;
     public Transform myTransform;
@@ -86,6 +87,14 @@ public class PlayerMovement : Movable
         }
         else
             CoolDownImage.fillAmount = 1 - jetpackCurrentUse / jetpackMaxTime;
-        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("hello");
+        if(other.gameObject.layer == LayerMask.NameToLayer("KillZone"))
+        {
+            playerHandler.PlayerDeath();
+        }
     }
 }

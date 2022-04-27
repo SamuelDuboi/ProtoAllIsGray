@@ -29,16 +29,20 @@ public class PlayerHandler : MonoBehaviour
         //Reset Statut;
         //Reset Shield;
         //Reset Rotation & Velocity;
+        playerMove.rigidbody.velocity = Vector3.zero;
+        playerMove.transform.rotation = Quaternion.identity;
+
         //Reset Fuel;
     }
 
     public void RespawnPlayer()
     {
-        transform.position = currentGameInstance.FindRespawnPoint(this).position;
+        playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
     }
 
     public void PlayerDeath()
     {
+        Debug.Log("Death");
         deathCount++;
         PlayerDead?.Invoke();
 
@@ -47,11 +51,13 @@ public class PlayerHandler : MonoBehaviour
             if (deathCount >= CurrentSetting.stockCount)
             {
                 currentGameInstance.EndSession();
+                Debug.Log("EndSession");
             }
             else
             {
                 ResetPlayer();
                 RespawnPlayer();
+                Debug.Log("Respawn");
             }
         }
     }
