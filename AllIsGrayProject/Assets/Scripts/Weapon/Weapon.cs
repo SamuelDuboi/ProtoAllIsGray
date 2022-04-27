@@ -46,4 +46,8 @@ public class Weapon : ThrowObject
         yield return new WaitForSeconds(coolDown);
         isOnCd = false;
     }
+    public void Release()
+    {
+
+    }
 }

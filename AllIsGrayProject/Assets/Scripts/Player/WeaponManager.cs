@@ -41,7 +41,11 @@ public class WeaponManager : MonoBehaviour
         if (context.started)
             isHold = true;
         if (context.canceled)
+        {
             isHold = false;
+            if (myWeapon)
+                myWeapon.Release();
+        }
     }
     private void KnockBack(float knockBackForce)
     {
