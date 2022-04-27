@@ -11,7 +11,8 @@ public class ThrowObject : Movable
     private Vector3 myDirection;
     private void OnCollisionEnter(Collision collision)
     {
-       // myEffect.ApplyEffectOnCollision();
+        // myEffect.ApplyEffectOnCollision();
+        OnCollision();
     }
     public virtual void Throw(Vector3 direction)
     {
@@ -30,5 +31,15 @@ public class ThrowObject : Movable
         rgb.isKinematic = false;
         GetComponent<Collider>().isTrigger = false;
       //  myEffect.ApplyEffectOnThrow();
+    }
+
+    protected virtual void OnCollision()
+    {
+        StartCoroutine(WaitToDie());
+    }
+    IEnumerator WaitToDie()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

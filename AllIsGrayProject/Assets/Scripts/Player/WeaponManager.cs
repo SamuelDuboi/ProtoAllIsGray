@@ -49,11 +49,13 @@ public class WeaponManager : MonoBehaviour
         {
             if (!myWeapon)
                 return ;
+            myWeapon.transform.SetParent(null);
+            myWeapon.transform.position = followPointTransform.position;
             myWeapon.GetComponent<Rigidbody>().velocity=direction * throwWeaponForce;
             myWeapon.Throw(direction,throwWeaponForce);
+            myWeapon.GetComponent<Collider>().enabled = true;
             myWeapon.tag = "Untagged";
-            myWeapon.transform.SetParent(null);
-            myWeapon.transform.position = basicWeapon.transform.position;
+           
             myWeapon = null;
             return ;
         }
@@ -62,15 +64,27 @@ public class WeaponManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Weapon")
+        if(other.tag == "WeaponSpawner")
         {
+            myWeapon = other.GetComponent<WeaponSpawner>().Collect();
+            if (myWeapon == null)
+                return;
             basicWeapon.gameObject.SetActive( false);
+            myWeapon.GetComponent<Collider>().enabled = false;
+            myWeapon.transform.parent =weaponHandler;
+            myWeapon.GetComponent<Rigidbody>().isKinematic = true;
+            myWeapon.transform.position = basicWeapon.transform.position;
+
+        }
+        else if (other.tag == "Weapon")
+        {
+            basicWeapon.gameObject.SetActive(false);
             direction = followPointTransform.position - transform.position;
             direction.Normalize();
             KnockBack(0);
             other.GetComponent<Collider>().enabled = false;
             myWeapon = other.GetComponent<Weapon>();
-            myWeapon.transform.parent =weaponHandler;
+            myWeapon.transform.parent = weaponHandler;
             myWeapon.GetComponent<Rigidbody>().isKinematic = true;
             other.transform.position = basicWeapon.transform.position;
 

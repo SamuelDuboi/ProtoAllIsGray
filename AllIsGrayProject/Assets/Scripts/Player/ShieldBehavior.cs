@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ShieldBehavior : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ShieldBehavior : MonoBehaviour
     private float propulsionForce = 1;
     public Rigidbody rgb;
     public bool isInvicible;
+    public TextMeshProUGUI shieldPurcentage;
     public void Start()
     {
         currentShieldAmount = maxShieldAmount;
@@ -26,7 +28,9 @@ public class ShieldBehavior : MonoBehaviour
                 return;
             }
             currentShieldAmount -= colObject.damageOnPlayer;
-            GetPropulsionForce();
+            var propForce = currentShieldAmount / maxShieldAmount;
+            shieldPurcentage.text = propForce*100 + " %";
+            GetPropulsionForce(1-propForce);
             var direction = colObject.transform.position - transform.position;
             direction.Normalize();
             rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
@@ -42,7 +46,11 @@ public class ShieldBehavior : MonoBehaviour
         propulsionForce = propForce/ 0.05f +1;
         return propulsionForce;
     }
-
+    public float GetPropulsionForce( float propForce)
+    {
+        propulsionForce = propForce / 0.05f + 1;
+        return propulsionForce;
+    }
     public void ShowShield()
     {
         // here to displayDamageOnPlayer
