@@ -14,7 +14,7 @@ public class ShieldBehavior : MonoBehaviour
     public TextMeshProUGUI shieldPurcentage;
     public void Start()
     {
-        currentShieldAmount = maxShieldAmount;
+        currentShieldAmount = 0;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,10 +35,10 @@ public class ShieldBehavior : MonoBehaviour
     }
     public void TakeDamage(Movable colObject)
     {
-        currentShieldAmount -= colObject.damageOnPlayer;
+        currentShieldAmount += colObject.damageOnPlayer;
         var propForce = currentShieldAmount / maxShieldAmount;
         shieldPurcentage.text = propForce * 100 + " %";
-        GetPropulsionForce(1 - propForce);
+        GetPropulsionForce( propForce);
         var direction = colObject.transform.position - transform.position;
         direction.Normalize();
         rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
@@ -46,10 +46,10 @@ public class ShieldBehavior : MonoBehaviour
     }
     public void TakeDamage(float value, Movable colObject)
     {
-        currentShieldAmount -= value;
+        currentShieldAmount += value;
         var propForce = currentShieldAmount / maxShieldAmount;
         shieldPurcentage.text = propForce * 100 + " %";
-        GetPropulsionForce(1 - propForce);
+        GetPropulsionForce( propForce);
         var direction = colObject.transform.position - transform.position;
         direction.Normalize();
         rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
@@ -57,7 +57,7 @@ public class ShieldBehavior : MonoBehaviour
     }
     public float GetPropulsionForce()
     {
-        var propForce = 1 - currentShieldAmount / maxShieldAmount;
+        var propForce = currentShieldAmount / maxShieldAmount;
         propulsionForce = propForce/ 0.05f +1;
         return propulsionForce;
     }

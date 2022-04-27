@@ -13,6 +13,7 @@ public class Weapon : ThrowObject
     protected bool isOnCd;
     private HomingMissileBehavior homing;
     private List<PlayerMovement> players = new List<PlayerMovement>();
+    public float angleMove;
     private void Start()
     {
         homing = projectile.GetComponent<HomingMissileBehavior>();
@@ -70,10 +71,14 @@ public class Weapon : ThrowObject
                     players.Add(player.playerMove);
             }
         }
-        var angle = 0;
+        var angle = 360.0f;
         foreach (var player in players)
         {
-           /* if()*/
+            angleMove = Mathf.Abs(Vector3.Angle(direction + transform.position, player.transform.position));
+            if (angleMove < angle)
+            {
+                angle = angleMove;
+            }
         }
     }
 }
