@@ -12,9 +12,7 @@ public class AnimAimAt : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         Quaternion lookRot = Quaternion.LookRotation(direction);
 
-        float eulerY = lookRot.eulerAngles.y;
-
-        Quaternion rotation = Quaternion.Euler(0, eulerY, 0);
-        transform.localRotation = rotation;
+        float eulerY = lookRot.eulerAngles.x;
+        transform.LookAt(target);
     }
 }

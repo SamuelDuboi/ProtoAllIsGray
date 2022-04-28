@@ -10,10 +10,14 @@ PrefabInstance:
     - target: {fileID: -123061539441290358, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ed0dc67347b1ba14d842e39b36b5d7a3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9813d299d2835d940a45d4dfcabd0f06, type: 2}
     - target: {fileID: 7485956109114996163, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485956109114996163, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.16901
       objectReference: {fileID: 0}
     - target: {fileID: 7485956109114996163, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 8417418024931749660, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -951608786083511892, guid: 86a02cb6ff186ba45adc430a852bfd60, type: 3}
     m_RemovedComponents:
     - {fileID: 7485956109114996188, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
@@ -83,11 +91,14 @@ MonoBehaviour:
   myEffect: {fileID: 0}
   rgb: {fileID: 8637462842215617781}
   throwForce: 2
+  playerDestroy: 1
   projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
   knockBackForce: 3
   projectileSpeed: 25
   numberOfBullets: 5
   coolDown: 2
+  angleMove: 0
+  target: {fileID: 0}
   isCharging: 0
   chargeTime: 2
   accelerationDecharge: 2
