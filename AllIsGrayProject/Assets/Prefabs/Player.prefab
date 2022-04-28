@@ -339,11 +339,11 @@ MonoBehaviour:
   rigidbody: {fileID: 2481340437093062121}
   myTransform: {fileID: 2481340437093062103}
   rotationSpeed: 1
-  rotationTreshold: 0.1
-  movementTreshold: 0.1
-  jetpackForce: 0.1
-  jetpackMaxTime: 1
-  jetpackCooldown: 2
+  rotationTreshold: 0.2
+  movementTreshold: 0.2
+  jetpackForce: 0.04
+  jetpackMaxTime: 1.5
+  jetpackCooldown: 0.8
   CoolDownImage: {fileID: 2481340438291342333}
   doCoolDown: 1
   jetpackTrail: {fileID: 120393450823748788}
@@ -370,7 +370,7 @@ MonoBehaviour:
   myWeapon: {fileID: 0}
   basicWeapon: {fileID: 2481340437385127288}
   followPointTransform: {fileID: 2481340438576148171}
-  throwWeaponForce: 5
+  throwWeaponForce: 18
   weaponHandler: {fileID: 2481340437812199220}
 --- !u!114 &1088264442746836671
 MonoBehaviour:
@@ -390,7 +390,7 @@ MonoBehaviour:
   isInvincible: 0
   shieldPurcentage: {fileID: 3490805348484148956}
   Shield: {fileID: 888410709024049283}
-  invincibilityDuration: 0
+  invincibilityDuration: 1
 --- !u!1 &2481340437532877063
 GameObject:
   m_ObjectHideFlags: 0

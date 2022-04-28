@@ -127,20 +127,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7741584592a907141923f3e7031d41bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOnPlayer: 0
+  damageOnPlayer: 7
   myEffect: {fileID: 0}
   rgb: {fileID: 8637462842215617781}
   throwForce: 2
   playerDestroy: 1
   projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
-  knockBackForce: 3
-  projectileSpeed: 25
-  numberOfBullets: 5
+  knockBackForce: 6
+  projectileSpeed: 60
+  numberOfBullets: 6
   coolDown: 2
   angleMove: 0
   target: {fileID: 0}
   isCharging: 0
-  chargeTime: 2
+  chargeTime: 3
   accelerationDecharge: 2
   shoot: 0
   directionSnip: {x: 0, y: 0, z: 0}
