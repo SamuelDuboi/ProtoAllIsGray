@@ -34,6 +34,11 @@ public class PlayerMovement : Movable
     public ParticleSystem jetpackFlames;
     public GameObject jetpackBigFlame;
 
+    public TrailRenderer jetpackTrail2;
+    public ParticleSystem jetpackCircles2;
+    public ParticleSystem jetpackFlames2;
+    public GameObject jetpackBigFlame2; 
+
     public void Rotation(InputAction.CallbackContext context)
     {
         rotation = context.ReadValue<Vector2>().x;
@@ -50,6 +55,11 @@ public class PlayerMovement : Movable
             jetpackFlames.Play();
             jetpackCircles.Play();
             jetpackTrail.emitting = true;
+
+            jetpackBigFlame2.SetActive(true);
+            jetpackFlames2.Play();
+            jetpackCircles2.Play();
+            jetpackTrail2.emitting = true;
         }
         else if (context.canceled)
         {
@@ -57,6 +67,11 @@ public class PlayerMovement : Movable
             jetpackFlames.Stop();
             jetpackCircles.Stop();
             jetpackTrail.emitting = false;
+
+            jetpackBigFlame2.SetActive(false);
+            jetpackFlames2.Stop();
+            jetpackCircles2.Stop();
+            jetpackTrail2.emitting = false;
         }
     }
 
@@ -67,6 +82,11 @@ public class PlayerMovement : Movable
         jetpackFlames.Stop();
         jetpackCircles.Stop();
         jetpackTrail.emitting = false;
+
+        jetpackBigFlame2.SetActive(false);
+        jetpackFlames2.Stop();
+        jetpackCircles2.Stop();
+        jetpackTrail2.emitting = false; 
     }
 
     // Update is called once per frame
