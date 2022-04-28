@@ -389,7 +389,9 @@ MonoBehaviour:
   rgb: {fileID: 2481340437093062121}
   isInvincible: 0
   shieldPurcentage: {fileID: 3490805348484148956}
-  Shield: {fileID: 888410709024049283}
+  Shield:
+  - {fileID: 888410709024049283}
+  - {fileID: 1428981741332842127}
   invincibilityDuration: 1
 --- !u!1 &2481340437532877063
 GameObject:
@@ -1204,6 +1206,11 @@ PrefabInstance:
 --- !u!1 &888410709024049283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1772083111654420583, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
+  m_PrefabInstance: {fileID: 1496304373069347044}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1428981741332842127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 510933934440234603, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
   m_PrefabInstance: {fileID: 1496304373069347044}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &3471917992235500116 stripped

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -123061539441290358}
   - component: {fileID: 8417418024931749660}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: BasicGunLaser
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

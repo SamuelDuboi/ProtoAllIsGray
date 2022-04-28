@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6074755837638386653, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
       propertyPath: m_Name
-      value: Shotgun
+      value: ShotgunPlasma
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6074755837638386652, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
@@ -138,13 +138,18 @@ MonoBehaviour:
   rgb: {fileID: 1034989202022537080}
   throwForce: 2
   playerDestroy: 1
-  projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
+  projectile: {fileID: 8315286014265795621, guid: 06f9721e7b7b80444a9d2b8a7b90ab17, type: 3}
   knockBackForce: 4
   projectileSpeed: 20
   numberOfBullets: 7
   coolDown: 2
   angleMove: 0
-  target: {fileID: 0}
+  target: {fileID: 8817928324175635750}
   numOfProjectile: 3
   modDir: 0
   spreadRate: 0.2
+--- !u!4 &8817928324175635750 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 278370593329833643, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+  m_PrefabInstance: {fileID: 8755960310957785997}
+  m_PrefabAsset: {fileID: 0}
