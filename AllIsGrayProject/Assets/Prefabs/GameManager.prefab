@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneManagementUI: {fileID: 7985897071641060312}
+  colorBank: {fileID: 11400000, guid: e333b3dfdf106754596967a07d7873eb, type: 2}
 --- !u!1 &7985897071641060308
 GameObject:
   m_ObjectHideFlags: 0

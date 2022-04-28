@@ -40,6 +40,7 @@ public class GameInstanceHandler : MonoBehaviour
 
     public void InitSession(GameSettings settings)
     {
+        var colorBank = GameManager.Instance.colorBank;
         currentSettings = settings;
         currentTimer = settings.gameTimer;
 
@@ -47,7 +48,7 @@ public class GameInstanceHandler : MonoBehaviour
         {
             var player = Instantiate(playerPrefab);
             allActivePlayer.Add(player);
-            player.InitPlayer(this);
+            player.InitPlayer(this, colorBank.skinColors[i]);
         }
     }
 
@@ -65,14 +66,6 @@ public class GameInstanceHandler : MonoBehaviour
     {
         allActivePlayer.Remove(player);
         benchedPlayer.Add(player);
-    }
-
-    public PlayerHandler SpawnPlayer()
-    {
-        var player = Instantiate(playerPrefab);
-        player.InitPlayer(this);
-
-        return player;
     }
 
     public Transform FindRespawnPoint(PlayerHandler playerToRespawn)

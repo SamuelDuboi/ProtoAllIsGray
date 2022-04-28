@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField, ReadOnly]
     public static  GameInstanceHandler currentGameInstance;
 
+    [Header("Global Game Infos")]
+    public PlayerColorBank colorBank;
+
     private void Awake()
     {
         #region Singleton/DDOL
