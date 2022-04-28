@@ -28,6 +28,7 @@ public class Weapon : ThrowObject
             numberOfBullets = Mathf.FloorToInt( numberOfBullets * 0.75f);
 
         //Set color here
+        if(homing)
         target.GetComponent<SpriteRenderer>().color = Color.red;
     }
     /// <summary>
