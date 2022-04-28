@@ -86,6 +86,8 @@ public class WeaponManager : MonoBehaviour
             myWeapon.transform.parent =weaponHandler;
             myWeapon.GetComponent<Rigidbody>().isKinematic = true;
             myWeapon.transform.position = basicWeapon.transform.position;
+            myWeapon.transform.localRotation = basicWeapon.transform.localRotation;
+            
 
         }
         else if (other.tag == "Weapon")
@@ -99,6 +101,8 @@ public class WeaponManager : MonoBehaviour
             myWeapon.transform.parent = weaponHandler;
             myWeapon.GetComponent<Rigidbody>().isKinematic = true;
             other.transform.position = basicWeapon.transform.position;
+            myWeapon.transform.localRotation = basicWeapon.transform.localRotation;
+
 
         }
     }
