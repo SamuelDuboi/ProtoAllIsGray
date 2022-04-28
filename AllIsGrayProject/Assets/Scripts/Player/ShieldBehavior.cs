@@ -28,7 +28,8 @@ public class ShieldBehavior : MonoBehaviour
     public void ShieldReset()
     {
         StopAllCoroutines();
-        currentShieldAmount = maxShieldAmount;
+        currentShieldAmount = 0;
+        shieldPurcentage.text = "0 %";
         StartCoroutine(StartInvicibility());
     }
 
