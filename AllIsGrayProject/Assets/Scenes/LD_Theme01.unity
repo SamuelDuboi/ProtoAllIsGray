@@ -562,6 +562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (11)
@@ -1426,6 +1430,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (18)
@@ -1500,6 +1508,18 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -1633,6 +1653,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (3)
@@ -1707,6 +1735,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -2159,28 +2195,14 @@ GameObject:
   - component: {fileID: 266201762}
   - component: {fileID: 266201759}
   - component: {fileID: 266201758}
-  - component: {fileID: 266201757}
-  m_Layer: 0
+  - component: {fileID: 266201763}
+  m_Layer: 8
   m_Name: TOP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &266201757
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266201756}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!33 &266201758
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2246,6 +2268,19 @@ Transform:
   m_Father: {fileID: 1080290544}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &266201763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266201756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &271237806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2369,6 +2404,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -3124,6 +3163,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (27)
@@ -3269,6 +3316,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (46)
@@ -3346,6 +3397,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -3797,6 +3856,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (24)
@@ -4053,6 +4120,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (33)
@@ -4127,6 +4198,18 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -4503,6 +4586,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (39)
@@ -4585,6 +4680,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -4971,6 +5074,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (30)
@@ -5145,6 +5252,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -5517,6 +5628,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (41)
@@ -5586,6 +5709,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -5727,6 +5854,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (10)
@@ -5806,28 +5937,14 @@ GameObject:
   - component: {fileID: 678233725}
   - component: {fileID: 678233722}
   - component: {fileID: 678233721}
-  - component: {fileID: 678233720}
-  m_Layer: 0
+  - component: {fileID: 678233726}
+  m_Layer: 8
   m_Name: LEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &678233720
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678233719}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!33 &678233721
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5893,6 +6010,19 @@ Transform:
   m_Father: {fileID: 1080290544}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &678233726
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678233719}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &679610590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7273,6 +7403,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (16)
@@ -7782,6 +7916,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (29)
@@ -7913,6 +8051,18 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -8205,6 +8355,18 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -8811,6 +8973,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (9)
@@ -8951,6 +9117,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (60)
@@ -9020,6 +9194,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -9276,6 +9458,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -9568,6 +9758,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (59)
@@ -9699,6 +9897,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -9834,6 +10040,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -10236,6 +10450,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -10700,6 +10922,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -12498,6 +12724,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (53)
@@ -12876,6 +13110,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
@@ -13261,6 +13503,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (49)
@@ -13634,6 +13880,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (20)
@@ -13703,6 +13953,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -13903,6 +14157,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (2)
@@ -14047,6 +14309,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -14214,6 +14484,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -14404,6 +14678,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (32)
@@ -14543,6 +14821,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -14963,6 +15249,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (28)
@@ -15102,6 +15396,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -15341,6 +15639,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (7)
@@ -15418,6 +15724,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -15564,6 +15878,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (62)
@@ -15642,6 +15964,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (21)
@@ -15711,6 +16037,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -16441,6 +16775,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (15)
@@ -16509,6 +16847,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
@@ -16881,6 +17227,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (35)
@@ -17083,6 +17441,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (22)
@@ -17222,6 +17588,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -17410,6 +17780,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (63)
@@ -17594,6 +17972,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (5)
@@ -17725,6 +18111,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -17956,6 +18346,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -18352,6 +18750,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayClose
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (37)
@@ -18484,6 +18894,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
       value: Door (56)
@@ -18558,6 +18976,10 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
@@ -18748,28 +19170,14 @@ GameObject:
   - component: {fileID: 2075194980}
   - component: {fileID: 2075194977}
   - component: {fileID: 2075194976}
-  - component: {fileID: 2075194975}
-  m_Layer: 0
+  - component: {fileID: 2075194981}
+  m_Layer: 8
   m_Name: BOTTOM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2075194975
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075194974}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!33 &2075194976
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18835,6 +19243,19 @@ Transform:
   m_Father: {fileID: 1080290544}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2075194981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075194974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2079751053
 GameObject:
   m_ObjectHideFlags: 0
@@ -18846,28 +19267,14 @@ GameObject:
   - component: {fileID: 2079751059}
   - component: {fileID: 2079751056}
   - component: {fileID: 2079751055}
-  - component: {fileID: 2079751054}
-  m_Layer: 0
+  - component: {fileID: 2079751060}
+  m_Layer: 8
   m_Name: RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2079751054
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079751053}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!33 &2079751055
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18933,6 +19340,19 @@ Transform:
   m_Father: {fileID: 1080290544}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2079751060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079751053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2080599148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19118,6 +19538,14 @@ PrefabInstance:
     - target: {fileID: 8721460107158661987, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: timeStayOpen
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721460107158661991, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
+      propertyPath: initTimeStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721460107158662296, guid: 18ef6ab694d9d864b90af12a254fbad1, type: 3}
       propertyPath: m_Name
