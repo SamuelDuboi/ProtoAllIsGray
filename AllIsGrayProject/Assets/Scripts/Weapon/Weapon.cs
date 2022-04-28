@@ -19,6 +19,14 @@ public class Weapon : ThrowObject
     private void Start()
     {
         homing = projectile.GetComponent<HomingMissileBehavior>();
+       var type = projectile.GetComponent<ThrowObject>();
+       if (type as PlasmaBehavior || homing)
+       {
+            numberOfBullets = Mathf.FloorToInt(numberOfBullets * 0.5f);
+        }
+       else if (type as GammaBehavior)
+            numberOfBullets = Mathf.FloorToInt( numberOfBullets * 0.75f);
+
         //Set color here
         target.GetComponent<SpriteRenderer>().color = Color.red;
     }

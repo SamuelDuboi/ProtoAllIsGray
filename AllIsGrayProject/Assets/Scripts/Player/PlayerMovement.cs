@@ -87,6 +87,7 @@ public class PlayerMovement : Movable
         jetpackFlames2.Stop();
         jetpackCircles2.Stop();
         jetpackTrail2.emitting = false; 
+
     }
 
     // Update is called once per frame
