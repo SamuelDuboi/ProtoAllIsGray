@@ -11,19 +11,22 @@ public class PlayerHandler : MonoBehaviour
 
     public PlayerMovement playerMove;
     public ShieldBehavior playerShield;
+    public PlayerColorSkinHandler playerSkin;
 
     public int deathCount;
     public int currentScore;
+    public int playerIndex;
 
     public Action PlayerDead;
     public Action PlayerBenched;
 
-    public void InitPlayer(GameInstanceHandler instance)
+    public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor)
     {
         currentGameInstance = instance;
         RespawnPlayer();
         //Assign Controler;
         playerShield.ShieldInit();
+        playerSkin.InitColor(skinColor);
     }
 
     public void ResetPlayer()

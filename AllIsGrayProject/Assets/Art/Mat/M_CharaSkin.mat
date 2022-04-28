@@ -75,5 +75,5 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _SkinCharaColor1: {r: 0.72305536, g: 0.21586053, b: 0.04091521, a: 1}
-    - _SkinCharaColor2: {r: 0.095307484, g: 0.98225087, b: 0.2917707, a: 0}
+    - _SkinCharaColor2: {r: 0.095307484, g: 0.98225087, b: 0.2917707, a: 1}
   m_BuildTextureStacks: []

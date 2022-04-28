@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -123061539441290358}
   - component: {fileID: 8417418024931749660}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: BasicGunHoming
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,11 +138,11 @@ MonoBehaviour:
   rgb: {fileID: 4931659181971833589}
   throwForce: 2
   playerDestroy: 1
-  projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
+  projectile: {fileID: 8315286014265795621, guid: 222bb3b7be2fb0a4d925138ef29b43f2, type: 3}
   knockBackForce: 2
   projectileSpeed: 30
   numberOfBullets: 10
-  coolDown: 0.8
+  coolDown: 0.5
   angleMove: 0
   target: {fileID: 3490944749073510571}
 --- !u!65 &-6861651453633868703

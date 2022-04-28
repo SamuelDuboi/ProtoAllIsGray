@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485956109114996189, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: m_Name
-      value: Sniper
+      value: SniperLaser
       objectReference: {fileID: 0}
     - target: {fileID: 8417418024931749660, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: m_Mesh
@@ -110,6 +110,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7485956109114996188, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+--- !u!4 &278370593329833643 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3490944749073510571, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+  m_PrefabInstance: {fileID: 3724102321435334144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6074755837638386653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7485956109114996189, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
@@ -138,7 +143,7 @@ MonoBehaviour:
   numberOfBullets: 6
   coolDown: 2
   angleMove: 0
-  target: {fileID: 0}
+  target: {fileID: 278370593329833643}
   isCharging: 0
   chargeTime: 3
   accelerationDecharge: 2
