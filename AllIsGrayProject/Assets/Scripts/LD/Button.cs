@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    public Door door;
+    public Door[] doors;
 #if UNITY_EDITOR
     public float size = 10;
     public Color color = Color.green;
@@ -13,7 +13,8 @@ public class Button : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Movable>())
         {
-            door.Perform();
+            foreach (var door in doors)
+                door.Perform();
         }
     }
 }

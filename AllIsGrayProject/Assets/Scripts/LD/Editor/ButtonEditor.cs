@@ -12,11 +12,15 @@ public class ButtonEditor : Editor
     {
         if (!targetB)
             targetB = target as Button;
-        if (targetB.door)
+        if (targetB.doors.Length > 0)
         {
             var _color = Handles.color;
             Handles.color = targetB.color;
-            Handles.DrawLine(targetB.transform.position, targetB.door.transform.position, targetB.size);
+            foreach (var door in targetB.doors)
+            {
+                Handles.DrawLine(targetB.transform.position, door.transform.position, targetB.size);
+
+            }
             Handles.color = _color;
         }
     }
@@ -28,7 +32,7 @@ public class ButtonEditor : Editor
     }
     public override void OnInspectorGUI()
     {
-        if (!targetB.door)
+        if (targetB.doors.Length == 0)
             EditorGUILayout.HelpBox("Need a door to work", MessageType.Warning);
         base.OnInspectorGUI();
         serializedObject.ApplyModifiedProperties();
