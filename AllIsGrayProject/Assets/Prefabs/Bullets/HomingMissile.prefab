@@ -4877,7 +4877,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 28de7a2dbfbbad048bba40cda57161bd, type: 2}
+  - {fileID: 2100000, guid: 4df6f8d90b60ed2428e31849c5aa955d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4940,8 +4940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65cd137e5c58a847b1cea3d7678c013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOnPlayer: 2
+  damageOnPlayer: 8
   myEffect: {fileID: 0}
   rgb: {fileID: 7175174408968588468}
-  throwForce: 3
+  throwForce: 2
   playerDestroy: 1
+  target: {fileID: 0}
