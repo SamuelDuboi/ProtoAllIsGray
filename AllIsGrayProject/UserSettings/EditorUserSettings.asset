@@ -6,6 +6,7 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
+<<<<<<< HEAD
       value: 00080757515751020f085d7b40750a44154f19737f7b7531792a4f37b1b53161
       flags: 0
 <<<<<<< HEAD
@@ -32,6 +33,13 @@ EditorUserSettings:
       flags: 0
 =======
 >>>>>>> Anais
+=======
+      value: 5552060500000a0f540b5f7141740f44124e417a7a7874607f704f32e7b9603b
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 515250500656515d5e0c5b7b41270744141640727f7a24692b2b4f30e0b3606a
+      flags: 0
+>>>>>>> aubane
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
