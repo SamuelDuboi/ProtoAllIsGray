@@ -9,7 +9,8 @@ public class GameInstanceHandler : MonoBehaviour
     public PlayerHandler playerPrefab;
 
     public GameSettings currentSettings;
-    public PlayerHandler[] allPlayer;
+    public List<PlayerHandler> allActivePlayer = new List<PlayerHandler>();
+    public List<PlayerHandler> benchedPlayer = new List<PlayerHandler>();
     public Transform[] allSpawnPoints;
 
     public float currentTimer;
@@ -42,11 +43,10 @@ public class GameInstanceHandler : MonoBehaviour
         currentSettings = settings;
         currentTimer = settings.gameTimer;
 
-        allPlayer = new PlayerHandler[settings.playerAmount];
         for (int i = 0; i < settings.playerAmount; i++)
         {
             var player = Instantiate(playerPrefab);
-            allPlayer[i] = player;
+            allActivePlayer.Add(player);
             player.InitPlayer(this);
         }
     }
@@ -59,6 +59,12 @@ public class GameInstanceHandler : MonoBehaviour
     public void EndSession()
     {
 
+    }
+
+    public void RemovePlayer(PlayerHandler player)
+    {
+        allActivePlayer.Remove(player);
+        benchedPlayer.Add(player);
     }
 
     public PlayerHandler SpawnPlayer()
@@ -78,11 +84,11 @@ public class GameInstanceHandler : MonoBehaviour
         {
             allPossiblePoint.Add(spawnPoint, Mathf.Infinity);
 
-            foreach (PlayerHandler player in allPlayer)
+            foreach (PlayerHandler player in allActivePlayer)
             {
                 if (player == null || player == playerToRespawn)
                     continue;
-                distanceFromPoint = Vector3.Distance(spawnPoint.position, player.transform.position);
+                distanceFromPoint = Vector3.Distance(spawnPoint.position, player.playerMove.transform.position);
                 if (allPossiblePoint[spawnPoint] > distanceFromPoint)
                 {
                     allPossiblePoint[spawnPoint] = distanceFromPoint;
