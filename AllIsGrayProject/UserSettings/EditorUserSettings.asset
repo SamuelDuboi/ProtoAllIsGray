@@ -6,32 +6,11 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 00080757515751020f085d7b40750a44154f19737f7b7531792a4f37b1b53161
-      flags: 0
-<<<<<<< HEAD
-    RecentlyUsedSceneGuid-1:
-      value: 0508075201015b5d0c0c5e2714735b4445161929782a7460797d4936e4e46439
-      flags: 0
-    RecentlyUsedSceneGuid-2:
-      value: 515250500656515d5e0c5b7b41270744141640727f7a24692b2b4f30e0b3606a
-      flags: 0
-    RecentlyUsedSceneGuid-3:
-      value: 5552060500000a0f540b5f7141740f44124e417a7a7874607f704f32e7b9603b
-      flags: 0
-    RecentlyUsedSceneGuid-4:
-      value: 5a52575207035d0d09595e7112200d4415164079752c24347e714f61b7b63769
-      flags: 0
-    RecentlyUsedSceneGuid-5:
-      value: 500855515c015b580f5a0972497b5e44434e1a2e7f707363757a4f6ab6b3606c
-      flags: 0
-    RecentlyUsedSceneGuid-6:
-      value: 5757075154070a0d095c0d7312215a444616492b7e2c7067297c1b35e6b06469
-      flags: 0
-    RecentlyUsedSceneGuid-7:
       value: 5a010d045606595e5a595d26427b5b4445164c787c297362752d1937b0b4323c
       flags: 0
-=======
->>>>>>> Anais
+    RecentlyUsedSceneGuid-1:
+      value: 5757075154070a0d095c0d7312215a444616492b7e2c7067297c1b35e6b06469
+      flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
