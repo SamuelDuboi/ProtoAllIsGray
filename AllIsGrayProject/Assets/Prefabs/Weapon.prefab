@@ -133,16 +133,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3640cd8990d6f4a9b09a305048577b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOnPlayer: 0
+  damageOnPlayer: 5
   myEffect: {fileID: 0}
   rgb: {fileID: 4931659181971833589}
   throwForce: 2
   playerDestroy: 1
   projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
   knockBackForce: 2
-  projectileSpeed: 2
-  numberOfBullets: 5
-  coolDown: 1
+  projectileSpeed: 30
+  numberOfBullets: 10
+  coolDown: 0.5
   angleMove: 0
   target: {fileID: 3490944749073510571}
 --- !u!65 &-6861651453633868703
