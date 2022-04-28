@@ -12,13 +12,14 @@ public class Door : MonoBehaviour
     private Vector3 initPos;
     private Vector3 endPos;
     public bool isClose;
+    public float initTimeStart;
     private IEnumerator Start()
     {
         endPos = openPos.transform.position;
         initPos = transform.position;
         if (!needKey)
         {
-            yield return new WaitForSeconds(timeStayClose);
+            yield return new WaitForSeconds(timeStayClose+initTimeStart);
             StartCoroutine(Open());
         }
     }

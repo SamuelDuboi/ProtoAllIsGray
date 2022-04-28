@@ -53,13 +53,15 @@ public class Sniper : Weapon
             instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
             //instantiatedProjectile.GetComponent<Movable>().
             instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
+            instantiatedProjectile.GetComponent<ThrowObject>().damageOnPlayer +=10;
+
             numberOfBullets--;
 
             force = knockBackForce;
         }
         return true;
     }
-    public override void Release()
+    public override float Release()
     {
         if( isCharging >= chargeTime)
         {
@@ -67,11 +69,13 @@ public class Sniper : Weapon
             float rien;
             Fire(directionSnip, positionSnip, out rien);
             isCharging = 0;
+            return knockBackForce;
             //METTRE FEEDBACK POUR CHARGE DU SNIPER
         }
         else
         {
             StartCoroutine(Decharge());
+            return 0.01f;
         }
     }
     IEnumerator Decharge()

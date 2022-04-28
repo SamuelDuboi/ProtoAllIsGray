@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movable : MonoBehaviour
 {
     [Header("Movable")]
+    [Tooltip("damage this thingwill do when throw to player")]
     public float damageOnPlayer;
     // Start is called before the first frame update
     void Start()

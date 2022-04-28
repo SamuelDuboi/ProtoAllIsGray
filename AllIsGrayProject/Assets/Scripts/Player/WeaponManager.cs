@@ -51,7 +51,7 @@ public class WeaponManager : MonoBehaviour
         {
             isHold = false;
             if (myWeapon)
-                myWeapon.Release();
+                KnockBack( myWeapon.Release());
         }
     }
     private void KnockBack(float knockBackForce)
@@ -66,10 +66,11 @@ public class WeaponManager : MonoBehaviour
             myWeapon.Throw(direction,throwWeaponForce);
             myWeapon.GetComponent<Collider>().enabled = true;
             myWeapon.tag = "Untagged";
-           
+            basicWeapon.LunchCD();
             myWeapon = null;
             return ;
         }
+        if(knockBackForce >0.1f)
         myRigidbody.AddForce(-direction * knockBackForce, ForceMode.Impulse);
     }
 
@@ -85,6 +86,8 @@ public class WeaponManager : MonoBehaviour
             myWeapon.transform.parent =weaponHandler;
             myWeapon.GetComponent<Rigidbody>().isKinematic = true;
             myWeapon.transform.position = basicWeapon.transform.position;
+            myWeapon.transform.localRotation = basicWeapon.transform.localRotation;
+            
 
         }
         else if (other.tag == "Weapon")
@@ -98,6 +101,8 @@ public class WeaponManager : MonoBehaviour
             myWeapon.transform.parent = weaponHandler;
             myWeapon.GetComponent<Rigidbody>().isKinematic = true;
             other.transform.position = basicWeapon.transform.position;
+            myWeapon.transform.localRotation = basicWeapon.transform.localRotation;
+
 
         }
     }

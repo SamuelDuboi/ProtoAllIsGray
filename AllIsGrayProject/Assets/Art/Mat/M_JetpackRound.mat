@@ -39,7 +39,8 @@ Material:
     - _QueueOffset: 0
     - _RoundOrFlames: 0
     - _Steps: 3
-    m_Colors: []
+    m_Colors:
+    - _SkinCharaColor2: {r: 0.095307484, g: 0.98225087, b: 0.2917707, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1767435070096237700
 MonoBehaviour:
