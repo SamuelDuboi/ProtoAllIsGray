@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAmount: 2
   gameMode: 0
-  stockCount: 3
+  stockCount: 11
   gameTimer: 0
   weaponSpawnRate: 1
   specialWeaponSpawn: 1
