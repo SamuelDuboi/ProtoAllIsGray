@@ -53,6 +53,8 @@ public class Sniper : Weapon
             instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
             //instantiatedProjectile.GetComponent<Movable>().
             instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
+            instantiatedProjectile.GetComponent<ThrowObject>().damageOnPlayer +=10;
+
             numberOfBullets--;
 
             force = knockBackForce;

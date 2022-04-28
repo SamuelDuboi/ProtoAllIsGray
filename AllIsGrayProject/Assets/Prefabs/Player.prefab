@@ -345,7 +345,7 @@ MonoBehaviour:
   jetpackMaxTime: 1
   jetpackCooldown: 2
   CoolDownImage: {fileID: 2481340438291342333}
-  doCoolDown: 0
+  doCoolDown: 1
   jetpackTrail: {fileID: 120393450823748788}
   jetpackCircles: {fileID: 120393451096713946}
   jetpackFlames: {fileID: 120393452022126301}
@@ -1013,6 +1013,10 @@ PrefabInstance:
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
       value: 
       objectReference: {fileID: 2481340438576148171}
+    - target: {fileID: 1047755925239836364, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
+      propertyPath: m_RigLayers.Array.data[1].m_Active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1690742070588852818, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
       propertyPath: m_Layer
       value: 6

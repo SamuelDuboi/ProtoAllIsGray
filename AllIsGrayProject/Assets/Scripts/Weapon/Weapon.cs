@@ -13,7 +13,7 @@ public class Weapon : ThrowObject
     protected bool isOnCd;
     private HomingMissileBehavior homing;
     private List<PlayerMovement> players = new List<PlayerMovement>();
-    public float angleMove;
+   [HideInInspector] public float angleMove;
     PlayerMovement lockedPlayer;
     public Transform target;
     private void Start()
@@ -31,7 +31,7 @@ public class Weapon : ThrowObject
     /// <returns></returns>
     public virtual bool Fire(Vector3 direction, Vector3 position, out float force)
     {
-        force = 0.1f;
+        force = 0.001f;
         if (!isOnCd)
         {
             isOnCd = true;

@@ -100,7 +100,7 @@ public class PlayerMovement : Movable
                 CoolDownImage.gameObject.SetActive(true);
             rigidbody.AddForce(myTransform.up * jetpackForce, ForceMode.Impulse);
             jetpackCurrentUse += Time.deltaTime;
-            
+            CoolDownImage.fillAmount = 1 - jetpackCurrentUse / jetpackMaxTime;
         }
         else if(jetpackCurrentUse>0 && !doCoolDown)
         {
@@ -108,8 +108,11 @@ public class PlayerMovement : Movable
         }
         if (doCoolDown)
         {
-            if (jetpackCurrentUse < jetpackMaxTime && jetpackCurrentUse > 0.02f)
+            if (!isMoving && jetpackCurrentUse < jetpackMaxTime && jetpackCurrentUse > 0.02f)
+            {
                 jetpackCurrentUse -= Time.deltaTime;
+                CoolDownImage.fillAmount = 1 - jetpackCurrentUse / jetpackMaxTime;
+            }
             else if (isMoving && jetpackCurrentUse > jetpackMaxTime)
             {
                 isCoolingDown = true;
@@ -131,8 +134,7 @@ public class PlayerMovement : Movable
                 }
             }
         }
-        else
-            CoolDownImage.fillAmount = 1 - jetpackCurrentUse / jetpackMaxTime;
+
     }
 
     private void OnTriggerEnter(Collider other)

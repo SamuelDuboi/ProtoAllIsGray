@@ -70,6 +70,7 @@ public class WeaponManager : MonoBehaviour
             myWeapon = null;
             return ;
         }
+        if(knockBackForce >0.1f)
         myRigidbody.AddForce(-direction * knockBackForce, ForceMode.Impulse);
     }
 

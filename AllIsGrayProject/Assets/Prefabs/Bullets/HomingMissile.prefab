@@ -4940,8 +4940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65cd137e5c58a847b1cea3d7678c013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOnPlayer: 2
+  damageOnPlayer: 8
   myEffect: {fileID: 0}
   rgb: {fileID: 7175174408968588468}
-  throwForce: 3
+  throwForce: 2
   playerDestroy: 1
+  target: {fileID: 0}
