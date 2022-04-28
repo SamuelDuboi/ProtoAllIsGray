@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 72467622357726500}
   - component: {fileID: 8003303201106907871}
   - component: {fileID: 84147522533729199}
-  - component: {fileID: -7306048840978571654}
+  - component: {fileID: 5989678167114405083}
   m_Layer: 0
   m_Name: DefaultGate
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739851246712556540}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &-7306048840978571654
+--- !u!65 &5989678167114405083
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,5 +95,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000001, y: 2.8, z: 0.49900818}
+  m_Center: {x: -0.49999997, y: 0.6999999, z: 0.2504958}

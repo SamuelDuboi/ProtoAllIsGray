@@ -6,8 +6,9 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+      value: 00080757515751020f085d7b40750a44154f19737f7b7531792a4f37b1b53161
       flags: 0
+<<<<<<< HEAD
     RecentlyUsedSceneGuid-1:
       value: 0508075201015b5d0c0c5e2714735b4445161929782a7460797d4936e4e46439
       flags: 0
@@ -29,6 +30,8 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-7:
       value: 5a010d045606595e5a595d26427b5b4445164c787c297362752d1937b0b4323c
       flags: 0
+=======
+>>>>>>> Anais
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
@@ -37,7 +40,7 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
-  m_DesiredImportWorkerCount: 5
+  m_DesiredImportWorkerCount: 4
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
