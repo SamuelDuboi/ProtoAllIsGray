@@ -1799,7 +1799,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 9.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1208359243}
   m_Father: {fileID: 1151189436}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1819,8 +1820,8 @@ MonoBehaviour:
   players: []
   myTransfrom: {fileID: 770045711}
   vcam: {fileID: 1617443994}
-  maxFov: 120
-  minFov: 70
+  maxFov: 10
+  minFov: -10
   edgeTransforme:
   - {fileID: 743301851}
   - {fileID: 1982974981}
@@ -1830,26 +1831,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.4097994
-      value: 0.8074981
-      inSlope: 0.7624488
-      outSlope: 0.7624488
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -1904,7 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_FollowOffset: {x: 0, y: 0, z: -9.490001}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2149,7 +2141,6 @@ Transform:
   - {fileID: 770045711}
   - {fileID: 743301851}
   - {fileID: 1982974981}
-  - {fileID: 1208359243}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2177,13 +2168,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208359242}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1151189436}
-  m_RootOrder: 5
+  m_Father: {fileID: 770045711}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1208359244
 BoxCollider:
@@ -2500,7 +2491,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5276758018786306507, guid: fc2455416d80e24449c5e9391c0d475b, type: 3}
   currentSettings: {fileID: 11400000, guid: 414f931d215a0134a8f501b146586b1a, type: 2}
-  allPlayer: []
+  allActivePlayer: []
+  benchedPlayer: []
   allSpawnPoints:
   - {fileID: 1291960143}
   - {fileID: 1687425613}
@@ -2546,7 +2538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617443992}
   m_LocalRotation: {x: -0, y: -1e-45, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.23999977}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2699995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2575,7 +2567,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 770045711}
   m_Lens:
-    FieldOfView: 100
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -2583,7 +2575,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9186046, y: 1}
+    m_SensorSize: {x: 3.3218997, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2755,7 +2747,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 100
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2781,7 +2773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941310875}
   m_LocalRotation: {x: -0, y: -1e-45, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.23999977}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2699995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
