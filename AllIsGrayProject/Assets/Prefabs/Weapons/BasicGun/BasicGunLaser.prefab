@@ -142,7 +142,7 @@ MonoBehaviour:
   knockBackForce: 2
   projectileSpeed: 30
   numberOfBullets: 10
-  coolDown: 0.5
+  coolDown: 0.8
   angleMove: 0
   target: {fileID: 3490944749073510571}
 --- !u!65 &-6861651453633868703
