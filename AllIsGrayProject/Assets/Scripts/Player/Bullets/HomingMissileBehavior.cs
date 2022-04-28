@@ -9,6 +9,7 @@ public class HomingMissileBehavior : ThrowObject
     private void Update()
     {
         if(target)
-        rgb.AddForce(target.position - transform.position);  
+        rgb.AddForce(target.position - transform.position);
+        transform.LookAt(target);
     }
 }
