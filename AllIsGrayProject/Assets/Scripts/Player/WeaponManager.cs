@@ -51,7 +51,7 @@ public class WeaponManager : MonoBehaviour
         {
             isHold = false;
             if (myWeapon)
-                myWeapon.Release();
+                KnockBack( myWeapon.Release());
         }
     }
     private void KnockBack(float knockBackForce)
@@ -66,7 +66,7 @@ public class WeaponManager : MonoBehaviour
             myWeapon.Throw(direction,throwWeaponForce);
             myWeapon.GetComponent<Collider>().enabled = true;
             myWeapon.tag = "Untagged";
-           
+            basicWeapon.LunchCD();
             myWeapon = null;
             return ;
         }

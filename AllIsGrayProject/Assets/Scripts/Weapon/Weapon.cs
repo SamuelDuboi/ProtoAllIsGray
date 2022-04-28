@@ -42,8 +42,7 @@ public class Weapon : ThrowObject
         force = 0.001f;
         if (!isOnCd)
         {
-            isOnCd = true;
-            StartCoroutine(CoolDown());
+            LunchCD();
         }
         else
             return true;
@@ -66,9 +65,14 @@ public class Weapon : ThrowObject
         yield return new WaitForSeconds(coolDown);
         isOnCd = false;
     }
-    public virtual void Release()
+    public virtual float Release()
     {
-
+        return 0;
+    }
+    public void LunchCD()
+    {
+        isOnCd = true;
+        StartCoroutine(CoolDown());
     }
     private void Update()
     {
