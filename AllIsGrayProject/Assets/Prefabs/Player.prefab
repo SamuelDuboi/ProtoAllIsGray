@@ -1018,10 +1018,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6450181716453640123, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d2dd6b2067bc40e42b9c787b4f86435c, type: 2}
     - target: {fileID: 6482016890386696366, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
       propertyPath: m_Name
       value: Astro_Anim
       objectReference: {fileID: 0}
+    - target: {fileID: 6592551953300987711, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31641d21fd4c4994a9fbc511bed67c5e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4227fdcdd2f0b9047a21994e34df07d4, type: 3}
 --- !u!1 &888410709024049283 stripped
