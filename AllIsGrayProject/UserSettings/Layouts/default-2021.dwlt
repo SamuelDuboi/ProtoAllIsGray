@@ -11,6 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_Name: 
   m_EditorClassIdentifier: 
@@ -37,6 +38,8 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
 >>>>>>> aubane
+=======
+>>>>>>> Théo
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
@@ -57,6 +60,7 @@ MonoBehaviour:
 >>>>>>> aubane
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
+<<<<<<< HEAD
   m_UseTopView: 1
   m_TopViewHeight: 30
   m_UseBottomView: 1
@@ -84,6 +88,10 @@ MonoBehaviour:
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 2 by 3
 --- !u!114 &4
+=======
+  m_Maximized: 0
+--- !u!114 &2
+>>>>>>> Théo
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +179,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 907
     y: 0
     width: 308
@@ -178,6 +187,15 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
+=======
+    x: 921
+    y: 0
+    width: 285
+    height: 665
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 13}
+>>>>>>> Théo
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
@@ -198,10 +216,14 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 0
 =======
     x: 1215
 >>>>>>> aubane
+=======
+    x: 0
+>>>>>>> Théo
     y: 0
     width: 275
     height: 947
@@ -210,10 +232,14 @@ MonoBehaviour:
   m_ActualView: {fileID: 17}
   m_Panes:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 14}
 =======
   - {fileID: 17}
 >>>>>>> aubane
+=======
+  - {fileID: 14}
+>>>>>>> Théo
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
@@ -262,12 +288,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
 =======
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: SceneView
 >>>>>>> aubane
+=======
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+>>>>>>> Théo
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 7}
@@ -278,6 +309,9 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Théo
     width: 1206
     height: 715
   m_MinSize: {x: 875, y: 300}
@@ -310,6 +344,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 486
     width: 907
     height: 461
@@ -324,6 +359,17 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 3
 --- !u!114 &12
+=======
+    y: 0
+    width: 1206
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LoadedToolbars: []
+  m_MainToolbar: {fileID: 18}
+  m_LastLoadedLayoutName: Default
+--- !u!114 &8
+>>>>>>> Théo
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924ffcbe75518854f97b48776d0f1939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Children: []
   m_Position:
@@ -357,6 +404,10 @@ MonoBehaviour:
     m_Image: {fileID: 2800000, guid: 7129268cf102b2f45809905bcb27ce8b, type: 3}
     m_Tooltip: 
   m_Pos:
+=======
+  m_Children: []
+  m_Position:
+>>>>>>> Théo
     serializedVersion: 2
     x: 1920
     y: 559
@@ -1590,6 +1641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Children: []
   m_Position:
 =======
@@ -2769,6 +2821,22 @@ MonoBehaviour:
   m_AssetMaybeChangedOnDisk: 1
   m_AssetMaybeDeleted: 0
 --- !u!114 &14
+=======
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 5}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 921
+    height: 665
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+  vertical: 1
+  controlID: 92
+--- !u!114 &10
+>>>>>>> Théo
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2789,6 +2857,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 921
+<<<<<<< HEAD
     height: 665
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
@@ -4255,6 +4324,14 @@ MonoBehaviour:
   m_AssetMaybeDeleted: 0
 --- !u!114 &15
 >>>>>>> aubane
+=======
+    height: 394
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 93
+--- !u!114 &11
+>>>>>>> Théo
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4263,6 +4340,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -4327,6 +4405,14 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+=======
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+>>>>>>> Théo
     x: 228
     y: 0
     width: 693
@@ -4394,14 +4480,18 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 3135
     y: 73
     width: 273
     height: 926
+=======
+    x: 2249
+    y: 726.5
+    width: 920
+    height: 250
+>>>>>>> Théo
   m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -4416,10 +4506,14 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets
 =======
     - Assets/Art/Guns/Meshes
 >>>>>>> aubane
+=======
+    - Assets
+>>>>>>> Théo
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -4428,15 +4522,19 @@ MonoBehaviour:
   - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: U:\layout
+<<<<<<< HEAD
 =======
   - Assets/Art/Guns/Meshes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Semaine Retro SF\ProtoAllIsGray\AllIsGrayProject
 >>>>>>> aubane
+=======
+>>>>>>> Théo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: f4350000
     m_LastClickedID: 13812
@@ -4446,6 +4544,11 @@ MonoBehaviour:
     m_LastClickedID: 32792
     m_ExpandedIDs: 00000000da7d0000dc7d0000de7d0000e07d0000e27d0000e47d0000167e0000307e0000a28c000000ca9a3b
 >>>>>>> aubane
+=======
+    m_SelectedIDs: f4350000
+    m_LastClickedID: 13812
+    m_ExpandedIDs: 00000000f435000000ca9a3b
+>>>>>>> Théo
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4474,10 +4577,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000f4350000
 =======
     m_ExpandedIDs: 00000000da7d0000dc7d0000de7d0000e07d0000e27d0000e47d000000ca9a3b
 >>>>>>> aubane
+=======
+    m_ExpandedIDs: 00000000f4350000
+>>>>>>> Théo
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4505,6 +4612,9 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Théo
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
 =======
@@ -4527,10 +4637,14 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
 =======
       m_ClientGUIView: {fileID: 8}
 >>>>>>> aubane
+=======
+      m_ClientGUIView: {fileID: 0}
+>>>>>>> Théo
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -4611,6 +4725,9 @@ MonoBehaviour:
     height: 440
   m_ViewDataDictionary: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Théo
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
@@ -5031,6 +5148,7 @@ MonoBehaviour:
     m_Target: {x: -0.0504161, y: -0.6839432, z: 0.04748124, w: -0.72625494}
     speed: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
     m_Target: 10
@@ -5039,6 +5157,11 @@ MonoBehaviour:
   m_Size:
     m_Target: 1.2674726
 >>>>>>> aubane
+=======
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_Size:
+    m_Target: 10
+>>>>>>> Théo
     speed: 2
     m_Value: 1.2128924
   m_Ortho:
