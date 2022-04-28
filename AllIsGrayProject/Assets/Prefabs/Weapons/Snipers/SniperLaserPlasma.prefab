@@ -138,14 +138,14 @@ MonoBehaviour:
   throwForce: 2
   playerDestroy: 1
   projectile: {fileID: 8315286014265795621, guid: 06f9721e7b7b80444a9d2b8a7b90ab17, type: 3}
-  knockBackForce: 6
+  knockBackForce: 4
   projectileSpeed: 60
   numberOfBullets: 6
   coolDown: 2
   angleMove: 0
   target: {fileID: 278370593329833643}
   isCharging: 0
-  chargeTime: 3
+  chargeTime: 2
   accelerationDecharge: 2
   shoot: 0
   directionSnip: {x: 0, y: 0, z: 0}

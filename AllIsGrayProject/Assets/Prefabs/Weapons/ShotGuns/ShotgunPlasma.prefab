@@ -139,7 +139,7 @@ MonoBehaviour:
   throwForce: 2
   playerDestroy: 1
   projectile: {fileID: 8315286014265795621, guid: 06f9721e7b7b80444a9d2b8a7b90ab17, type: 3}
-  knockBackForce: 4
+  knockBackForce: 3
   projectileSpeed: 20
   numberOfBullets: 7
   coolDown: 2

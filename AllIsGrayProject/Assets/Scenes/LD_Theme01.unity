@@ -5329,6 +5329,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6249317043865875606, guid: 12f3bd1950220ae44a1b5bc2841ff85d, type: 3}
+      propertyPath: m_Constraints
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249317043865875606, guid: 12f3bd1950220ae44a1b5bc2841ff85d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249317043865875625, guid: 12f3bd1950220ae44a1b5bc2841ff85d, type: 3}
+      propertyPath: damageOnPlayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12f3bd1950220ae44a1b5bc2841ff85d, type: 3}
 --- !u!4 &652027660 stripped
@@ -6900,6 +6912,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 662286051}
     m_Modifications:
+    - target: {fileID: 2527082685766953322, guid: c55a256aef17eb54d8b39fd9247030f1, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 2527082685766953326, guid: c55a256aef17eb54d8b39fd9247030f1, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -14656,7 +14672,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786561, y: 1}
+    m_SensorSize: {x: 1.6335312, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
