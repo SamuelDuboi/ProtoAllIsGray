@@ -14,6 +14,7 @@ public class LookAtPointCam : MonoBehaviour
     public Transform[] edgeTransforme;
     private float maxDistance;
     public AnimationCurve camCurve;
+    public Transform collider;
     private void Start()
     {
         maxDistance = Vector3.Distance(edgeTransforme[0].position, edgeTransforme[1].position); 
@@ -32,8 +33,8 @@ public class LookAtPointCam : MonoBehaviour
         }
         position /= players.Count;
         distances.Sort();
-        myTransfrom.position = position;
-        vcam.m_Lens.FieldOfView = Mathf.Clamp( camCurve.Evaluate( distances[distances.Count-1]/ maxDistance)*maxFov, minFov, maxFov);
+        myTransfrom.position = new Vector3( position.x, position.y,Mathf.Lerp( maxFov, minFov, camCurve.Evaluate(distances[distances.Count - 1] / maxDistance)));
+        collider.transform.position = new Vector3(collider.transform.position.x, transform.position.y, myTransfrom.position.z);
 
     }
     public void AddPlayer(PlayerInput player)
