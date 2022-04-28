@@ -49,9 +49,11 @@ Material:
     m_Floats:
     - _Damaged: 0
     - _Hit: 0
-    - _Offset: 0.05
-    - _PowerFresnel: 1
+    - _Offset: 0.025
+    - _Over100: 0
+    - _PowerFresnel: 3
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SpeedAlarm: 7
     m_Colors: []
   m_BuildTextureStacks: []
