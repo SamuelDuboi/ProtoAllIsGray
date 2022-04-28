@@ -1201,6 +1201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 7485956109114996189, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6861651453633868703, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
     - {fileID: 4931659181971833589, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
