@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad028074341ccd43b9bfc60a5d54910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
+  doors: []
   size: 10
   color: {r: 0, g: 1, b: 0, a: 1}
 --- !u!65 &8295862858371166946
