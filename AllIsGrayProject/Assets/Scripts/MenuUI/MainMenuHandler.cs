@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenuHandler : MonoBehaviour
 {
-    enum MenuState { StartScreen, MainMenu, PlayerJoin, StageSelection, GameRules, Settings};
+    enum MenuState { StartScreen, MainMenu, PlayerJoin, StageSelection, GameRules, Settings };
 
     [SerializeField, ReadOnly]
     MenuState _currentMenuState;
@@ -30,6 +30,7 @@ public class MainMenuHandler : MonoBehaviour
                     InitMainMenuState();
                     break;
                 case MenuState.PlayerJoin:
+                    InitPlayerJoinState();
                     break;
                 case MenuState.StageSelection:
                     break;
@@ -53,6 +54,8 @@ public class MainMenuHandler : MonoBehaviour
     StartScreen startScreenElements;
     [SerializeField]
     MainMenu mainMenuElements;
+    [SerializeField]
+    PlayerJoin playerJoinElements;
 
 
     private void Awake()
@@ -107,12 +110,27 @@ public class MainMenuHandler : MonoBehaviour
 
     public void OnNewGameCliked()
     {
-        print("Start a new game");
+        eventSystem.gameObject.SetActive(false);
+        mainMenuElements.DisappearAnimation();
+        mainMenuElements.DisappearEnds += () => 
+        {
+            CurrentMenuState = MenuState.PlayerJoin;
+            mainMenuElements.DisappearEnds = null;
+        };
     }
 
     public void OnSettingsClicked()
     {
-        print("Go to settings");
+        eventSystem.gameObject.SetActive(false);
+        mainMenuElements.DisappearAnimation();
+        mainMenuElements.DisappearEnds += () => print("Go to settings"); ;
+    }
+
+    public void OnTutoClicked()
+    {
+        eventSystem.gameObject.SetActive(false);
+        mainMenuElements.DisappearAnimation();
+        mainMenuElements.DisappearEnds += () => print("Go to tutorial"); ;
     }
 
     public void OnQuitClicked()
@@ -123,6 +141,75 @@ public class MainMenuHandler : MonoBehaviour
 
     #endregion
 
+    #region PlayerJoin
+
+    private void InitPlayerJoinState()
+    {
+        playerJoinElements.AppearEnds += EnablePlayerJoin;
+        playerJoinElements.Appear();
+    }
+
+    public void EnablePlayerJoin()
+    {
+        playerJoinElements.AppearEnds -= EnablePlayerJoin;
+
+        controls.UIControls.MenuValidate.performed += PlayerJoinValidate;
+        controls.UIControls.MenuReturn.performed += PlayerJoinReturn;
+    }
+
+    public void PlayerJoinValidate(InputAction.CallbackContext context)
+    {
+        ref var usedDevices = ref GameManager.Instance.playerDevices;
+
+        if (!usedDevices.Contains(context.control.device) && usedDevices.Count < 5)
+        {
+            usedDevices.Add(context.control.device);
+            playerJoinElements.AddNewPlayer(context.control.device);
+            UpdateGoToStage();
+
+        }
+        else if(usedDevices.Contains(context.control.device))
+        {
+            playerJoinElements.SetPlayerReady(context.control.device);
+            UpdateGoToStage();
+        }
+    }
+
+    public void PlayerJoinReturn(InputAction.CallbackContext context)
+    {
+        playerJoinElements.Disappear();
+        playerJoinElements.DisappearEnds += () =>
+        {
+            CurrentMenuState = MenuState.MainMenu;
+            playerJoinElements.DisappearEnds = null;
+        };
+    }
+
+    public void UpdateGoToStage()
+    {
+        if (playerJoinElements.CanGoToStage())
+        {
+            controls.UIControls.Start.performed += GoToStageSelection;
+            playerJoinElements.UpdateGoToStage(true);
+        }
+        else
+        {
+            controls.UIControls.Start.performed -= GoToStageSelection;
+            playerJoinElements.UpdateGoToStage(false);
+        }
+    }
+
+    public void GoToStageSelection(InputAction.CallbackContext context)
+    {
+        playerJoinElements.Disappear();
+        playerJoinElements.DisappearEnds += () =>
+        {
+            print("Go To Stage Select");
+            playerJoinElements.DisappearEnds = null;
+        };
+    }
+
+    #endregion
 }
 
 [Serializable]
@@ -188,7 +275,7 @@ class StartScreen
 
         leftPanel.rectTransform.DOMove(leftPanelTarget.position, transitionDuration)
             .SetEase(panelsProgressionCurve);
-            
+
         rightPanel.rectTransform.DOMove(rightPanelTarget.position, transitionDuration)
             .SetEase(panelsProgressionCurve)
             .OnComplete(CallTransitionEnd);
@@ -199,7 +286,7 @@ class StartScreen
         TransitionEnds?.Invoke();
         startScreenRoot.gameObject.SetActive(false);
     }
-    
+
 }
 
 [Serializable]
@@ -215,6 +302,8 @@ class MainMenu
     [SerializeField]
     GameObject settingsButton;
     [SerializeField]
+    GameObject tutoButton;
+    [SerializeField]
     GameObject quitButton;
 
     [Space]
@@ -225,12 +314,15 @@ class MainMenu
     [SerializeField]
     RectTransform settingsButtonTarget;
     [SerializeField]
+    RectTransform tutoButtonTarget;
+    [SerializeField]
     RectTransform quitButtonTarget;
 
-    Vector2 titleBasePos; 
-    Vector2 newGameButtonBasePos; 
-    Vector2 settingsButtonBasePos; 
-    Vector2 quitButtonBasePos; 
+    Vector2 titleBasePos;
+    Vector2 newGameButtonBasePos;
+    Vector2 settingsButtonBasePos;
+    Vector2 tutoButtonBasePos;
+    Vector2 quitButtonBasePos;
 
     [Space]
     [SerializeField]
@@ -238,9 +330,12 @@ class MainMenu
     [SerializeField]
     AnimationCurve appearCurve;
     [SerializeField]
+    AnimationCurve disappearCurve;
+    [SerializeField]
     float buttonAppearDelay;
 
     public Action AppearEnds;
+    public Action DisappearEnds;
 
     public GameObject ReturnFirstButton()
     {
@@ -252,6 +347,7 @@ class MainMenu
         titleBasePos = title.rectTransform.position;
         newGameButtonBasePos = newGameButton.transform.position;
         settingsButtonBasePos = settingsButton.transform.position;
+        tutoButtonBasePos = tutoButton.transform.position;
         quitButtonBasePos = quitButton.transform.position;
 
         mainMenuRoot.gameObject.SetActive(true);
@@ -267,12 +363,171 @@ class MainMenu
             .SetEase(appearCurve)
             .SetDelay(buttonAppearDelay * 1f);
 
+        tutoButton.transform.DOMove(tutoButtonTarget.position, appearDuration)
+            .SetEase(appearCurve)
+            .SetDelay(buttonAppearDelay * 2f);
+
         quitButton.transform.DOMove(quitButtonTarget.position, appearDuration)
             .SetEase(appearCurve)
-            .SetDelay(buttonAppearDelay * 2f)
+            .SetDelay(buttonAppearDelay * 3f)
             .OnComplete(OnAppearEnds);
     }
 
+    public void DisappearAnimation()
+    {
+        title.transform.DOMove(titleBasePos, appearDuration)
+            .SetEase(disappearCurve);
+
+        newGameButton.transform.DOMove(newGameButtonBasePos, appearDuration)
+            .SetEase(disappearCurve)
+            .SetDelay(buttonAppearDelay * 3f)
+            .OnComplete(OnDisappearEnds);
+
+        settingsButton.transform.DOMove(settingsButtonBasePos, appearDuration)
+            .SetEase(disappearCurve)
+            .SetDelay(buttonAppearDelay * 2f);
+
+        tutoButton.transform.DOMove(tutoButtonBasePos, appearDuration)
+            .SetEase(disappearCurve)
+            .SetDelay(buttonAppearDelay * 1f);
+
+        quitButton.transform.DOMove(quitButtonBasePos, appearDuration)
+            .SetEase(disappearCurve)
+            .SetDelay(buttonAppearDelay * 0f);
+    }
+
     public void OnAppearEnds() => AppearEnds?.Invoke();
+    public void OnDisappearEnds()
+    {
+        DisappearEnds?.Invoke();
+        mainMenuRoot.gameObject.SetActive(false);
+    }
+
+}
+
+[Serializable]
+class PlayerJoin
+{
+    [SerializeField]
+    RectTransform playerJoinRoot;
+    [SerializeField]
+    RectTransform portraitLayout;
+
+    [Space]
+    [SerializeField]
+    List<PlayerJoinElement> playerPortraits;
+
+    Dictionary<InputDevice, PlayerJoinElement> connectedPlayerPortraits = new Dictionary<InputDevice, PlayerJoinElement>();
+    int playerCount = 0;
+    int readyCount = 0;
+
+    [Space]
+    [SerializeField]
+    TextMeshProUGUI title;
+    [SerializeField]
+    RectTransform goStageButton;
+    [SerializeField]
+    RectTransform goBackButton;
+    [SerializeField]
+    TextMeshProUGUI waitingText;
+    [SerializeField]
+    TextMeshProUGUI goStageText;
+    [SerializeField]
+    Image background;
+    [SerializeField]
+    RectTransform newPlayerBox;
+
+    [Space]
+    [SerializeField]
+    float appearDuration;
+    [SerializeField]
+    AnimationCurve appearCurve;
+    [SerializeField]
+    AnimationCurve disappearCurve;
+
+    [Space]
+    [SerializeField]
+    float elementAppearDuration;
+    [SerializeField]
+    AnimationCurve elementAppearCurve;
+
+    public Action AppearEnds;
+    public Action DisappearEnds;
+
+    public void Appear()
+    {
+        playerJoinRoot.gameObject.SetActive(true);
+
+        foreach (PlayerJoinElement portait in playerPortraits)
+            portait.gameObject.SetActive(false);
+        
+        goStageText.gameObject.SetActive(false);
+        waitingText.gameObject.SetActive(true);
+
+        background.rectTransform.localScale = Vector3.one * 0;
+        background.rectTransform.DOScale(Vector3.one, appearDuration)
+            .SetEase(appearCurve)
+            .OnComplete(OnAppearEnds);
+    }
+
+    public void Disappear()
+    {
+        background.rectTransform.DOScale(Vector3.one * 0, appearDuration)
+            .SetEase(disappearCurve)
+            .OnComplete(OnDisappearEnds);
+    }
+
+    public void OnDisappearEnds()
+    {
+        DisappearEnds?.Invoke();
+        playerJoinRoot.gameObject.SetActive(false);
+    }
+
+    public void AddNewPlayer(InputDevice device)
+    {
+        var newElement = playerPortraits[playerCount];
+        connectedPlayerPortraits.Add(device, newElement);
+        newElement.gameObject.SetActive(true);
+        newElement.InitElement(playerCount,elementAppearDuration, elementAppearCurve);
+        playerCount++;
+
+        if(playerCount == 4)
+            newPlayerBox.gameObject.SetActive(false);
+    }
+
+    IEnumerator UnityMadeMeDoThis(PlayerJoinElement obj)
+    {
+        yield return new WaitForEndOfFrame();
+        obj.gameObject.SetActive(true);
+        obj.StartAnimation();
+
+    }
+
+    public void SetPlayerReady(InputDevice device)
+    {
+        readyCount++;
+        connectedPlayerPortraits[device].SetReady(true);
+    }
+
+    public bool CanGoToStage()
+    {
+        return playerCount > 1 && readyCount == playerCount;
+    }
+
+    public void UpdateGoToStage(bool state)
+    {
+        if (state)
+        {
+            goStageText.gameObject.SetActive(true);
+            waitingText.gameObject.SetActive(false);
+        }
+        if (!state)
+        {
+            goStageText.gameObject.SetActive(false);
+            waitingText.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnAppearEnds() => AppearEnds?.Invoke();
 
 }
