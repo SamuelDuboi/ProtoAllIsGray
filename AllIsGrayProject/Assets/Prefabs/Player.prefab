@@ -473,9 +473,9 @@ MonoBehaviour:
   rotationSpeed: 1
   rotationTreshold: 0.2
   movementTreshold: 0.2
-  jetpackForce: 0.05
-  jetpackMaxTime: 2.5
-  jetpackCooldown: 1
+  jetpackForce: 0.07
+  jetpackMaxTime: 1.6
+  jetpackCooldown: 0.8
   CoolDownImage: {fileID: 2481340438291342333}
   doCoolDown: 1
   jetpackTrail: {fileID: 120393450823748788}
