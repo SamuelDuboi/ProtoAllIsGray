@@ -5,69 +5,6 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
   m_ConfigSettings:
-    RecentlyUsedSceneGuid-0:
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 5102035f54075f0d5b0f542445720e44464e482c797b70347d7e1c60e1e3646e
-      flags: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    RecentlyUsedSceneGuid-1:
-      value: 5757075154070a0d095c0d7312215a444616492b7e2c7067297c1b35e6b06469
-=======
-    UnityEditor.ShaderGraph.Blackboard:
-      value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd3c3e302a07a37e0901373ae01e0008f707250d171df81a53a5405d41895ac825e0100ec20313c0d91cddccd3d0c7efcca9bd80908fecb0f9cfddf1eff4e7a1b1eae482f0fdaee1e1928b86d888ed909c968797a7cf
-=======
-      value: 555404075c510c0b0e5c557b13705a4415151e79287b27367b704e6ae1b2656c
-      flags: 0
-    RecentlyUsedSceneGuid-1:
-      value: 5a010d045606595e5a595d26427b5b4445164c787c297362752d1937b0b4323c
->>>>>>> aubane
-      flags: 0
-    RecentlyUsedSceneGuid-2:
-      value: 54065505530d0f0e080b552640250f4417151a7b7d7a253175794d64bae4303c
-      flags: 0
-<<<<<<< HEAD
-    UnityEditor.ShaderGraph.InspectorWindow:
-      value: 18135939215a0a5004000b0e15254b524c1119263f2d6a722016393ce1eb3d36e5d339f9a560393d3511ea7046333e09f7181d02f50a06241708ee0b05bd4a405f95548717f73713d91006c1c309d0effad0d2f9ddffa5828691f0beb6fdd1cbfceba0b9f0b3bed8e8f5ade1ff8c978883d3f59e9e919c89eacfcc
->>>>>>> Anais
-      flags: 0
-=======
->>>>>>> Théo
-=======
-    RecentlyUsedSceneGuid-1:
-      value: 5552060500000a0f540b5f7141740f44124e417a7a7874607f704f32e7b9603b
-=======
-    RecentlyUsedSceneGuid-3:
-      value: 515250500656515d5e0c5b7b41270744141640727f7a24692b2b4f30e0b3606a
-      flags: 0
-    RecentlyUsedSceneGuid-4:
-      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
-      flags: 0
-    RecentlyUsedSceneGuid-5:
-      value: 500855515c015b580f5a0972497b5e44434e1a2e7f707363757a4f6ab6b3606c
-      flags: 0
-    RecentlyUsedSceneGuid-6:
-      value: 5757075154070a0d095c0d7312215a444616492b7e2c7067297c1b35e6b06469
-      flags: 0
-    RecentlyUsedSceneGuid-7:
-      value: 5552060500000a0f540b5f7141740f44124e417a7a7874607f704f32e7b9603b
-      flags: 0
-    UnityEditor.ShaderGraph.Blackboard:
-      value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd2e2d293c4ead313b08042de6030a0afa240c0d020be94c4ba95e435d8715fa32c70d15d11612dacc11fee5d3c5d1fe9ab1b689908fecb0f9cfddf1eff4e7a1b1eae482f0fea9e9e1928b86d888ed909c968797a7cf
-      flags: 0
-    UnityEditor.ShaderGraph.FloatingWindowsLayout2:
-      value: 181344140043005e1a220d3b1f364b524c0c5a27130c293326201334cee5322ca0bd30e8eb293a707b0fd0180b3d0a36fc0d3d04e649500d1002ee0b5dbd1d2c27c00ad113cb1e10e41f1addc80993b98d9884a69ae6d8f0d1cda9e8fbfefaf9f9dea3fdb9ade882f0f7b0e1e380cafbf2c3adc18e9cd285a2908b82ec869c8395949c9483d68a8e97ddbd90bf
-      flags: 0
-    UnityEditor.ShaderGraph.InspectorWindow:
-      value: 18135939215a0a5004000b0e15254b524c1119263f2d6a722016393ce1eb3d36e5d339f9a5602b2e2c07a37e0901373ae01e0008f707250d171df81a53a5485d41895ac825e0100ec20313c0d91cddccd3d0c7efcca9bd80908fecb0f9cfddf1eff4e7a1b1eae482f0fcaee1e1928b86d888ed969b938797a7cf
->>>>>>> aubane
-      flags: 0
->>>>>>> Marc
-=======
-      value: 54065505530d0f0e080b552640250f4417151a7b7d7a253175794d64bae4303c
-      flags: 0
->>>>>>> Remi
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
@@ -76,7 +13,7 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
-  m_DesiredImportWorkerCount: 4
+  m_DesiredImportWorkerCount: 5
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
