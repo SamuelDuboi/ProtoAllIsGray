@@ -16,8 +16,6 @@ public class WeaponSpawner : MonoBehaviour
     public Weapon Collect()
     {
         StartCoroutine(WaitToSpawn());
-        if(currentWeapon)
-           return currentWeapon.GetComponent<Weapon>();
         return null;
     }
 

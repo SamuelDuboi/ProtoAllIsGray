@@ -81,24 +81,16 @@ public class WeaponManager : MonoBehaviour
     {
         if(other.tag == "WeaponSpawner")
         {
-            myWeapon = other.GetComponent<WeaponSpawner>().Collect();
-            if (myWeapon == null)
-                return;
-            basicWeapon.gameObject.SetActive( false);
-            myWeapon.GetComponent<Collider>().enabled = false;
-            myWeapon.transform.parent =weaponHandler;
-            myWeapon.GetComponent<Rigidbody>().isKinematic = true;
-            myWeapon.transform.position = basicWeapon.transform.position;
-            myWeapon.transform.localRotation = basicWeapon.transform.localRotation;
-            
-
+            other.GetComponent<WeaponSpawner>().Collect();
+            KnockBack(0);
         }
         else if (other.tag == "Weapon")
         {
             basicWeapon.gameObject.SetActive(false);
             direction = followPointTransform.position - transform.position;
             direction.Normalize();
-            KnockBack(0.01f);
+            if(myWeapon)
+            KnockBack(0);
             other.GetComponent<Collider>().enabled = false;
             myWeapon = other.GetComponent<Weapon>();
             myWeapon.transform.parent = weaponHandler;
