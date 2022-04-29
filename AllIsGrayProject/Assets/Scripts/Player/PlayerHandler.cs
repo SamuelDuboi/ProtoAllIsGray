@@ -20,6 +20,8 @@ public class PlayerHandler : MonoBehaviour
     public Action PlayerDead;
     public Action PlayerBenched;
 
+    public ParticleSystem psSpawner;
+
     public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor)
     {
         currentGameInstance = instance;
@@ -45,6 +47,8 @@ public class PlayerHandler : MonoBehaviour
     public void RespawnPlayer()
     {
         playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
+        StartCoroutine(startAndStopParticleSystem());
+
     }
 
     public void BenchPlayer()
@@ -72,4 +76,11 @@ public class PlayerHandler : MonoBehaviour
             }
         }
     }
+
+    IEnumerator startAndStopParticleSystem()
+    {
+        psSpawner.Play();
+        yield return new WaitForSeconds(2);
+        psSpawner.Stop();
+     }
 }
