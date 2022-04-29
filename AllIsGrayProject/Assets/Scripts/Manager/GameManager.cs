@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using NaughtyAttributes;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Global Game Infos")]
     public PlayerColorBank colorBank;
+
+    public List<InputDevice> playerDevices = new List<InputDevice>();
 
     private void Awake()
     {
