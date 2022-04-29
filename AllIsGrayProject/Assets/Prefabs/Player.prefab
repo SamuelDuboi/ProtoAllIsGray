@@ -6886,7 +6886,7 @@ PrefabInstance:
     - target: {fileID: 7485956109114996188, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 8315286014265795621, guid: 222bb3b7be2fb0a4d925138ef29b43f2, type: 3}
+      objectReference: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
     - target: {fileID: 7485956109114996188, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
       propertyPath: numberOfBullets
       value: 100000
