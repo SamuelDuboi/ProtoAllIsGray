@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1739067440247583301
 Transform:
   m_ObjectHideFlags: 0
@@ -254,6 +254,8 @@ MonoBehaviour:
   positionSnip: {x: 0, y: 0, z: 0}
   forceSnip: 0
   decharging: 0
+  sphere: {fileID: 7684387748357439515}
+  finalColor: {r: 0.7490196, g: 0.019607844, b: 0, a: 0}
 --- !u!54 &8637462842215617781 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4931659181971833589, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}

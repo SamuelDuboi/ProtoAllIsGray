@@ -15,17 +15,48 @@ public class Sniper : Weapon
     public float forceSnip;
 
     public bool decharging;
+
+    public GameObject sphere;
+    public Color finalColor;
+    private float sizeSphere;
+    private MaterialPropertyBlock propBlock;
+    private void Start()
+    {
+        propBlock = new MaterialPropertyBlock();
+    }
     public override bool Fire(Vector3 direction, Vector3 position, out float force)
     {
         directionSnip = direction;
         positionSnip = position;
 
+        Renderer sphereRenderer = sphere.GetComponent<Renderer>();
 
         isCharging += Time.deltaTime;
         if (isCharging!= 0 && isCharging<chargeTime)
         {
+            sphere.SetActive(true);
+
             isCharging += Time.deltaTime;
-            Debug.Log(isCharging);
+            sizeSphere += Time.deltaTime / chargeTime; // à remultiply par la size voulue
+            sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
+
+            if (isCharging < chargeTime)
+            {
+                sphereRenderer.GetPropertyBlock(propBlock);
+                propBlock.SetColor("_color", new Color(1,1,1));
+                propBlock.SetFloat("_offset", 0.5f);
+                sphereRenderer.SetPropertyBlock(propBlock);
+            }
+
+            if (isCharging >= chargeTime)
+            {
+                sphereRenderer.GetPropertyBlock(propBlock);
+                propBlock.SetColor("_color", finalColor);
+                propBlock.SetFloat("_offset", 0f);
+                sphereRenderer.SetPropertyBlock(propBlock);
+            }
+
+
         }
         if (decharging)
         {
@@ -69,8 +100,11 @@ public class Sniper : Weapon
             float rien;
             Fire(directionSnip, positionSnip, out rien);
             isCharging = 0;
-            return knockBackForce;
+
             //METTRE FEEDBACK POUR CHARGE DU SNIPER
+            sphere.SetActive(false);
+
+            return knockBackForce;
         }
         else
         {
