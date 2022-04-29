@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_TirGamma
-  m_Shader: {fileID: -6465566751694194690, guid: 05405113abae9094ab9d6d38aa393818, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: bce567bb2ce254a4aa830231a778ee58, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
