@@ -26,6 +26,7 @@ public class Shotgun : Weapon
             force = 0;
             return false;
         }
+            reloadSource.Play();
         for(int i=0; i<numOfProjectile; i++)
         {
             modDir = Mathf.FloorToInt(numOfProjectile / 2);
@@ -33,7 +34,6 @@ public class Shotgun : Weapon
             rumbler.RumbleConstant(1, 2, 0.2f);
             source.clip = clips[Random.Range(0, clips.Count)];
             source.Play();
-            reloadSource.Play();
             //instantiatedProjectile.GetComponent<Movable>().
 
             instantiatedProjectile.GetComponent<ThrowObject>().Throw(new Vector3(Mathf.Cos(Mathf.Atan2( direction.y,direction.x) + (0 + (i - modDir)) * spreadRate), Mathf.Sin(Mathf.Atan2(direction.y, direction.x) + (0 + (i - modDir)) * spreadRate),0), projectileSpeed); //SPREAD MAIS PAS SUR QUE CA FONCTION à 360° 
