@@ -242,7 +242,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 808fee66c4f4d394baf5537810b187a6, type: 3}
   - {fileID: 8300000, guid: 2a7432940355d544c9951628a2cbe5aa, type: 3}
   isCharging: 0
-  chargeTime: 2
+  chargeTime: 1
   accelerationDecharge: 2
   shoot: 0
   directionSnip: {x: 0, y: 0, z: 0}

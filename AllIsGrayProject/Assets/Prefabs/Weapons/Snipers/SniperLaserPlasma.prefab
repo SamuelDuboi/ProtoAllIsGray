@@ -248,6 +248,7 @@ MonoBehaviour:
   projectileSpeed: 60
   numberOfBullets: 6
   coolDown: 2
+  isOnCd: 0
   angleMove: 0
   target: {fileID: 278370593329833643}
   clips:
@@ -255,7 +256,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c5c0b5d13bc80b41a39fea7a137b237, type: 3}
   - {fileID: 8300000, guid: 5114fc6075c2ccb4692b7220e23354fb, type: 3}
   isCharging: 0
-  chargeTime: 2
+  chargeTime: 1
   accelerationDecharge: 2
   shoot: 0
   directionSnip: {x: 0, y: 0, z: 0}
