@@ -94,7 +94,8 @@ public class Sniper : Weapon
             source.clip = clips[Random.Range(0, clips.Count)];
             source.Play();
             instantiatedProjectile.GetComponent<ThrowObject>().damageOnPlayer +=10;
-            
+            instantiatedProjectile.gameObject.layer = GetComponentInParent<ShieldBehavior>().gameObject.layer;
+            StartCoroutine(WaitToChangeLayer());
             numberOfBullets--;
 
             force =0.01f +knockBackForce;

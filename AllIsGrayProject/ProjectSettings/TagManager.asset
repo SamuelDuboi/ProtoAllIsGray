@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapon
+  - WeaponSpawner
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - PlayerUseless
   - Projectiles
   - KillZone
-  - 
-  - 
+  - Player1
+  - Player2
   - 
   - 
   - 
