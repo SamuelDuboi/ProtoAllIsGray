@@ -4,28 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 77ac68f5ee9d0f04abb112ca80078ddd
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/LUD_Conduits.unity
-    guid: 4f3712c6d2a1bbe40a1a2d67d5ffd001
-  - enabled: 1
-    path: Assets/Scenes/LUD_Docks.unity
-    guid: 909b330e771d28d43a420a528ddd24fd
-  - enabled: 1
-    path: Assets/Scenes/CHB_NoMansLand.unity
-=======
-    path: Assets/Scenes/LD_Theme01.unity
-    guid: 909b330e771d28d43a420a528ddd24fd
-  - enabled: 1
-    path: Assets/Scenes/LD_Arena2.unity
-    guid: 4f3712c6d2a1bbe40a1a2d67d5ffd001
-  - enabled: 1
-    path: Assets/Scenes/LD_NoMansLand.unity
->>>>>>> Remi
-    guid: 6e0a9de0c299c3e4cbf3d3af6939c214
-  m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 5b6a879025d380e439a830f48ab6ede4, type: 2}
+  m_Scenes: []
+  m_configObjects: {}
