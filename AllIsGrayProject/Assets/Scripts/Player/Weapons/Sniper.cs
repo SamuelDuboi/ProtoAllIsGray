@@ -114,6 +114,7 @@ public class Sniper : Weapon
             //METTRE FEEDBACK POUR CHARGE DU SNIPER
             sphere.SetActive(false);
             sizeSphere = 0;
+            sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
             sphereRenderer.GetPropertyBlock(propBlock);
             propBlock.SetColor("_color", new Color(1, 1, 1));
             propBlock.SetFloat("_offset", 0.5f);
@@ -133,7 +134,9 @@ public class Sniper : Weapon
             while (isCharging > 0)
             {
                 isCharging -= accelerationDecharge * Time.deltaTime;
-                Debug.Log(isCharging);
+                if(sizeSphere>0)
+                sizeSphere -= (Time.deltaTime / chargeTime) * 2;
+                sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
             }
         isCharging = 0f;
         decharging = false;
