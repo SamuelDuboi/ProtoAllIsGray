@@ -18,6 +18,7 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1920
     y: 43
     width: 1920
@@ -56,6 +57,12 @@ MonoBehaviour:
     width: 1920
     height: 997
 >>>>>>> Anais
+=======
+    x: 0
+    y: 43
+    width: 1920
+    height: 989
+>>>>>>> Marc
   m_ShowMode: 4
   m_Title: Scene
   m_RootView: {fileID: 6}
@@ -67,6 +74,7 @@ MonoBehaviour:
 >>>>>>> aubane
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_UseTopView: 1
@@ -101,6 +109,9 @@ MonoBehaviour:
 =======
   m_Maximized: 1
 >>>>>>> Anais
+=======
+  m_Maximized: 1
+>>>>>>> Marc
 --- !u!114 &2
 >>>>>>> Théo
 MonoBehaviour:
@@ -124,6 +135,7 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1920
+<<<<<<< HEAD
     height: 947
 <<<<<<< HEAD
   m_MinSize: {x: 400, y: 200}
@@ -182,6 +194,13 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
   controlID: 116
+=======
+    height: 939
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 51
+>>>>>>> Marc
 --- !u!114 &3
 >>>>>>> Anais
 MonoBehaviour:
@@ -200,6 +219,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 907
     y: 0
     width: 308
@@ -215,6 +235,12 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 947
+=======
+    x: 1490
+    y: 0
+    width: 430
+    height: 939
+>>>>>>> Marc
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
@@ -249,6 +275,7 @@ MonoBehaviour:
 >>>>>>> Théo
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 275
     height: 947
   m_MinSize: {x: 232, y: 271}
@@ -259,6 +286,12 @@ MonoBehaviour:
     height: 561
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 369
+    height: 556
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Marc
   m_ActualView: {fileID: 14}
 >>>>>>> Anais
   m_Panes:
@@ -426,11 +459,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 0
     width: 1206
     height: 30
 =======
     y: 977
+=======
+    y: 969
+>>>>>>> Marc
     width: 1920
     height: 20
 >>>>>>> Anais
@@ -2878,7 +2915,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 27
+=======
+  controlID: 52
+>>>>>>> Marc
 --- !u!114 &10
 >>>>>>> Théo
 MonoBehaviour:
@@ -2900,6 +2941,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 921
 <<<<<<< HEAD
@@ -4381,6 +4423,14 @@ MonoBehaviour:
 >>>>>>> Anais
   vertical: 0
   controlID: 28
+=======
+    width: 1490
+    height: 556
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 53
+>>>>>>> Marc
 --- !u!114 &11
 >>>>>>> Théo
 MonoBehaviour:
@@ -4451,7 +4501,7 @@ MonoBehaviour:
   m_EditorHideFlags: 1
 <<<<<<< HEAD
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -4537,6 +4587,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 3135
     y: 73
     width: 273
@@ -4553,6 +4604,12 @@ MonoBehaviour:
     width: 1465
     height: 365
 >>>>>>> Anais
+=======
+    x: 0
+    y: 629
+    width: 1489
+    height: 362
+>>>>>>> Marc
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -4573,6 +4630,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets
 =======
     - Assets/Art/Guns/Meshes
@@ -4583,11 +4641,15 @@ MonoBehaviour:
 =======
     - Assets/Art/Mesh
 >>>>>>> Anais
+=======
+    - Assets
+>>>>>>> Marc
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - Assets
@@ -4596,6 +4658,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 =======
   - Assets/Art/Guns/Meshes
+=======
+  - Assets
+>>>>>>> Marc
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Semaine Retro SF\ProtoAllIsGray\AllIsGrayProject
 >>>>>>> aubane
@@ -4609,6 +4674,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4631,6 +4697,12 @@ MonoBehaviour:
     m_LastClickedID: 35226
     m_ExpandedIDs: 00000000528900005489000056890000588900005c89000000ca9a3b
 >>>>>>> Anais
+=======
+    scrollPos: {x: 0, y: 30}
+    m_SelectedIDs: 6ef70000
+    m_LastClickedID: 63342
+    m_ExpandedIDs: 000000006ef70000eaf70000f0f70000f8f7000000ca9a3b
+>>>>>>> Marc
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4661,6 +4733,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000f4350000
 =======
     m_ExpandedIDs: 00000000da7d0000dc7d0000de7d0000e07d0000e27d0000e47d000000ca9a3b
@@ -4671,6 +4744,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000528900005489000056890000588900005a8900005c890000
 >>>>>>> Anais
+=======
+    m_ExpandedIDs: 000000006ef70000
+>>>>>>> Marc
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4705,12 +4781,16 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 0
 =======
     m_HadKeyboardFocusLastEvent: 1
+<<<<<<< HEAD
 >>>>>>> Anais
     m_ExpandedInstanceIDs: c6230000
 =======
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
 >>>>>>> aubane
+=======
+    m_ExpandedInstanceIDs: c6230000927c000098ef000078ef000094ef0000
+>>>>>>> Marc
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4817,6 +4897,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1920
     y: 559
     width: 906
@@ -4831,6 +4912,12 @@ MonoBehaviour:
     y: 73
     width: 362
     height: 540
+=======
+    x: 0
+    y: 73
+    width: 368
+    height: 535
+>>>>>>> Marc
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -4839,9 +4926,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: d48bffffeab8ffff4af5ffff6c9a0000ac9c0000
+=======
+      m_SelectedIDs: bcfb0000
+      m_LastClickedID: 64444
+      m_ExpandedIDs: bc6bffffbcfb0000
+>>>>>>> Marc
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -4956,6 +5049,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1920
     y: 73
     width: 906
@@ -4966,6 +5060,12 @@ MonoBehaviour:
     width: 1101
     height: 540
 >>>>>>> Anais
+=======
+    x: 369
+    y: 73
+    width: 1119
+    height: 535
+>>>>>>> Marc
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -4977,10 +5077,14 @@ MonoBehaviour:
       displayed: 1
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: -101, y: -1}
 =======
       snapOffsetDelta: {x: -101, y: -26}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: -101, y: -1}
+>>>>>>> Marc
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -5003,10 +5107,14 @@ MonoBehaviour:
       displayed: 1
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: unity-scene-view-toolbar
       index: 0
@@ -5018,10 +5126,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 1
       id: unity-search-toolbar
       index: 1
@@ -5032,11 +5144,16 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffset: {x: 0, y: 25}
 =======
       snapOffset: {x: 0, y: 0}
 >>>>>>> Anais
       snapOffsetDelta: {x: 0, y: 0}
+=======
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: unity-transform-toolbar
       index: 0
@@ -5059,10 +5176,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Light Settings
       index: 0
@@ -5074,10 +5195,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Camera
       index: 1
@@ -5089,10 +5214,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Cloth Constraints
       index: 2
@@ -5104,10 +5233,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Cloth Collisions
       index: 3
@@ -5119,10 +5252,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Navmesh Display
       index: 4
@@ -5134,10 +5271,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Agent Display
       index: 5
@@ -5149,10 +5290,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Obstacle Display
       index: 6
@@ -5164,10 +5309,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Occlusion Culling
       index: 7
@@ -5179,10 +5328,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Physics Debugger
       index: 8
@@ -5194,10 +5347,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Scene Visibility
       index: 9
@@ -5208,10 +5365,14 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffset: {x: 0, y: 25}
 =======
       snapOffset: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffset: {x: 0, y: 25}
+>>>>>>> Marc
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -5224,10 +5385,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Visual Effect Model
       index: 11
@@ -5239,10 +5404,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Visual Effect
       index: 12
@@ -5254,10 +5423,14 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Visual Effect Event Tester
       index: 13
@@ -5269,17 +5442,24 @@ MonoBehaviour:
       displayed: 0
       snapOffset: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffsetDelta: {x: 0, y: 25}
 =======
       snapOffsetDelta: {x: 0, y: 0}
 >>>>>>> Anais
+=======
+      snapOffsetDelta: {x: 0, y: 25}
+>>>>>>> Marc
       snapCorner: 0
       id: Scene View/Animation Rigging
       index: 14
       layout: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_WindowGUID: 1a20f8445ca0aa64098a610d496fa76c
 =======
+=======
+>>>>>>> Marc
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
 >>>>>>> Anais
   m_Gizmos: 1
@@ -5292,6 +5472,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.41656682, y: 0.07480139, z: 10.003695}
     speed: 2
     m_Value: {x: 0.419049, y: 0.0869707, z: 10.0183115}
@@ -5300,6 +5481,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -27.538857, y: 11.309261, z: 2.5828443}
 >>>>>>> Anais
+=======
+    m_Target: {x: 0.17294805, y: 0.06188194, z: -0.00007098913}
+    speed: 2
+    m_Value: {x: 0.17294805, y: 0.06188194, z: -0.00007098913}
+>>>>>>> Marc
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -5312,10 +5498,14 @@ MonoBehaviour:
     m_AlwaysRefresh: 0
     showFog: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     showSkybox: 0
 =======
     showSkybox: 1
 >>>>>>> Anais
+=======
+    showSkybox: 0
+>>>>>>> Marc
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -5332,7 +5522,7 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -5340,7 +5530,7 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -5350,6 +5540,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: -0.0504161, y: -0.6839432, z: 0.04748124, w: -0.72625494}
     speed: 2
@@ -5379,10 +5570,19 @@ MonoBehaviour:
     speed: 2
     m_Value: 19.108269
 >>>>>>> Anais
-  m_Ortho:
-    m_Target: 0
+=======
+    m_Target: {x: 0, y: 1, z: 0, w: 0}
     speed: 2
-    m_Value: 0
+    m_Value: {x: 0, y: 1, z: 0, w: 0}
+  m_Size:
+    m_Target: 0.35516253
+    speed: 2
+    m_Value: 0.35516253
+>>>>>>> Marc
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -5424,10 +5624,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 507
-    y: 94
-    width: 1532
-    height: 790
+    x: 369
+    y: 73
+    width: 1119
+    height: 535
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -5438,10 +5638,10 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1532, y: 769}
+  m_TargetSize: {x: 1119, y: 514}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
-  m_RenderIMGUI: 0
+  m_RenderIMGUI: 1
   m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
@@ -5453,10 +5653,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -766
-    m_HBaseRangeMax: 766
-    m_VBaseRangeMin: -395
-    m_VBaseRangeMax: 395
+    m_HBaseRangeMin: -559.5
+    m_HBaseRangeMax: 559.5
+    m_VBaseRangeMin: -257
+    m_VBaseRangeMax: 257
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -5473,24 +5673,24 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
-      width: 1532
-      height: 790
+      y: 21
+      width: 1119
+      height: 514
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 766, y: 395}
+    m_Translation: {x: 559.5, y: 257}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -766
-      y: -395
-      width: 1532
-      height: 790
+      x: -559.5
+      y: -257
+      width: 1119
+      height: 514
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1532, y: 790}
+  m_LastWindowPixelSize: {x: 1119, y: 535}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -5522,6 +5722,7 @@ MonoBehaviour:
     height: 250
   m_ViewDataDictionary: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,3 +5743,8 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
 >>>>>>> Anais
+=======
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+>>>>>>> Marc
