@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
     [Header("Global Game Infos")]
     public PlayerColorBank colorBank;
 
+    [Header("New Game Infos")]
     public List<InputDevice> playerDevices = new List<InputDevice>();
+    public StageInfos stageToPlay;
+    public GameSettings instanceSettings;
 
     private void Awake()
     {
@@ -64,6 +67,43 @@ public class GameManager : MonoBehaviour
     public void ReferenceGameInstance(GameInstanceHandler instance)
     {
         currentGameInstance = instance;
+    }
+
+    #endregion
+
+    #region GameCreation
+
+    public void ResetGameCreation()
+    {
+        playerDevices = new List<InputDevice>();
+        stageToPlay = null;
+        instanceSettings = null;
+    }
+
+    public void GoToStage(GameSettings gameSettings)
+    {
+        instanceSettings = gameSettings;
+        sceneManagementUI.FadeInEnds += LoadStage;
+        sceneManagementUI.StartFadeIn();
+    }
+
+    public void LoadStage()
+    {
+        sceneManagementUI.FadeInEnds -= LoadStage;
+        SceneManager.LoadScene(stageToPlay.stageScene);
+        SceneManager.sceneLoaded += StageEnter;
+    }
+
+    public void StageEnter(Scene _scene, LoadSceneMode _mode)
+    {
+        SceneManager.sceneLoaded -= StageEnter;
+        sceneManagementUI.FadeOutEnds += StartSession;
+        sceneManagementUI.StartFadeOut();
+    }
+
+    public void StartSession()
+    {
+
     }
 
     #endregion

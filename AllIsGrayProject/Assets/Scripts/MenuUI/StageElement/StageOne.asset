@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe857fdeda836e4788f090297eee89a, type: 3}
+  m_Name: StageOne
+  m_EditorClassIdentifier: 
+  stageScene:
+    m_SceneAsset: {fileID: 102900000, guid: 4f3712c6d2a1bbe40a1a2d67d5ffd001, type: 3}
+    m_SceneName: LD_Arena2
+  stageName: Arena2
+  stageScreen: {fileID: 21300000, guid: ce1c5e161fa68174ea6f13291c43f9d0, type: 3}

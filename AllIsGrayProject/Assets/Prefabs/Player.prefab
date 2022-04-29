@@ -1085,6 +1085,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinRenderer: {fileID: 5566544792400772959}
+  trailRendererOne: {fileID: 120393450823748788}
+  trailRendererTwo: {fileID: 3504274988459540599}
 --- !u!1 &3613939833225727856
 GameObject:
   m_ObjectHideFlags: 0

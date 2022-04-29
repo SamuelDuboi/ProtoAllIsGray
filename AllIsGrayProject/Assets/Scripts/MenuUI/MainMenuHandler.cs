@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenuHandler : MonoBehaviour
 {
-    enum MenuState { StartScreen, MainMenu, PlayerJoin, StageSelection, GameRules, Settings };
+    enum MenuState { StartScreen, MainMenu, PlayerJoin, StageSelection, GameRules, GameSettings };
 
     [SerializeField, ReadOnly]
     MenuState _currentMenuState;
@@ -33,10 +33,12 @@ public class MainMenuHandler : MonoBehaviour
                     InitPlayerJoinState();
                     break;
                 case MenuState.StageSelection:
+                    InitStageSelectionState();
                     break;
                 case MenuState.GameRules:
+                    InitGameRuleState();
                     break;
-                case MenuState.Settings:
+                case MenuState.GameSettings:
                     break;
                 default:
                     break;
@@ -56,6 +58,10 @@ public class MainMenuHandler : MonoBehaviour
     MainMenu mainMenuElements;
     [SerializeField]
     PlayerJoin playerJoinElements;
+    [SerializeField]
+    StageSelection stageSelectionElements;
+    [SerializeField]
+    GameRule gameRuleElements;
 
 
     private void Awake()
@@ -112,7 +118,7 @@ public class MainMenuHandler : MonoBehaviour
     {
         eventSystem.gameObject.SetActive(false);
         mainMenuElements.DisappearAnimation();
-        mainMenuElements.DisappearEnds += () => 
+        mainMenuElements.DisappearEnds += () =>
         {
             CurrentMenuState = MenuState.PlayerJoin;
             mainMenuElements.DisappearEnds = null;
@@ -168,7 +174,7 @@ public class MainMenuHandler : MonoBehaviour
             UpdateGoToStage();
 
         }
-        else if(usedDevices.Contains(context.control.device))
+        else if (usedDevices.Contains(context.control.device))
         {
             playerJoinElements.SetPlayerReady(context.control.device);
             UpdateGoToStage();
@@ -177,9 +183,14 @@ public class MainMenuHandler : MonoBehaviour
 
     public void PlayerJoinReturn(InputAction.CallbackContext context)
     {
+        controls.UIControls.MenuValidate.performed -= PlayerJoinValidate;
+        controls.UIControls.MenuReturn.performed -= PlayerJoinReturn;
+        controls.UIControls.Start.performed -= GoToStageSelection;
+
         playerJoinElements.Disappear();
         playerJoinElements.DisappearEnds += () =>
         {
+            GameManager.Instance.ResetGameCreation();
             CurrentMenuState = MenuState.MainMenu;
             playerJoinElements.DisappearEnds = null;
         };
@@ -201,12 +212,170 @@ public class MainMenuHandler : MonoBehaviour
 
     public void GoToStageSelection(InputAction.CallbackContext context)
     {
+        controls.UIControls.MenuValidate.performed -= PlayerJoinValidate;
+        controls.UIControls.MenuReturn.performed -= PlayerJoinReturn;
+        controls.UIControls.Start.performed -= GoToStageSelection;
+
         playerJoinElements.Disappear();
         playerJoinElements.DisappearEnds += () =>
         {
-            print("Go To Stage Select");
+            CurrentMenuState = MenuState.StageSelection;
             playerJoinElements.DisappearEnds = null;
         };
+    }
+
+    #endregion
+
+    #region StageSelection
+
+    StageElement lastElement;
+
+    private void InitStageSelectionState()
+    {
+        lastElement = null;
+        stageSelectionElements.AppearEnds += EnableStageSelection;
+        stageSelectionElements.Appear();
+    }
+
+    public void EnableStageSelection()
+    {
+        controls.UIControls.MenuReturn.performed += StageSelectionReturn;
+        stageSelectionElements.AppearEnds -= EnableStageSelection;
+
+        eventSystem.gameObject.SetActive(true);
+        eventSystem.SetSelectedGameObject(stageSelectionElements.GetStageElement(0).pointer.gameObject);
+    }
+
+    public void StageSelectionReturn(InputAction.CallbackContext context)
+    {
+        eventSystem.gameObject.SetActive(false);
+        controls.UIControls.MenuReturn.performed -= StageSelectionReturn;
+        controls.UIControls.Start.performed -= GoToGameRules;
+
+        stageSelectionElements.Disappear();
+        stageSelectionElements.DisappearEnds += () =>
+        {
+            GameManager.Instance.ResetGameCreation();
+            CurrentMenuState = MenuState.PlayerJoin;
+            stageSelectionElements.DisappearEnds = null;
+        };
+    }
+
+    public void OnStageClicked(StageElement stage)
+    {
+        if (lastElement != null)
+            lastElement.UpdateSelection(false);
+        else
+        {
+            stageSelectionElements.UpdateGoButton(true);
+            controls.UIControls.Start.performed += GoToGameRules;
+        }
+
+        stage.UpdateSelection(true);
+        lastElement = stage;
+        GameManager.Instance.stageToPlay = stage.stageInfos;
+    }
+
+    public void GoToGameRules(InputAction.CallbackContext context)
+    {
+        eventSystem.gameObject.SetActive(false);
+        controls.UIControls.MenuReturn.performed -= StageSelectionReturn;
+        controls.UIControls.Start.performed -= GoToGameRules;
+
+        stageSelectionElements.Disappear();
+        stageSelectionElements.DisappearEnds += () =>
+        {
+            CurrentMenuState = MenuState.GameRules;
+            stageSelectionElements.DisappearEnds = null;
+        };
+    }
+
+    #endregion
+
+    #region GameRules
+
+    GameSettings.GameModeType currentGameMode;
+    int playerLife;
+    int gameTimer;
+
+    private void InitGameRuleState()
+    {
+        currentGameMode = GameSettings.GameModeType.DeathMatch;
+        playerLife = 1;
+        gameTimer = 5;
+
+        gameRuleElements.AppearEnds += EnableGameRule;
+        eventSystem.gameObject.SetActive(true);
+        gameRuleElements.Appear();
+    }
+
+    public void EnableGameRule()
+    {
+        controls.UIControls.MenuReturn.performed += GameRuleReturn;
+        controls.UIControls.Start.performed += StartGame;
+        gameRuleElements.AppearEnds -= EnableStageSelection;
+        eventSystem.SetSelectedGameObject(gameRuleElements.gameModeDropDown.gameObject);
+    }
+
+
+    public void OnGameModeChanged(TMP_Dropdown dropDown)
+    {
+        switch (dropDown.value)
+        {
+            case 0:
+                currentGameMode = GameSettings.GameModeType.DeathMatch;
+                gameRuleElements.UpdateGameMode(GameRule.GameMode.DeathMatch); 
+                break;
+            case 1:
+                currentGameMode = GameSettings.GameModeType.TimeAttack;
+                gameRuleElements.UpdateGameMode(GameRule.GameMode.TimeAttack);
+                break;
+        }
+    }
+
+    public void OnSliderChanged(Slider slider)
+    {
+        switch (currentGameMode)
+        {
+            case GameSettings.GameModeType.DeathMatch:
+                playerLife = (int)slider.value;
+                break;
+            case GameSettings.GameModeType.TimeAttack:
+                gameTimer = (int)slider.value;
+                break;
+        }
+        gameRuleElements.UpdateSliderValue(slider.value.ToString());
+    }
+
+    public void GameRuleReturn(InputAction.CallbackContext context)
+    {
+        eventSystem.gameObject.SetActive(false);
+        controls.UIControls.MenuReturn.performed -= GameRuleReturn;
+        controls.UIControls.Start.performed -= StartGame;
+
+        gameRuleElements.Disappear();
+        gameRuleElements.DisappearEnds += () =>
+        {
+            CurrentMenuState = MenuState.StageSelection;
+            stageSelectionElements.DisappearEnds = null;
+        };
+    }
+
+    public void StartGame(InputAction.CallbackContext context)
+    {
+        eventSystem.gameObject.SetActive(false);
+        controls.UIControls.MenuReturn.performed -= GameRuleReturn;
+        controls.UIControls.Start.performed -= StartGame;
+
+        var settings = new GameSettings()
+        {
+            gameMode = currentGameMode,
+            playerAmount = GameManager.Instance.playerDevices.Count,
+            stockCount = playerLife,
+            gameTimer = gameTimer
+        };
+
+        GameManager.Instance.GoToStage(settings);
     }
 
     #endregion
@@ -456,11 +625,15 @@ class PlayerJoin
 
     public void Appear()
     {
+        connectedPlayerPortraits = new Dictionary<InputDevice, PlayerJoinElement>();
         playerJoinRoot.gameObject.SetActive(true);
+        newPlayerBox.gameObject.SetActive(true);
+        playerCount = 0;
+        readyCount = 0;
 
         foreach (PlayerJoinElement portait in playerPortraits)
             portait.gameObject.SetActive(false);
-        
+
         goStageText.gameObject.SetActive(false);
         waitingText.gameObject.SetActive(true);
 
@@ -488,10 +661,10 @@ class PlayerJoin
         var newElement = playerPortraits[playerCount];
         connectedPlayerPortraits.Add(device, newElement);
         newElement.gameObject.SetActive(true);
-        newElement.InitElement(playerCount,elementAppearDuration, elementAppearCurve);
+        newElement.InitElement(playerCount, elementAppearDuration, elementAppearCurve);
         playerCount++;
 
-        if(playerCount == 4)
+        if (playerCount == 4)
             newPlayerBox.gameObject.SetActive(false);
     }
 
@@ -530,4 +703,200 @@ class PlayerJoin
 
     private void OnAppearEnds() => AppearEnds?.Invoke();
 
+}
+
+[Serializable]
+class StageSelection
+{
+    [SerializeField]
+    RectTransform stageSelectionRoot;
+
+    [Space]
+    [SerializeField]
+    Image background;
+    [SerializeField]
+    TextMeshProUGUI waitingText;
+    [SerializeField]
+    TextMeshProUGUI goSettingsText;
+
+    [Space]
+    [SerializeField]
+    float appearDuration;
+    [SerializeField]
+    AnimationCurve appearCurve;
+    [SerializeField]
+    AnimationCurve disappearCurve;
+
+    [Space]
+    [SerializeField]
+    StageElement[] stageElements;
+
+    public Action AppearEnds;
+    public Action DisappearEnds;
+
+    public void Appear()
+    {
+        stageSelectionRoot.gameObject.SetActive(true);
+
+        foreach (StageElement element in stageElements)
+            element.Init();
+
+        goSettingsText.gameObject.SetActive(false);
+        waitingText.gameObject.SetActive(true);
+
+        background.rectTransform.localScale = Vector3.one * 0;
+        background.rectTransform.DOScale(Vector3.one, appearDuration)
+            .SetEase(appearCurve)
+            .OnComplete(OnAppearEnds);
+    }
+
+    private void OnAppearEnds() => AppearEnds?.Invoke();
+
+    public void Disappear()
+    {
+        background.rectTransform.DOScale(Vector3.one * 0f, appearDuration)
+            .SetEase(disappearCurve)
+            .OnComplete(OnDisappearEnds);
+    }
+
+    private void OnDisappearEnds()
+    {
+        DisappearEnds?.Invoke();
+        stageSelectionRoot.gameObject.SetActive(false);
+    }
+
+
+    public StageElement GetStageElement(int index)
+    {
+        return stageElements[index];
+    }
+
+
+    public void UpdateGoButton(bool state)
+    {
+        if (state)
+        {
+            waitingText.gameObject.SetActive(false);
+            goSettingsText.gameObject.SetActive(true);
+        }
+        else
+        {
+            waitingText.gameObject.SetActive(true);
+            goSettingsText.gameObject.SetActive(false);
+        }
+    }
+}
+
+[Serializable]
+class GameRule
+{
+    [SerializeField]
+    RectTransform gamerulesRoot;
+    [SerializeField]
+    Image background;
+
+    [Space]
+    [Header("Stage Showsown")]
+    [SerializeField]
+    Image stagePic;
+    [SerializeField]
+    TextMeshProUGUI stageNameDisplay;
+
+    [Space]
+    [Header("Settings")]
+    [SerializeField]
+    TextMeshProUGUI gameModeDescription;
+    [SerializeField, TextArea]
+    string deathMatchDescription;
+    [SerializeField, TextArea]
+    string timeAttackDescription;
+    public TMP_Dropdown gameModeDropDown;
+
+    [Space]
+    [SerializeField]
+    RectTransform playerLifeSection;
+    [SerializeField]
+    TextMeshProUGUI playerLifeDisplay;
+
+    [Space]
+    [SerializeField]
+    RectTransform timerSection;
+    [SerializeField]
+    TextMeshProUGUI timerDisplay;
+
+    [Space]
+    [Header("Animation")]
+    [SerializeField]
+    float appearDuration;
+    [SerializeField]
+    AnimationCurve appearCurve;
+    [SerializeField]
+    AnimationCurve disappearCurve;
+
+    public Action AppearEnds;
+    public Action DisappearEnds;
+
+    public void Appear()
+    {
+        gamerulesRoot.gameObject.SetActive(true);
+
+        gameModeDropDown.value = 0;
+        playerLifeSection.gameObject.SetActive(true);
+        timerSection.gameObject.SetActive(false);
+
+        background.rectTransform.localScale = Vector3.one * 0;
+        background.rectTransform.DOScale(Vector3.one, appearDuration)
+            .SetEase(appearCurve)
+            .OnComplete(OnAppearEnds);
+    }
+
+    void OnAppearEnds() => AppearEnds?.Invoke();
+
+    public void Disappear()
+    {
+        background.rectTransform.DOScale(Vector3.one * 0f, appearDuration)
+        .SetEase(disappearCurve)
+        .OnComplete(OnDisappearEnds);
+    }
+
+    void OnDisappearEnds()
+    {
+        DisappearEnds?.Invoke();
+        gamerulesRoot.gameObject.SetActive(false);
+    }
+
+    public enum GameMode { TimeAttack, DeathMatch }
+    GameMode currentGameMode;
+
+    public void UpdateGameMode(GameMode mode)
+    {
+        switch (mode)
+        {
+            case GameMode.TimeAttack:
+                gameModeDescription.text = timeAttackDescription;
+                playerLifeSection.gameObject.SetActive(false);
+                timerSection.gameObject.SetActive(true);
+                break;
+            case GameMode.DeathMatch:
+                gameModeDescription.text = deathMatchDescription;
+                playerLifeSection.gameObject.SetActive(true);
+                timerSection.gameObject.SetActive(false);
+                break;
+        }
+
+        currentGameMode = mode;
+    }
+
+    public void UpdateSliderValue(string value)
+    {
+        switch (currentGameMode)
+        {
+            case GameMode.TimeAttack:
+                timerDisplay.text = value + " min";
+                break;
+            case GameMode.DeathMatch:
+                playerLifeDisplay.text = value;
+                break;
+        }
+    }
 }
