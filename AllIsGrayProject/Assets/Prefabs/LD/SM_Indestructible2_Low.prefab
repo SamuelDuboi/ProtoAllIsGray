@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7543970545823606864}
   - component: {fileID: 6853997771102119925}
   - component: {fileID: 8717488804133114687}
+  - component: {fileID: 7112465245692282254}
+  - component: {fileID: 2629840057535866191}
+  - component: {fileID: 4323619865196012562}
   m_Layer: 0
   m_Name: SM_Indestructible2_Low
   m_TagString: Untagged
@@ -26,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7204142646995137258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,3 +86,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &7112465245692282254
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7204142646995137258}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
+--- !u!65 &2629840057535866191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7204142646995137258}
+  m_Material: {fileID: 13400000, guid: 901149a996a883747a54b65da9752797, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.886327, z: 1.367552}
+  m_Center: {x: 0, y: 0, z: 0.29281646}
+--- !u!114 &4323619865196012562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7204142646995137258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d357102b2ad2fde46ac90e9f7b117ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageOnPlayer: 5
+  myEffect: {fileID: 0}
+  rgb: {fileID: 7112465245692282254}
+  throwForce: 0
+  playerDestroy: 0
+  life: 20
