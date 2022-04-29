@@ -37,7 +37,7 @@ public class Sniper : Weapon
             sphere.SetActive(true);
 
             isCharging += Time.deltaTime;
-            sizeSphere += Time.deltaTime / chargeTime; // à remultiply par la size voulue
+            sizeSphere += (Time.deltaTime / chargeTime)*2; // à remultiply par la size voulue
             sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
 
             if (isCharging < chargeTime)
