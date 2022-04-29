@@ -21,6 +21,7 @@ public class Sniper : Weapon
     private float sizeSphere;
     private MaterialPropertyBlock propBlock;
     Renderer sphereRenderer;
+    public AudioSource laodSource;
     protected override void Start()
     {
         base.Start();
@@ -34,8 +35,8 @@ public class Sniper : Weapon
         if (!rumbler)
             rumbler = GetComponentInParent<Rumbler>();
 
-      
-
+        if (isCharging == 0)
+            laodSource.Play();
         isCharging += Time.deltaTime;
         if (isCharging!= 0 && isCharging<chargeTime)
         {
@@ -131,6 +132,7 @@ public class Sniper : Weapon
     }
     IEnumerator Decharge()
     {
+        laodSource.Stop();
         decharging = true;
 
             while (isCharging > 0)
