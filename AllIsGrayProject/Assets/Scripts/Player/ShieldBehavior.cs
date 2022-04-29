@@ -16,6 +16,7 @@ public class ShieldBehavior : MonoBehaviour
     public GameObject[] Shield= new GameObject[2];
     private Renderer[] rendererShield = new Renderer[2];
     private MaterialPropertyBlock[] propBlock = new MaterialPropertyBlock[2];
+    public List<AudioClip> clisp;
 
     public float invincibilityDuration;
     public void ShieldInit()

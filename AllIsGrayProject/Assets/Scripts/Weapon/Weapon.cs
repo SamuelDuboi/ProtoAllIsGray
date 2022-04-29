@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent( typeof(AudioSource))]
 
 public class Weapon : ThrowObject
 {
@@ -16,6 +17,7 @@ public class Weapon : ThrowObject
    [HideInInspector] public float angleMove;
     PlayerMovement lockedPlayer;
     public Transform target;
+    public List<AudioClip> clips;
     private void Start()
     {
         homing = projectile.GetComponent<HomingMissileBehavior>();
@@ -55,6 +57,8 @@ public class Weapon : ThrowObject
         instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
         //instantiatedProjectile.GetComponent<Movable>().
         instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
+        source.clip = clips[Random.Range(0, clips.Count )];
+        source.Play();
         numberOfBullets--;
         if (homing && lockedPlayer)
             instantiatedProjectile.GetComponent<HomingMissileBehavior>().target = lockedPlayer.transform;

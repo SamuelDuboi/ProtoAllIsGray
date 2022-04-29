@@ -138,6 +138,10 @@ MonoBehaviour:
   rgb: {fileID: 1034989202022537080}
   throwForce: 2
   playerDestroy: 1
+  clipsImpact:
+  - {fileID: 8300000, guid: 0d7cff8afa6fe0347bb839510116d6c9, type: 3}
+  - {fileID: 8300000, guid: d34b4f4d06e6b5c499f2910e18e8d45d, type: 3}
+  - {fileID: 8300000, guid: 333308b45fc729747bb3e6dbb0b83e39, type: 3}
   projectile: {fileID: 8315286014265795621, guid: 222bb3b7be2fb0a4d925138ef29b43f2, type: 3}
   knockBackForce: 3
   projectileSpeed: 20
@@ -145,6 +149,10 @@ MonoBehaviour:
   coolDown: 2
   angleMove: 0
   target: {fileID: 8817928324175635750}
+  clips:
+  - {fileID: 8300000, guid: d41b6e14f4b94e648adfabe88b3d3d4a, type: 3}
+  - {fileID: 8300000, guid: ce5cec1364cc1704ba07e8a1ca82d93e, type: 3}
+  - {fileID: 8300000, guid: d04def24886a8b04a9abfa3cdb69f5de, type: 3}
   numOfProjectile: 3
   modDir: 0
   spreadRate: 0.2

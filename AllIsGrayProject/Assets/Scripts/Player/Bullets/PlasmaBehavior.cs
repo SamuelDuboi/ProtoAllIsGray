@@ -15,6 +15,8 @@ public class PlasmaBehavior : ThrowObject
         var hit = Physics.OverlapSphere(transform.position, range);
         particules.transform.localScale = Vector3.one*range;
         particules.SetActive(true);
+        source.clip = clipsImpact[Random.Range(0, clipsImpact.Count)];
+        source.Play();
         foreach (var throwObejct in hit)
         {
             if (!throwObejct.GetComponent<ThrowObject>())

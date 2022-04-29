@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof( AudioSource))]
 public class ThrowObject : Movable
 {
     [Header("ThrowObject")]
@@ -10,6 +10,13 @@ public class ThrowObject : Movable
     public float throwForce;
     protected Vector3 myDirection;
     public bool playerDestroy = true;
+    public List<AudioClip> clipsImpact;
+    protected AudioSource source;
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
         // myEffect.ApplyEffectOnCollision();
@@ -36,6 +43,11 @@ public class ThrowObject : Movable
 
     protected virtual void OnCollision(Collision collision)
     {
+        if(collision.gameObject.tag != "Player")
+        {
+            source.clip = clipsImpact[Random.Range(0, clipsImpact.Count)];
+            source.Play();
+        }
         StartCoroutine(WaitToDie());
     }
     protected IEnumerator WaitToDie(float timer)

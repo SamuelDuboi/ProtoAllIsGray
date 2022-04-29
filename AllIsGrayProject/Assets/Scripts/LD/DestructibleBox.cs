@@ -8,7 +8,11 @@ public class DestructibleBox : ThrowObject
     protected override void OnCollision(Collision collision)
     {
         if (collision.gameObject.layer != 7)
+        {
+            source.clip = clipsImpact[Random.Range(0, clipsImpact.Count)];
+            source.Play();
             return;
+        }
         life--;
         if (life == 0)
             StartCoroutine(WaitToDie());

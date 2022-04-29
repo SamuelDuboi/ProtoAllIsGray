@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotgunGamma
       objectReference: {fileID: 0}
+    - target: {fileID: 6351390599796544319, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6074755837638386652, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
     - {fileID: 1477874519569038352, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
@@ -138,6 +142,10 @@ MonoBehaviour:
   rgb: {fileID: 1034989202022537080}
   throwForce: 2
   playerDestroy: 1
+  clipsImpact:
+  - {fileID: 8300000, guid: 0d7cff8afa6fe0347bb839510116d6c9, type: 3}
+  - {fileID: 8300000, guid: d34b4f4d06e6b5c499f2910e18e8d45d, type: 3}
+  - {fileID: 8300000, guid: 333308b45fc729747bb3e6dbb0b83e39, type: 3}
   projectile: {fileID: 8315286014265795621, guid: 34a97eef696d8d149953719b78961a54, type: 3}
   knockBackForce: 3
   projectileSpeed: 20
@@ -145,6 +153,10 @@ MonoBehaviour:
   coolDown: 2
   angleMove: 0
   target: {fileID: 8817928324175635750}
+  clips:
+  - {fileID: 8300000, guid: 2ef18f2e5770b6a409f3687d8a3921af, type: 3}
+  - {fileID: 8300000, guid: 808fee66c4f4d394baf5537810b187a6, type: 3}
+  - {fileID: 8300000, guid: 2a7432940355d544c9951628a2cbe5aa, type: 3}
   numOfProjectile: 3
   modDir: 0
   spreadRate: 0.2
