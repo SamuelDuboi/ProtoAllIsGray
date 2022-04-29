@@ -149,3 +149,5 @@ MonoBehaviour:
   timeStayClose: 5
   isClose: 0
   initTimeStart: 0
+  openSound: {fileID: 8300000, guid: 1d13df25dbc5cab49b7d20192192389a, type: 3}
+  closeSound: {fileID: 8300000, guid: 24b80871ccc216d45b277431832b5fe7, type: 3}

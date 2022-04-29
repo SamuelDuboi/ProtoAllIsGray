@@ -15,18 +15,56 @@ public class Sniper : Weapon
     public float forceSnip;
 
     public bool decharging;
+
+    public GameObject sphere;
+    public Color finalColor;
+    private float sizeSphere;
+    private MaterialPropertyBlock propBlock;
+    Renderer sphereRenderer;
+    protected virtual void Start()
+    {
+        base.Start();
+        propBlock = new MaterialPropertyBlock();
+         sphereRenderer = sphere.GetComponent<Renderer>();
+    }
     public override bool Fire(Vector3 direction, Vector3 position, out float force)
     {
         directionSnip = direction;
         positionSnip = position;
+        if (!rumbler)
+            rumbler = GetComponentInParent<Rumbler>();
 
+      
 
         isCharging += Time.deltaTime;
         if (isCharging!= 0 && isCharging<chargeTime)
         {
+            sphere.SetActive(true);
+            rumbler.RumbleConstant(0.1f*isCharging, 0.5f*isCharging, 0.1f);
             isCharging += Time.deltaTime;
-            Debug.Log(isCharging);
+            sizeSphere += (Time.deltaTime / chargeTime)*2; // à remultiply par la size voulue
+            sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
+
+            if (isCharging < chargeTime)
+            {
+                sphereRenderer.GetPropertyBlock(propBlock);
+                propBlock.SetColor("_color", new Color(1,1,1));
+                propBlock.SetFloat("_offset", 0.5f);
+                sphereRenderer.SetPropertyBlock(propBlock);
+            }
+
+            if (isCharging >= chargeTime)
+            {
+                sphereRenderer.GetPropertyBlock(propBlock);
+                propBlock.SetColor("_color", finalColor);
+                propBlock.SetFloat("_offset", 0f);
+                sphereRenderer.SetPropertyBlock(propBlock);
+            }
+
+
         }
+        else if(isCharging>=chargeTime)
+            rumbler.RumbleConstant(0.1f * isCharging, 0.5f * isCharging, 0.1f);
         if (decharging)
         {
             StopCoroutine(Decharge());
@@ -53,11 +91,14 @@ public class Sniper : Weapon
             instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
             //instantiatedProjectile.GetComponent<Movable>().
             instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
+            source.clip = clips[Random.Range(0, clips.Count)];
+            source.Play();
             instantiatedProjectile.GetComponent<ThrowObject>().damageOnPlayer +=10;
-
+            instantiatedProjectile.gameObject.layer = GetComponentInParent<ShieldBehavior>().gameObject.layer;
+            StartCoroutine(WaitToChangeLayer());
             numberOfBullets--;
 
-            force = knockBackForce;
+            force =0.01f +knockBackForce;
         }
         return true;
     }
@@ -69,8 +110,16 @@ public class Sniper : Weapon
             float rien;
             Fire(directionSnip, positionSnip, out rien);
             isCharging = 0;
-            return knockBackForce;
+
             //METTRE FEEDBACK POUR CHARGE DU SNIPER
+            sphere.SetActive(false);
+            sizeSphere = 0;
+            sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
+            sphereRenderer.GetPropertyBlock(propBlock);
+            propBlock.SetColor("_color", new Color(1, 1, 1));
+            propBlock.SetFloat("_offset", 0.5f);
+            sphereRenderer.SetPropertyBlock(propBlock);
+            return knockBackForce;
         }
         else
         {
@@ -85,10 +134,16 @@ public class Sniper : Weapon
             while (isCharging > 0)
             {
                 isCharging -= accelerationDecharge * Time.deltaTime;
-                Debug.Log(isCharging);
+                if(sizeSphere>0)
+                sizeSphere -= (Time.deltaTime / chargeTime) * 2;
+                sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
             }
         isCharging = 0f;
         decharging = false;
+        sphereRenderer.GetPropertyBlock(propBlock);
+        propBlock.SetColor("_color", new Color(1, 1, 1));
+        propBlock.SetFloat("_offset", 0.5f);
+        sphereRenderer.SetPropertyBlock(propBlock);
         yield return null;
 
     }

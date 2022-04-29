@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8295862858371166951
 Transform:
@@ -50,6 +50,8 @@ MonoBehaviour:
   doors: []
   size: 10
   color: {r: 0, g: 1, b: 0, a: 1}
+  open: {fileID: 8300000, guid: 1d13df25dbc5cab49b7d20192192389a, type: 3}
+  close: {fileID: 8300000, guid: 24b80871ccc216d45b277431832b5fe7, type: 3}
 --- !u!65 &8295862858371166946
 BoxCollider:
   m_ObjectHideFlags: 0

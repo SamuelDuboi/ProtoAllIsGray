@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Door : MonoBehaviour
 {
     public bool needKey;
@@ -13,8 +14,14 @@ public class Door : MonoBehaviour
     private Vector3 endPos;
     public bool isClose;
     public float initTimeStart;
+    private AudioSource source;
+    public AudioClip openSound;
+    public AudioClip closeSound;
+    public GameObject light;
+
     private IEnumerator Start()
     {
+        source = GetComponent<AudioSource>();
         endPos = openPos.transform.position;
         initPos = transform.position;
         if (!needKey)
@@ -31,15 +38,18 @@ public class Door : MonoBehaviour
         else
             CloseDoor();
         isClose = !isClose;
+        source.Play();
     }
     public void OpenDoore()
     {
-
+        source.clip = openSound;
         StartCoroutine(Open());
         StopCoroutine(Close());
     }
     public void CloseDoor()
     {
+        source.clip = closeSound;
+
         StartCoroutine(Close());
         StopCoroutine(Open());
     }
@@ -53,7 +63,11 @@ public class Door : MonoBehaviour
         }
         if (!needKey)
         {
-            yield return new WaitForSeconds(timeStayOpen);
+            yield return new WaitForSeconds(timeStayOpen-2);
+            light.SetActive(true);
+            yield return new WaitForSeconds(2);
+            light.SetActive(false);
+
             StartCoroutine(Close());
         }
     }
@@ -67,7 +81,10 @@ public class Door : MonoBehaviour
         }
         if (!needKey)
         {
-            yield return new WaitForSeconds(timeStayClose);
+            yield return new WaitForSeconds(timeStayClose-2);
+            light.SetActive(true);
+            yield return new WaitForSeconds(2);
+            light.SetActive(false);
             StartCoroutine(Open());
         }
     }

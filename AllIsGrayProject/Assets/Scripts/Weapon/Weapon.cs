@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent( typeof(AudioSource))]
 
 public class Weapon : ThrowObject
 {
@@ -10,14 +11,19 @@ public class Weapon : ThrowObject
     protected GameObject instantiatedProjectile;
     public int numberOfBullets = 5;
     public float coolDown;
-    protected bool isOnCd;
+    [HideInInspector]
+    public bool isOnCd;
     private HomingMissileBehavior homing;
     private List<PlayerMovement> players = new List<PlayerMovement>();
    [HideInInspector] public float angleMove;
     PlayerMovement lockedPlayer;
     public Transform target;
-    private void Start()
+    public List<AudioClip> clips;
+    protected Rumbler rumbler;
+
+    protected override void Start()
     {
+        base.Start();
         homing = projectile.GetComponent<HomingMissileBehavior>();
        var type = projectile.GetComponent<ThrowObject>();
        if (type as PlasmaBehavior || homing)
@@ -41,6 +47,8 @@ public class Weapon : ThrowObject
     public virtual bool Fire(Vector3 direction, Vector3 position, out float force)
     {
         force = 0.001f;
+        if (!rumbler)
+            rumbler = GetComponentInParent<Rumbler>();
         if (!isOnCd)
         {
             LunchCD();
@@ -55,7 +63,13 @@ public class Weapon : ThrowObject
         instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
         //instantiatedProjectile.GetComponent<Movable>().
         instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
+        instantiatedProjectile.gameObject.layer = GetComponentInParent<ShieldBehavior>().gameObject.layer;
+        StartCoroutine(WaitToChangeLayer());
+        source.clip = clips[Random.Range(0, clips.Count )];
+        source.Play();
         numberOfBullets--;
+        rumbler.RumbleConstant(0.2f, 0.5f, 0.2f);
+
         if (homing && lockedPlayer)
             instantiatedProjectile.GetComponent<HomingMissileBehavior>().target = lockedPlayer.transform;
         force = knockBackForce;
@@ -68,7 +82,7 @@ public class Weapon : ThrowObject
     }
     public virtual float Release()
     {
-        return 0;
+        return 0.01f;
     }
     public void LunchCD()
     {
@@ -113,5 +127,11 @@ public class Weapon : ThrowObject
             }
         }
 
+    }
+
+    protected IEnumerator WaitToChangeLayer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        instantiatedProjectile.gameObject.layer = 7;
     }
 }

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 using System;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerHandler : MonoBehaviour
 {
     public GameInstanceHandler currentGameInstance;
@@ -22,6 +22,10 @@ public class PlayerHandler : MonoBehaviour
 
     public Action PlayerDead;
     public Action PlayerBenched;
+
+    public ParticleSystem psSpawner;
+    public AudioSource respawnSource;
+    public AudioSource deathSource;
 
     public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor, InputDevice _device)
     {
@@ -49,6 +53,10 @@ public class PlayerHandler : MonoBehaviour
     public void RespawnPlayer()
     {
         playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
+        respawnSource.Play();
+        CameraShake.instance.ShakeCamera(2, 0.5f);
+        StartCoroutine(startAndStopParticleSystem());
+
     }
 
     public void BenchPlayer()
@@ -62,7 +70,7 @@ public class PlayerHandler : MonoBehaviour
     {
         deathCount++;
         PlayerDead?.Invoke();
-
+        deathSource.Play();
         if (CurrentSetting.IsDeathMatch)
         {
             if (deathCount >= CurrentSetting.stockCount)
@@ -76,4 +84,11 @@ public class PlayerHandler : MonoBehaviour
             }
         }
     }
+
+    IEnumerator startAndStopParticleSystem()
+    {
+        psSpawner.Play();
+        yield return new WaitForSeconds(2);
+        psSpawner.Stop();
+     }
 }

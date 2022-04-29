@@ -9,17 +9,17 @@ public class FlipRenderer : MonoBehaviour
     private Vector2 rotation;
     public void RotationWeapon(InputAction.CallbackContext context)
     {
-        /*rotation = context.ReadValue<Vector2>();
+        rotation = context.ReadValue<Vector2>();
         if (rotation.x < 0 && isRight)
         {
-            myTransform.rotation = Quaternion.Euler(0, 180, 0);
+            myTransform.localRotation = Quaternion.Euler(0, -90, 0);
             isRight = false;
         }
         else if(rotation.x>0 && !isRight)
         {
-            myTransform.rotation = Quaternion.Euler(0, 0, 0);
+            myTransform.localRotation = Quaternion.Euler(0, 90, 0);
             isRight = true;
-        }*/
+        }
       
     }
 }

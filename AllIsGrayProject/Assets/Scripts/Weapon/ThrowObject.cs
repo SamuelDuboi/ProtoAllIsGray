@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof( AudioSource))]
 public class ThrowObject : Movable
 {
     [Header("ThrowObject")]
@@ -10,6 +10,12 @@ public class ThrowObject : Movable
     public float throwForce;
     protected Vector3 myDirection;
     public bool playerDestroy = true;
+    public List<AudioClip> clipsImpact;
+    protected AudioSource source;
+    protected virtual void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         // myEffect.ApplyEffectOnCollision();
@@ -31,12 +37,24 @@ public class ThrowObject : Movable
         rgb.velocity = myDirection * throwForce;
         rgb.isKinematic = false;
         GetComponent<Collider>().isTrigger = false;
-      //  myEffect.ApplyEffectOnThrow();
-    }
 
+        //  myEffect.ApplyEffectOnThrow();
+    }
     protected virtual void OnCollision(Collision collision)
     {
-        StartCoroutine(WaitToDie());
+        if(collision.gameObject.tag != "Player")
+        {
+            source.clip = clipsImpact[Random.Range(0, clipsImpact.Count)];
+            source.Play();
+        }
+
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+        var trail = GetComponentInChildren<TrailRenderer>();
+        if (trail)
+            trail.gameObject.SetActive(false);
+        StartCoroutine(WaitToDie(0.6f));
+
     }
     protected IEnumerator WaitToDie(float timer)
     {
@@ -45,7 +63,7 @@ public class ThrowObject : Movable
     }
     protected IEnumerator WaitToDie()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         Destroy(gameObject);
     }
 

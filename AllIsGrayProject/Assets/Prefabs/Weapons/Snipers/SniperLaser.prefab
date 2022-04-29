@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 1739067440247583301}
   - component: {fileID: 3595441905518114850}
   - component: {fileID: 2240554781223973007}
-  - component: {fileID: 5173070252195818447}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1739067440247583301
 Transform:
   m_ObjectHideFlags: 0
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5173070252195818447
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7684387748357439515}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3724102321435334144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,21 +225,32 @@ MonoBehaviour:
   rgb: {fileID: 8637462842215617781}
   throwForce: 2
   playerDestroy: 1
+  clipsImpact:
+  - {fileID: 8300000, guid: 0d7cff8afa6fe0347bb839510116d6c9, type: 3}
+  - {fileID: 8300000, guid: d34b4f4d06e6b5c499f2910e18e8d45d, type: 3}
+  - {fileID: 8300000, guid: 333308b45fc729747bb3e6dbb0b83e39, type: 3}
   projectile: {fileID: 8315286014265795621, guid: d9c9ff2e1328a884fb561898e0c5ee06, type: 3}
   knockBackForce: 4
   projectileSpeed: 60
   numberOfBullets: 6
   coolDown: 2
+  isOnCd: 0
   angleMove: 0
   target: {fileID: 278370593329833643}
+  clips:
+  - {fileID: 8300000, guid: 407b010138e7bbe46a62f44b81b75b0f, type: 3}
+  - {fileID: 8300000, guid: 20478d725819ad14bb7cd72503d97006, type: 3}
+  - {fileID: 8300000, guid: 222780d1fb673d64f88f3f3a4e1a9317, type: 3}
   isCharging: 0
-  chargeTime: 2
+  chargeTime: 1
   accelerationDecharge: 2
   shoot: 0
   directionSnip: {x: 0, y: 0, z: 0}
   positionSnip: {x: 0, y: 0, z: 0}
   forceSnip: 0
   decharging: 0
+  sphere: {fileID: 7684387748357439515}
+  finalColor: {r: 0.7490196, g: 0.019607844, b: 0, a: 0}
 --- !u!54 &8637462842215617781 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4931659181971833589, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}

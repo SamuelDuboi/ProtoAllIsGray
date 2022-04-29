@@ -1,5 +1,102 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1550666506238940719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3279861069829380655}
+  - component: {fileID: 5116024854276650273}
+  - component: {fileID: 5472466964373332358}
+  - component: {fileID: 604782890205028677}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3279861069829380655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550666506238940719}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0, y: 5.4400005, z: 1.1399999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6074755837638386627}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5116024854276650273
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550666506238940719}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5472466964373332358
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550666506238940719}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e57cb4eed52ae284eb5fb36ab452da25, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &604782890205028677
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550666506238940719}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3724102321435334144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,6 +212,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3490944749073510571, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
   m_PrefabInstance: {fileID: 3724102321435334144}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6074755837638386627 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7485956109114996163, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+  m_PrefabInstance: {fileID: 3724102321435334144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6074755837638386653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7485956109114996189, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
@@ -137,21 +239,32 @@ MonoBehaviour:
   rgb: {fileID: 8637462842215617781}
   throwForce: 2
   playerDestroy: 1
+  clipsImpact:
+  - {fileID: 8300000, guid: 0d7cff8afa6fe0347bb839510116d6c9, type: 3}
+  - {fileID: 8300000, guid: d34b4f4d06e6b5c499f2910e18e8d45d, type: 3}
+  - {fileID: 8300000, guid: 333308b45fc729747bb3e6dbb0b83e39, type: 3}
   projectile: {fileID: 8315286014265795621, guid: 222bb3b7be2fb0a4d925138ef29b43f2, type: 3}
   knockBackForce: 4
   projectileSpeed: 60
   numberOfBullets: 6
   coolDown: 2
+  isOnCd: 0
   angleMove: 0
   target: {fileID: 278370593329833643}
+  clips:
+  - {fileID: 8300000, guid: d41b6e14f4b94e648adfabe88b3d3d4a, type: 3}
+  - {fileID: 8300000, guid: ce5cec1364cc1704ba07e8a1ca82d93e, type: 3}
+  - {fileID: 8300000, guid: d04def24886a8b04a9abfa3cdb69f5de, type: 3}
   isCharging: 0
-  chargeTime: 2
+  chargeTime: 1
   accelerationDecharge: 2
   shoot: 0
   directionSnip: {x: 0, y: 0, z: 0}
   positionSnip: {x: 0, y: 0, z: 0}
   forceSnip: 0
   decharging: 0
+  sphere: {fileID: 1550666506238940719}
+  finalColor: {r: 0.7490196, g: 0.7490196, b: 0.09411765, a: 0}
 --- !u!54 &8637462842215617781 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4931659181971833589, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}

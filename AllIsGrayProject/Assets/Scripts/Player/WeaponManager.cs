@@ -34,13 +34,16 @@ public class WeaponManager : MonoBehaviour
                 isDrop = myWeapon.Fire(direction, followPointTransform.position, out knockBackForce);
                 KnockBack(knockBackForce);
             }
-            else
+            else if(basicWeapon.gameObject.activeSelf)
             {
                 isDrop = basicWeapon.Fire(direction, followPointTransform.position, out knockBackForce);
                 KnockBack(knockBackForce);
             }
-            if (isDrop)
+            if (!isDrop)
+            {
                 basicWeapon.gameObject.SetActive(true);
+                basicWeapon.isOnCd = false;
+            }
         }
     }
     public void Fire(InputAction.CallbackContext context)
@@ -95,7 +98,6 @@ public class WeaponManager : MonoBehaviour
             basicWeapon.gameObject.SetActive(false);
             direction = followPointTransform.position - transform.position;
             direction.Normalize();
-            KnockBack(0);
             other.GetComponent<Collider>().enabled = false;
             myWeapon = other.GetComponent<Weapon>();
             myWeapon.transform.parent = weaponHandler;
