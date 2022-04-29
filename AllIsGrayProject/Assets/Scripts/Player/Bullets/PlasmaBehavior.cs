@@ -13,7 +13,7 @@ public class PlasmaBehavior : ThrowObject
     protected override void OnCollision(Collision collision)
     {
         var hit = Physics.OverlapSphere(transform.position, range);
-        particules.transform.localScale = Vector3.one*range;
+        //particules.transform.localScale = Vector3.one*range;
         particules.SetActive(true);
         source.clip = clipsImpact[Random.Range(0, clipsImpact.Count)];
         source.Play();
