@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 using System;
-
+[RequireComponent(typeof(AudioSource))]
 public class PlayerHandler : MonoBehaviour
 {
     public GameInstanceHandler currentGameInstance;
@@ -21,6 +20,7 @@ public class PlayerHandler : MonoBehaviour
     public Action PlayerBenched;
 
     public ParticleSystem psSpawner;
+    public AudioSource respawnSource;
 
     public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor)
     {
@@ -47,6 +47,8 @@ public class PlayerHandler : MonoBehaviour
     public void RespawnPlayer()
     {
         playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
+        respawnSource.Play();
+        CameraShake.instance.ShakeCamera(2, 0.5f);
         StartCoroutine(startAndStopParticleSystem());
 
     }

@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ShieldBehavior : MonoBehaviour
 {
 
@@ -16,8 +18,13 @@ public class ShieldBehavior : MonoBehaviour
     public GameObject[] Shield= new GameObject[2];
     private Renderer[] rendererShield = new Renderer[2];
     private MaterialPropertyBlock[] propBlock = new MaterialPropertyBlock[2];
-    public List<AudioClip> clisp;
-
+    public List<AudioClip> clips;
+    public AudioSource hitSource;
+    private Rumbler rumbler;
+    private void Start()
+    {
+        rumbler = GetComponent<Rumbler>();
+    }
     public float invincibilityDuration;
     public void ShieldInit()
     {
@@ -56,17 +63,22 @@ public class ShieldBehavior : MonoBehaviour
     }
     public void TakeDamage(Movable colObject)
     {
+        hitSource.clip = clips[Random.Range(0, clips.Count)];
+        hitSource.Play();
         currentShieldAmount += colObject.damageOnPlayer;
         var propForce = currentShieldAmount / maxShieldAmount;
         shieldPurcentage.text = propForce * 100 + " %";
         GetPropulsionForce( propForce);
         var direction = colObject.transform.position - transform.position;
         direction.Normalize();
+        rumbler.RumbleConstant(propForce, propForce * 2, 0.1f);
         rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
         ShowShield();
     }
     public void TakeDamage(float value, Movable colObject)
     {
+        hitSource.clip = clips[Random.Range(0, clips.Count)];
+        hitSource.Play();
         currentShieldAmount += value;
         var propForce = currentShieldAmount / maxShieldAmount;
         shieldPurcentage.text = propForce * 100 + " %";
