@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
 
     #region Scenes Management Methods
     
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     [Button("Launch Fade In")]
     public void TestFadeIn()
     {

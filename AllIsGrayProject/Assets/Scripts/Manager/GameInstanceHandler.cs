@@ -66,13 +66,15 @@ public class GameInstanceHandler : MonoBehaviour
 
     public void EndSession()
     {
-
+        GameManager.Instance.LoadMenu();
     }
 
     public void RemovePlayer(PlayerHandler player)
     {
         allActivePlayer.Remove(player);
         benchedPlayer.Add(player);
+        if (allActivePlayer.Count == 1)
+            EndSession();
     }
 
     public Transform FindRespawnPoint(PlayerHandler playerToRespawn)

@@ -58,7 +58,8 @@ public class PlayerHandler : MonoBehaviour
     {
         playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
         respawnSource.Play();
-        //CameraShake.instance.ShakeCamera(2, 0.5f);
+        CameraShake.instance.ShakeCamera(2, 0.5f);
+        GetComponent<Rumbler>().StopRumble();
         StartCoroutine(startAndStopParticleSystem());
 
     }
@@ -86,6 +87,11 @@ public class PlayerHandler : MonoBehaviour
                 ResetPlayer();
                 RespawnPlayer();
             }
+        }
+        else
+        {
+            ResetPlayer();
+            RespawnPlayer();
         }
     }
 

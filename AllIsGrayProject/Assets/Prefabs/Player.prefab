@@ -1112,6 +1112,7 @@ MonoBehaviour:
   playerMove: {fileID: 2481340437093062123}
   playerShield: {fileID: 1088264442746836671}
   playerSkin: {fileID: 8242065694041517128}
+  weapong: {fileID: 2481340437093062124}
   input: {fileID: 2481340437093062122}
   deathCount: 0
   currentScore: 0
