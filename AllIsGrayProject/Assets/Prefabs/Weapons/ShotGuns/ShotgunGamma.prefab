@@ -114,6 +114,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6074755837638386652, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
     - {fileID: 1477874519569038352, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
+    - {fileID: -1099623186337881713, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
 --- !u!54 &1034989202022537080 stripped
 Rigidbody:
@@ -136,7 +137,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 528a8c434ccfbb44a943cf5f2e0c81aa, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
