@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void StartSession()
     {
-
+        currentGameInstance.StartSession();
     }
 
     #endregion

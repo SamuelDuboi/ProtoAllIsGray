@@ -57,7 +57,7 @@ public class WeaponManager : MonoBehaviour
                 KnockBack( myWeapon.Release());
         }
     }
-    private void KnockBack(float knockBackForce)
+    public void KnockBack(float knockBackForce)
     {
         if (knockBackForce == 0)
         {

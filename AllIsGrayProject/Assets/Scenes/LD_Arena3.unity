@@ -914,7 +914,7 @@ MonoBehaviour:
   m_NotificationBehavior: 2
   m_MaxPlayerCount: -1
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2896,6 +2896,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  collider: {fileID: 0}
 --- !u!1 &771086637
 GameObject:
   m_ObjectHideFlags: 0
@@ -6370,7 +6371,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5276758018786306507, guid: fc2455416d80e24449c5e9391c0d475b, type: 3}
   currentSettings: {fileID: 11400000, guid: 414f931d215a0134a8f501b146586b1a, type: 2}
-  allPlayer: []
+  allActivePlayer: []
+  benchedPlayer: []
   allSpawnPoints:
   - {fileID: 1291960143}
   - {fileID: 1687425613}
@@ -6887,7 +6889,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7768987, y: 1}
+    m_SensorSize: {x: 1.7780821, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
