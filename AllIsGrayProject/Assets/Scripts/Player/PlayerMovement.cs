@@ -9,7 +9,7 @@ public class PlayerMovement : Movable
     [Header("Movement")]
     public Rigidbody rigidbody;
     public Transform myTransform;
-    float rotation;
+    Vector2 rotation;
     public float rotationSpeed = 1;
     bool IsRotating;
     [Range(0,0.5f)]
@@ -41,8 +41,9 @@ public class PlayerMovement : Movable
 
     public void Rotation(InputAction.CallbackContext context)
     {
-        rotation = context.ReadValue<Vector2>().x;
-        IsRotating = Mathf.Abs(rotation) > rotationTreshold;
+        
+        rotation = context.ReadValue<Vector2>();
+        IsRotating = Mathf.Abs(rotation.x) > rotationTreshold;
     }
     public void Impulse(InputAction.CallbackContext context)
     {
@@ -93,8 +94,13 @@ public class PlayerMovement : Movable
     // Update is called once per frame
     void Update()
     {
-        if(IsRotating)
-            transform.Rotate(0, 0, rotation*rotationSpeed, Space.Self);
+        if (IsRotating)
+        {
+            transform.localRotation =  Quaternion.Euler(0, 0,Mathf.Rad2Deg*Mathf.Atan2(rotation.y, rotation.x)-90);
+           // transform.Rotate(0, 0, rotation.x*rotationSpeed, Space.Self);
+           if(rigidbody.velocity.magnitude<2 ||Mathf.Sign(rotation.x) != Mathf.Sign(rigidbody.velocity.x)|| Mathf.Sign(rotation.y) != Mathf.Sign(rigidbody.velocity.y))
+            rigidbody.AddForce(rotation *0.2f, ForceMode.Acceleration);
+        }
         if (isMoving && jetpackCurrentUse <= jetpackMaxTime)
         {
             if (!CoolDownImage.gameObject.activeSelf)
