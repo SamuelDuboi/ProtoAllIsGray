@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Door : MonoBehaviour
 {
     public bool needKey;
@@ -13,8 +14,13 @@ public class Door : MonoBehaviour
     private Vector3 endPos;
     public bool isClose;
     public float initTimeStart;
+    private AudioSource source;
+    public AudioClip openSound;
+    public AudioClip closeSound;
+
     private IEnumerator Start()
     {
+        source = GetComponent<AudioSource>();
         endPos = openPos.transform.position;
         initPos = transform.position;
         if (!needKey)
@@ -31,15 +37,18 @@ public class Door : MonoBehaviour
         else
             CloseDoor();
         isClose = !isClose;
+        source.Play();
     }
     public void OpenDoore()
     {
-
+        source.clip = openSound;
         StartCoroutine(Open());
         StopCoroutine(Close());
     }
     public void CloseDoor()
     {
+        source.clip = closeSound;
+
         StartCoroutine(Close());
         StopCoroutine(Open());
     }

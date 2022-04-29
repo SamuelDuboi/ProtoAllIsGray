@@ -18,8 +18,9 @@ public class Weapon : ThrowObject
     PlayerMovement lockedPlayer;
     public Transform target;
     public List<AudioClip> clips;
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         homing = projectile.GetComponent<HomingMissileBehavior>();
        var type = projectile.GetComponent<ThrowObject>();
        if (type as PlasmaBehavior || homing)

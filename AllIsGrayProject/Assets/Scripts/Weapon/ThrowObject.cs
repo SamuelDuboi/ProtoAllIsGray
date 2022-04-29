@@ -12,7 +12,7 @@ public class ThrowObject : Movable
     public bool playerDestroy = true;
     public List<AudioClip> clipsImpact;
     protected AudioSource source;
-    private void Start()
+    protected virtual void Start()
     {
         source = GetComponent<AudioSource>();
 
@@ -48,7 +48,7 @@ public class ThrowObject : Movable
             source.clip = clipsImpact[Random.Range(0, clipsImpact.Count)];
             source.Play();
         }
-        StartCoroutine(WaitToDie());
+        StartCoroutine(WaitToDie(0.6f));
     }
     protected IEnumerator WaitToDie(float timer)
     {
