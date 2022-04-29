@@ -15,5 +15,5 @@ MonoBehaviour:
   stageScene:
     m_SceneAsset: {fileID: 102900000, guid: 4f3712c6d2a1bbe40a1a2d67d5ffd001, type: 3}
     m_SceneName: LUD_Conduits
-  stageName: Arena2
-  stageScreen: {fileID: 21300000, guid: ce1c5e161fa68174ea6f13291c43f9d0, type: 3}
+  stageName: Conduits
+  stageScreen: {fileID: 21300000, guid: f9c3a5e6e7f2ab94d8a848bea1aaaa5c, type: 3}

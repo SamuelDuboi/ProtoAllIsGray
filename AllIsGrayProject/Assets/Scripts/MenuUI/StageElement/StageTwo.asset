@@ -16,4 +16,4 @@ MonoBehaviour:
     m_SceneAsset: {fileID: 102900000, guid: 6e0a9de0c299c3e4cbf3d3af6939c214, type: 3}
     m_SceneName: CHB_NoMansLand
   stageName: No Man's Land
-  stageScreen: {fileID: 21300000, guid: ce1c5e161fa68174ea6f13291c43f9d0, type: 3}
+  stageScreen: {fileID: 21300000, guid: 843e235d242f2fd48a1f50fcf510e116, type: 3}
