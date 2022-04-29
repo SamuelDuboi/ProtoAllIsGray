@@ -35,6 +35,7 @@ public class ThrowObject : Movable
     private void Throw()
     {
         rgb.velocity = myDirection * throwForce;
+        transform.rotation = Quaternion.Euler(0, 0,Mathf.Rad2Deg* Mathf.Atan2(myDirection.y, myDirection.x));
         rgb.isKinematic = false;
         GetComponent<Collider>().isTrigger = false;
 

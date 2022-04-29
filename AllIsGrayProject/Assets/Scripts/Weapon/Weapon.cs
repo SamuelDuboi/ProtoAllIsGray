@@ -13,10 +13,10 @@ public class Weapon : ThrowObject
     public float coolDown;
     [HideInInspector]
     public bool isOnCd;
-    private HomingMissileBehavior homing;
+    protected HomingMissileBehavior homing;
     private List<PlayerMovement> players = new List<PlayerMovement>();
    [HideInInspector] public float angleMove;
-    PlayerMovement lockedPlayer;
+    protected PlayerMovement lockedPlayer;
     public Transform target;
     public List<AudioClip> clips;
     protected Rumbler rumbler;
@@ -95,6 +95,7 @@ public class Weapon : ThrowObject
             return;
         target.transform.position = lockedPlayer.transform.position;
         target.transform.position += Vector3.back * 0.5f;
+        target.transform.rotation = Quaternion.Euler(0,90,0);
     }
 
     public void HomingDirection(Vector3 direction)

@@ -21,7 +21,7 @@ public class Sniper : Weapon
     private float sizeSphere;
     private MaterialPropertyBlock propBlock;
     Renderer sphereRenderer;
-    protected virtual void Start()
+    protected override void Start()
     {
         base.Start();
         propBlock = new MaterialPropertyBlock();
@@ -95,6 +95,8 @@ public class Sniper : Weapon
             source.Play();
             instantiatedProjectile.GetComponent<ThrowObject>().damageOnPlayer +=10;
             instantiatedProjectile.gameObject.layer = GetComponentInParent<ShieldBehavior>().gameObject.layer;
+            if (homing && lockedPlayer)
+                instantiatedProjectile.GetComponent<HomingMissileBehavior>().target = lockedPlayer.transform;
             StartCoroutine(WaitToChangeLayer());
             numberOfBullets--;
 

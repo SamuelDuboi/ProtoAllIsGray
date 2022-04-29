@@ -98,6 +98,7 @@ public class WeaponManager : MonoBehaviour
             basicWeapon.gameObject.SetActive(false);
             direction = followPointTransform.position - transform.position;
             direction.Normalize();
+            KnockBack(0.01f);
             other.GetComponent<Collider>().enabled = false;
             myWeapon = other.GetComponent<Weapon>();
             myWeapon.transform.parent = weaponHandler;
