@@ -48,6 +48,8 @@ public class ThrowObject : Movable
             source.clip = clipsImpact[Random.Range(0, clipsImpact.Count)];
             source.Play();
         }
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
         StartCoroutine(WaitToDie(0.6f));
     }
     protected IEnumerator WaitToDie(float timer)

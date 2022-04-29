@@ -11,13 +11,16 @@ public class Weapon : ThrowObject
     protected GameObject instantiatedProjectile;
     public int numberOfBullets = 5;
     public float coolDown;
-    protected bool isOnCd;
+    [HideInInspector]
+    public bool isOnCd;
     private HomingMissileBehavior homing;
     private List<PlayerMovement> players = new List<PlayerMovement>();
    [HideInInspector] public float angleMove;
     PlayerMovement lockedPlayer;
     public Transform target;
     public List<AudioClip> clips;
+    protected Rumbler rumbler;
+
     protected override void Start()
     {
         base.Start();
@@ -44,6 +47,8 @@ public class Weapon : ThrowObject
     public virtual bool Fire(Vector3 direction, Vector3 position, out float force)
     {
         force = 0.001f;
+        if (!rumbler)
+            rumbler = GetComponentInParent<Rumbler>();
         if (!isOnCd)
         {
             LunchCD();
@@ -61,6 +66,8 @@ public class Weapon : ThrowObject
         source.clip = clips[Random.Range(0, clips.Count )];
         source.Play();
         numberOfBullets--;
+        rumbler.RumbleConstant(0.2f, 0.5f, 0.2f);
+
         if (homing && lockedPlayer)
             instantiatedProjectile.GetComponent<HomingMissileBehavior>().target = lockedPlayer.transform;
         force = knockBackForce;

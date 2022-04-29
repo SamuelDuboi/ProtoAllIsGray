@@ -39,8 +39,11 @@ public class WeaponManager : MonoBehaviour
                 isDrop = basicWeapon.Fire(direction, followPointTransform.position, out knockBackForce);
                 KnockBack(knockBackForce);
             }
-            if (isDrop)
+            if (!isDrop)
+            {
                 basicWeapon.gameObject.SetActive(true);
+                basicWeapon.isOnCd = false;
+            }
         }
     }
     public void Fire(InputAction.CallbackContext context)

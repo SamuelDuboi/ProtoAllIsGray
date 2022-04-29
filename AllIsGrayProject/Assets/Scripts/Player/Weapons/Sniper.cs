@@ -20,7 +20,7 @@ public class Sniper : Weapon
     public Color finalColor;
     private float sizeSphere;
     private MaterialPropertyBlock propBlock;
-    private void Start()
+    protected virtual void Start()
     {
         propBlock = new MaterialPropertyBlock();
     }
@@ -28,6 +28,8 @@ public class Sniper : Weapon
     {
         directionSnip = direction;
         positionSnip = position;
+        if (!rumbler)
+            rumbler = GetComponentInParent<Rumbler>();
 
         Renderer sphereRenderer = sphere.GetComponent<Renderer>();
 
@@ -35,7 +37,7 @@ public class Sniper : Weapon
         if (isCharging!= 0 && isCharging<chargeTime)
         {
             sphere.SetActive(true);
-
+            rumbler.RumbleConstant(0.1f*isCharging, 0.5f*isCharging, 0.1f);
             isCharging += Time.deltaTime;
             sizeSphere += (Time.deltaTime / chargeTime)*2; // à remultiply par la size voulue
             sphere.transform.localScale = new Vector3(sizeSphere, sizeSphere, sizeSphere);
@@ -58,6 +60,8 @@ public class Sniper : Weapon
 
 
         }
+        else if(isCharging>=chargeTime)
+            rumbler.RumbleConstant(0.1f * isCharging, 0.5f * isCharging, 0.1f);
         if (decharging)
         {
             StopCoroutine(Decharge());
@@ -85,7 +89,7 @@ public class Sniper : Weapon
             //instantiatedProjectile.GetComponent<Movable>().
             instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
             instantiatedProjectile.GetComponent<ThrowObject>().damageOnPlayer +=10;
-
+            
             numberOfBullets--;
 
             force = knockBackForce;

@@ -34,6 +34,8 @@ public class PlasmaBehavior : ThrowObject
         }
         myMesh.enabled = false;
         myCollider.enabled = false;
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(WaitToDie(1f));
     }
 }
