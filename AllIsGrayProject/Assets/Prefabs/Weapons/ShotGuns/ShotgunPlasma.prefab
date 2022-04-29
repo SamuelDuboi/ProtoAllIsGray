@@ -258,7 +258,7 @@ MonoBehaviour:
   numOfProjectile: 3
   modDir: 0
   spreadRate: 0.2
-  reloadSource: {fileID: -1568112171585540467, guid: 67986f881db74b04096124962b41af5c, type: 3}
+  reloadSource: {fileID: -4677319283300551532}
 --- !u!4 &8817928324175635750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 278370593329833643, guid: 16af2891f076f3148a3a1b66f43ffd60, type: 3}
