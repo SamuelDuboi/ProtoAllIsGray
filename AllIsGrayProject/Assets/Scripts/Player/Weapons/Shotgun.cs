@@ -37,6 +37,9 @@ public class Shotgun : Weapon
             //instantiatedProjectile.GetComponent<Movable>().
 
             instantiatedProjectile.GetComponent<ThrowObject>().Throw(new Vector3(Mathf.Cos(Mathf.Atan2( direction.y,direction.x) + (0 + (i - modDir)) * spreadRate), Mathf.Sin(Mathf.Atan2(direction.y, direction.x) + (0 + (i - modDir)) * spreadRate),0), projectileSpeed); //SPREAD MAIS PAS SUR QUE CA FONCTION à 360° 
+            instantiatedProjectile.gameObject.layer = GetComponentInParent<ShieldBehavior>().gameObject.layer;
+            StartCoroutine(WaitToChangeLayer());
+
         }
         numberOfBullets--;
         force = knockBackForce;

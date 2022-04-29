@@ -47,6 +47,7 @@ public class GameInstanceHandler : MonoBehaviour
         for (int i = 0; i < settings.playerAmount; i++)
         {
             var player = Instantiate(playerPrefab);
+            player.GetComponentInChildren<PlayerMovement>().gameObject.layer = 9 + i;
             allActivePlayer.Add(player);
             player.InitPlayer(this, colorBank.skinColors[i]);
         }

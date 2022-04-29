@@ -36,15 +36,9 @@ public class ThrowObject : Movable
     {
         rgb.velocity = myDirection * throwForce;
         rgb.isKinematic = false;
-
-        StartCoroutine(WaitToAttack());
-      //  myEffect.ApplyEffectOnThrow();
-    }
-    IEnumerator WaitToAttack()
-    {
-        yield return new WaitForSeconds(0.1f);
         GetComponent<Collider>().isTrigger = false;
 
+        //  myEffect.ApplyEffectOnThrow();
     }
     protected virtual void OnCollision(Collision collision)
     {
@@ -64,7 +58,7 @@ public class ThrowObject : Movable
     }
     protected IEnumerator WaitToDie()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         Destroy(gameObject);
     }
 

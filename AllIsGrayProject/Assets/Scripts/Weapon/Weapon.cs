@@ -63,6 +63,8 @@ public class Weapon : ThrowObject
         instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
         //instantiatedProjectile.GetComponent<Movable>().
         instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
+        instantiatedProjectile.gameObject.layer = GetComponentInParent<ShieldBehavior>().gameObject.layer;
+        StartCoroutine(WaitToChangeLayer());
         source.clip = clips[Random.Range(0, clips.Count )];
         source.Play();
         numberOfBullets--;
@@ -125,5 +127,11 @@ public class Weapon : ThrowObject
             }
         }
 
+    }
+
+    protected IEnumerator WaitToChangeLayer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        instantiatedProjectile.gameObject.layer = 7;
     }
 }
