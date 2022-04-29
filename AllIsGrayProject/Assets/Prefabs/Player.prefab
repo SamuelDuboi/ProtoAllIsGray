@@ -1120,6 +1120,7 @@ MonoBehaviour:
   psSpawner: {fileID: 9183856805060664368}
   respawnSource: {fileID: 8088375051815812163}
   deathSource: {fileID: 8088375051815812163}
+  playerTag: {fileID: 6531582437330368526}
 --- !u!82 &8088375051815812163
 AudioSource:
   m_ObjectHideFlags: 0

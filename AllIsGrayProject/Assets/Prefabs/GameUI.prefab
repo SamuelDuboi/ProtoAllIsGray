@@ -974,7 +974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2087321752713119651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -994,9 +994,9 @@ RectTransform:
   m_Father: {fileID: 2087321753927839159}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 238.056, y: -107.98151}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 185.296, y: 185.296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4107961516724817794
@@ -1017,8 +1017,8 @@ MonoBehaviour:
   shieldDisplay: {fileID: 2087321751990257107}
   stockGroup: {fileID: 2087321753344237124}
   shieldGroup: {fileID: 2087321753345343942}
-  basePortrait: {fileID: 21300000, guid: ab805d1684eecb546b0aba9219c485b0, type: 3}
-  deadPortrait: {fileID: 21300000, guid: 70a0c5a0a14dd4b48b3846914c9423fb, type: 3}
+  basePortrait: {fileID: 21300000, guid: 62b1439d0c8f9064b93bf800349d81b5, type: 3}
+  deadPortrait: {fileID: 21300000, guid: 7596e94489422fd44975a86b21972323, type: 3}
 --- !u!1 &2087321753043199444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,7 +2273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &119795787614466442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2293,9 +2293,9 @@ RectTransform:
   m_Father: {fileID: 2087321753927839159}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 463.352, y: -107.98151}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 185.296, y: 185.296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2012019750040647648
@@ -2316,8 +2316,8 @@ MonoBehaviour:
   shieldDisplay: {fileID: 6213225111200042615}
   stockGroup: {fileID: 5516084083710112541}
   shieldGroup: {fileID: 7735994954865408554}
-  basePortrait: {fileID: 21300000, guid: ab805d1684eecb546b0aba9219c485b0, type: 3}
-  deadPortrait: {fileID: 21300000, guid: 70a0c5a0a14dd4b48b3846914c9423fb, type: 3}
+  basePortrait: {fileID: 21300000, guid: 57dd4eca55295514db50a8a52f550a1e, type: 3}
+  deadPortrait: {fileID: 21300000, guid: f960fd159bfac9a4fb910c29cf9fd80e, type: 3}
 --- !u!1 &3691079156538738934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,7 +2622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4599564356042698016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2642,9 +2642,9 @@ RectTransform:
   m_Father: {fileID: 2087321753927839159}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 913.94403, y: -107.98151}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 185.296, y: 185.296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4884682703854390119
@@ -2665,8 +2665,8 @@ MonoBehaviour:
   shieldDisplay: {fileID: 4391824966165977748}
   stockGroup: {fileID: 50322913948814830}
   shieldGroup: {fileID: 9093532237263602491}
-  basePortrait: {fileID: 21300000, guid: ab805d1684eecb546b0aba9219c485b0, type: 3}
-  deadPortrait: {fileID: 21300000, guid: 70a0c5a0a14dd4b48b3846914c9423fb, type: 3}
+  basePortrait: {fileID: 21300000, guid: dff981487dda8164ea3eb70fffd4d709, type: 3}
+  deadPortrait: {fileID: 21300000, guid: bba5ac07b622d7b459148b185b96c37d, type: 3}
 --- !u!1 &5939585320067397181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1672425135282941803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2993,9 +2993,9 @@ RectTransform:
   m_Father: {fileID: 2087321753927839159}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 688.648, y: -107.98151}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 185.296, y: 185.296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7352975558736510766
@@ -3016,8 +3016,8 @@ MonoBehaviour:
   shieldDisplay: {fileID: 8249469745959449855}
   stockGroup: {fileID: 5615161192579354233}
   shieldGroup: {fileID: 2834769033456331217}
-  basePortrait: {fileID: 21300000, guid: ab805d1684eecb546b0aba9219c485b0, type: 3}
-  deadPortrait: {fileID: 21300000, guid: 70a0c5a0a14dd4b48b3846914c9423fb, type: 3}
+  basePortrait: {fileID: 21300000, guid: 1d46e966f0cb2bd40b320ce257896000, type: 3}
+  deadPortrait: {fileID: 21300000, guid: 4bf39a56a6dd29b459e96dc615545b9f, type: 3}
 --- !u!1 &8178553714798182946
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
+using TMPro;
 
 [RequireComponent(typeof(AudioSource))]
 public class PlayerHandler : MonoBehaviour
@@ -28,6 +29,8 @@ public class PlayerHandler : MonoBehaviour
     public AudioSource respawnSource;
     public AudioSource deathSource;
 
+    public TextMeshProUGUI playerTag;
+
 
     public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor, InputDevice _device, int index)
     {
@@ -38,6 +41,8 @@ public class PlayerHandler : MonoBehaviour
         input.enabled = false;
         playerShield.ShieldInit();
         playerSkin.InitColor(skinColor);
+        playerTag.text = "P" + index.ToString();
+        playerTag.color = skinColor.mainColor;
     }
 
     public void EnablePlayer()
