@@ -11,8 +11,9 @@ public class GammaBehavior : ThrowObject
     private MaterialPropertyBlock propBlock;
     private Renderer bulletRenderer;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         bulletRenderer = GetComponent<Renderer>();
         clouds.SetActive(true);
         clouds2.SetActive(true);

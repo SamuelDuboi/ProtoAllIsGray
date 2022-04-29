@@ -15,7 +15,6 @@ public class ThrowObject : Movable
     protected virtual void Start()
     {
         source = GetComponent<AudioSource>();
-
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,10 +36,16 @@ public class ThrowObject : Movable
     {
         rgb.velocity = myDirection * throwForce;
         rgb.isKinematic = false;
-        GetComponent<Collider>().isTrigger = false;
+
+        StartCoroutine(WaitToAttack());
       //  myEffect.ApplyEffectOnThrow();
     }
+    IEnumerator WaitToAttack()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<Collider>().isTrigger = false;
 
+    }
     protected virtual void OnCollision(Collision collision)
     {
         if(collision.gameObject.tag != "Player")
