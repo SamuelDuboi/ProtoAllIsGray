@@ -3877,6 +3877,22 @@ PrefabInstance:
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 7485956109114996189, guid: 5db14b88fe021dd4198a4d81ff577007, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: 5db14b88fe021dd4198a4d81ff577007, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: ffa25de868cb9c44f979c8b4fe720f85, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[2]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[3]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: 8582ac13e24d851478fb95025737458e, type: 3}
     - target: {fileID: 8873954791164487037, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner (3)
@@ -8388,6 +8404,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 6074755837638386653, guid: fb28d22da0e0bab4e856b3591545f347, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[2]
+      value: 
+      objectReference: {fileID: 6074755837638386653, guid: 4fa07221ce736d641a38226c1f202c98, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[3]
+      value: 
+      objectReference: {fileID: 6074755837638386653, guid: e8fec5528d8db4c479a4f760ba78304d, type: 3}
     - target: {fileID: 8873954791164487037, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner
@@ -18256,6 +18284,22 @@ PrefabInstance:
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 7485956109114996189, guid: 8582ac13e24d851478fb95025737458e, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 3300775399015080016, guid: 0fd18e9c21cad734fb31e3ce1df63ce5, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 3300775399015080016, guid: 46ce8f361abc3e945b9099a78a4bfba7, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[2]
+      value: 
+      objectReference: {fileID: 3300775399015080016, guid: 67986f881db74b04096124962b41af5c, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[3]
+      value: 
+      objectReference: {fileID: 3300775399015080016, guid: b4cf655d93601d248b5cc6e2b4a73a3c, type: 3}
     - target: {fileID: 8873954791164487037, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner (1)
@@ -23762,6 +23806,22 @@ PrefabInstance:
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 7485956109114996189, guid: ffa25de868cb9c44f979c8b4fe720f85, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: 5db14b88fe021dd4198a4d81ff577007, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: ffa25de868cb9c44f979c8b4fe720f85, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[2]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: eb77dc2ccf8d51e468911a5a1b56dd62, type: 3}
+    - target: {fileID: 8873954791164487036, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
+      propertyPath: Weapon.Array.data[3]
+      value: 
+      objectReference: {fileID: 7485956109114996189, guid: 8582ac13e24d851478fb95025737458e, type: 3}
     - target: {fileID: 8873954791164487037, guid: 153c33b46dec0c84fbe7ce19448cafd2, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner (2)
