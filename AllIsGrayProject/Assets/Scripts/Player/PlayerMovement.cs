@@ -96,6 +96,7 @@ public class PlayerMovement : Movable
     {
         if (IsRotating)
         {
+
             transform.localRotation =  Quaternion.Euler(0, 0,Mathf.Rad2Deg*Mathf.Atan2(rotation.y, rotation.x)-90);
            // transform.Rotate(0, 0, rotation.x*rotationSpeed, Space.Self);
            if(rigidbody.velocity.magnitude<2 ||Mathf.Sign(rotation.x) != Mathf.Sign(rigidbody.velocity.x)|| Mathf.Sign(rotation.y) != Mathf.Sign(rigidbody.velocity.y))
