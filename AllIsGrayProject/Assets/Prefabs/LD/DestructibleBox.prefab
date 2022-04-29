@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6249317043865875592}
   m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,7 +93,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6249317043865875592}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 901149a996a883747a54b65da9752797, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -111,9 +111,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &6249317043865875625
 MonoBehaviour:
@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d357102b2ad2fde46ac90e9f7b117ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOnPlayer: 5
+  damageOnPlayer: 2
   myEffect: {fileID: 0}
   rgb: {fileID: 6249317043865875606}
-  throwForce: 5
+  throwForce: 3
   playerDestroy: 0
   life: 2

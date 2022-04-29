@@ -102,6 +102,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1148971494794306419}
     m_Modifications:
+    - target: {fileID: 478161708152477091, guid: a0ab27675b1150f4aa6adda8ea345ecf, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 478161708152477091, guid: a0ab27675b1150f4aa6adda8ea345ecf, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 478161708152477095, guid: a0ab27675b1150f4aa6adda8ea345ecf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -149,6 +157,10 @@ PrefabInstance:
     - target: {fileID: 478161708152477117, guid: a0ab27675b1150f4aa6adda8ea345ecf, type: 3}
       propertyPath: m_Name
       value: FireExtinguisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 478161708152478297, guid: a0ab27675b1150f4aa6adda8ea345ecf, type: 3}
+      propertyPath: damageOnPlayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ab27675b1150f4aa6adda8ea345ecf, type: 3}

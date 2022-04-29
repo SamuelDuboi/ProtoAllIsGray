@@ -13,16 +13,18 @@ public class ShieldBehavior : MonoBehaviour
     public bool isInvincible;
     public TextMeshProUGUI shieldPurcentage;
 
-    public GameObject Shield;
-    private Renderer rendererShield;
-    private MaterialPropertyBlock propBlock;
+    public GameObject[] Shield= new GameObject[2];
+    private Renderer[] rendererShield = new Renderer[2];
+    private MaterialPropertyBlock[] propBlock = new MaterialPropertyBlock[2];
 
     public float invincibilityDuration;
     public void ShieldInit()
     {
         currentShieldAmount = 0;
-        rendererShield = Shield.GetComponent<Renderer>();
-        propBlock = new MaterialPropertyBlock();
+        rendererShield[0] = Shield[0].GetComponent<Renderer>();
+        propBlock[0] = new MaterialPropertyBlock();
+        rendererShield[1] = Shield[1].GetComponent<Renderer>();
+        propBlock[1] = new MaterialPropertyBlock();
     }
 
     public void ShieldReset()
@@ -30,6 +32,7 @@ public class ShieldBehavior : MonoBehaviour
         StopAllCoroutines();
         currentShieldAmount = 0;
         shieldPurcentage.text = "0 %";
+        ShowShield();
         StartCoroutine(StartInvicibility());
     }
 
@@ -86,16 +89,25 @@ public class ShieldBehavior : MonoBehaviour
     public void ShowShield()
     {
         // here to displayDamageOnPlayer
-        float currentShieldAmountShader = currentShieldAmount * 0.01f;
+        float currentShieldAmountShader = currentShieldAmount / maxShieldAmount;
 
-        rendererShield.GetPropertyBlock(propBlock);
-        propBlock.SetFloat("_Damaged", currentShieldAmountShader);
+        rendererShield[0].GetPropertyBlock(propBlock[0]);
+        propBlock[0].SetFloat("_Damaged", currentShieldAmountShader);
         if (currentShieldAmountShader > 1)
         {
-            propBlock.SetFloat("_Over100", 1);
+            propBlock[0].SetFloat("_Over100", 1);
         }
-        else { propBlock.SetFloat("_Over100", 0); }
-        rendererShield.SetPropertyBlock(propBlock);
+        else { propBlock[0].SetFloat("_Over100", 0); }
+        rendererShield[0].SetPropertyBlock(propBlock[0]);
+
+        rendererShield[1].GetPropertyBlock(propBlock[1]);
+        propBlock[1].SetFloat("_Damaged", currentShieldAmountShader);
+        if (currentShieldAmountShader > 1)
+        {
+            propBlock[1].SetFloat("_Over100", 1);
+        }
+        else { propBlock[1].SetFloat("_Over100", 0); }
+        rendererShield[1].SetPropertyBlock(propBlock[1]);
     }
 
     public void SetInvincible(bool value)
