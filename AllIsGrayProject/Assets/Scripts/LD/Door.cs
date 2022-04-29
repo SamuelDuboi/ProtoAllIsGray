@@ -63,10 +63,16 @@ public class Door : MonoBehaviour
         }
         if (!needKey)
         {
-            yield return new WaitForSeconds(timeStayOpen-2);
-            light.SetActive(true);
-            yield return new WaitForSeconds(2);
-            light.SetActive(false);
+            if (light)
+            {
+                yield return new WaitForSeconds(timeStayOpen - 2);
+                light.SetActive(true);
+                yield return new WaitForSeconds(2);
+                light.SetActive(false);
+
+            }
+            else
+                yield return new WaitForSeconds(timeStayOpen);
 
             StartCoroutine(Close());
         }
@@ -81,10 +87,16 @@ public class Door : MonoBehaviour
         }
         if (!needKey)
         {
-            yield return new WaitForSeconds(timeStayClose-2);
-            light.SetActive(true);
-            yield return new WaitForSeconds(2);
-            light.SetActive(false);
+            if (light)
+            {
+                yield return new WaitForSeconds(timeStayClose - 2);
+                light.SetActive(true);
+                yield return new WaitForSeconds(2);
+                light.SetActive(false);
+
+            }
+            else
+                yield return new WaitForSeconds(timeStayClose);
             StartCoroutine(Open());
         }
     }
