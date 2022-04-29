@@ -5,13 +5,13 @@ using UnityEngine;
 public class WeaponSpawner : MonoBehaviour
 {
 
-    public GameObject Weapon;
+    public GameObject[] Weapon;
     public float spawnCD;
     private GameObject currentWeapon;
 
     private void Start()
     {
-        currentWeapon = Instantiate(Weapon, transform);
+        currentWeapon = Instantiate(Weapon[Random.Range(0,Weapon.Length)], transform);
     }
     public Weapon Collect()
     {
@@ -24,6 +24,6 @@ public class WeaponSpawner : MonoBehaviour
     IEnumerator WaitToSpawn()
     {
         yield return new WaitForSeconds(spawnCD);
-        currentWeapon = Instantiate(Weapon, transform);
+        currentWeapon = Instantiate(Weapon[Random.Range(0, Weapon.Length)], transform);
     }
 }

@@ -80,7 +80,7 @@ public class Weapon : ThrowObject
     }
     public virtual float Release()
     {
-        return 0;
+        return 0.01f;
     }
     public void LunchCD()
     {

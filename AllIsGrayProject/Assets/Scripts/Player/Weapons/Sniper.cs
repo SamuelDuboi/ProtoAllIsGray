@@ -20,9 +20,12 @@ public class Sniper : Weapon
     public Color finalColor;
     private float sizeSphere;
     private MaterialPropertyBlock propBlock;
+    Renderer sphereRenderer;
     protected virtual void Start()
     {
+        base.Start();
         propBlock = new MaterialPropertyBlock();
+         sphereRenderer = sphere.GetComponent<Renderer>();
     }
     public override bool Fire(Vector3 direction, Vector3 position, out float force)
     {
@@ -31,7 +34,7 @@ public class Sniper : Weapon
         if (!rumbler)
             rumbler = GetComponentInParent<Rumbler>();
 
-        Renderer sphereRenderer = sphere.GetComponent<Renderer>();
+      
 
         isCharging += Time.deltaTime;
         if (isCharging!= 0 && isCharging<chargeTime)
@@ -88,11 +91,13 @@ public class Sniper : Weapon
             instantiatedProjectile = Instantiate(projectile, position, Quaternion.identity);
             //instantiatedProjectile.GetComponent<Movable>().
             instantiatedProjectile.GetComponent<ThrowObject>().Throw(direction, projectileSpeed);
+            source.clip = clips[Random.Range(0, clips.Count)];
+            source.Play();
             instantiatedProjectile.GetComponent<ThrowObject>().damageOnPlayer +=10;
             
             numberOfBullets--;
 
-            force = knockBackForce;
+            force =0.01f +knockBackForce;
         }
         return true;
     }
@@ -107,7 +112,11 @@ public class Sniper : Weapon
 
             //METTRE FEEDBACK POUR CHARGE DU SNIPER
             sphere.SetActive(false);
-
+            sizeSphere = 0;
+            sphereRenderer.GetPropertyBlock(propBlock);
+            propBlock.SetColor("_color", new Color(1, 1, 1));
+            propBlock.SetFloat("_offset", 0.5f);
+            sphereRenderer.SetPropertyBlock(propBlock);
             return knockBackForce;
         }
         else
@@ -127,6 +136,10 @@ public class Sniper : Weapon
             }
         isCharging = 0f;
         decharging = false;
+        sphereRenderer.GetPropertyBlock(propBlock);
+        propBlock.SetColor("_color", new Color(1, 1, 1));
+        propBlock.SetFloat("_offset", 0.5f);
+        sphereRenderer.SetPropertyBlock(propBlock);
         yield return null;
 
     }

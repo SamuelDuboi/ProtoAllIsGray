@@ -21,6 +21,7 @@ public class PlayerHandler : MonoBehaviour
 
     public ParticleSystem psSpawner;
     public AudioSource respawnSource;
+    public AudioSource deathSource;
 
     public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor)
     {
@@ -64,7 +65,7 @@ public class PlayerHandler : MonoBehaviour
     {
         deathCount++;
         PlayerDead?.Invoke();
-
+        deathSource.Play();
         if (CurrentSetting.IsDeathMatch)
         {
             if (deathCount >= CurrentSetting.stockCount)
