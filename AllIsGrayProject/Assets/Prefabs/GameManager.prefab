@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneManagementUI: {fileID: 7985897071641060312}
   colorBank: {fileID: 11400000, guid: e333b3dfdf106754596967a07d7873eb, type: 2}
+  stageToPlay: {fileID: 0}
+  instanceSettings: {fileID: 0}
 --- !u!1 &7985897071641060308
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +124,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20000
   m_TargetDisplay: 0
 --- !u!114 &7985897071641060314
 MonoBehaviour:
