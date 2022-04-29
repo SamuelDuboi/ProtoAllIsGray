@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenuHandler : MonoBehaviour
 {
-    enum MenuState { StartScreen, MainMenu, PlayerJoin, StageSelection, GameRules, GameSettings };
+    enum MenuState { StartScreen, MainMenu, PlayerJoin, StageSelection, GameRules, Tuto, Credits };
 
     [SerializeField, ReadOnly]
     MenuState _currentMenuState;
@@ -38,7 +38,11 @@ public class MainMenuHandler : MonoBehaviour
                 case MenuState.GameRules:
                     InitGameRuleState();
                     break;
-                case MenuState.GameSettings:
+                case MenuState.Tuto:
+                    InitTuto();
+                    break;
+                case MenuState.Credits:
+                    InitCredits();
                     break;
                 default:
                     break;
@@ -129,14 +133,20 @@ public class MainMenuHandler : MonoBehaviour
     {
         eventSystem.gameObject.SetActive(false);
         mainMenuElements.DisappearAnimation();
-        mainMenuElements.DisappearEnds += () => print("Go to settings"); ;
+        mainMenuElements.DisappearEnds += () => {
+            CurrentMenuState = MenuState.Credits;
+            mainMenuElements.DisappearEnds = null;
+        };
     }
 
     public void OnTutoClicked()
     {
         eventSystem.gameObject.SetActive(false);
         mainMenuElements.DisappearAnimation();
-        mainMenuElements.DisappearEnds += () => print("Go to tutorial"); ;
+        mainMenuElements.DisappearEnds += () => {
+            CurrentMenuState = MenuState.Tuto;
+            mainMenuElements.DisappearEnds = null;
+        } ;
     }
 
     public void OnQuitClicked()
@@ -148,9 +158,10 @@ public class MainMenuHandler : MonoBehaviour
     #endregion
 
     #region PlayerJoin
-
+    List<InputDevice> readyDevice = new List<InputDevice>();
     private void InitPlayerJoinState()
     {
+        readyDevice = new List<InputDevice>();
         playerJoinElements.AppearEnds += EnablePlayerJoin;
         playerJoinElements.Appear();
     }
@@ -174,9 +185,10 @@ public class MainMenuHandler : MonoBehaviour
             UpdateGoToStage();
 
         }
-        else if (usedDevices.Contains(context.control.device))
+        else if (usedDevices.Contains(context.control.device) && !readyDevice.Contains(context.control.device))
         {
             playerJoinElements.SetPlayerReady(context.control.device);
+            readyDevice.Add(context.control.device);
             UpdateGoToStage();
         }
     }
@@ -379,6 +391,44 @@ public class MainMenuHandler : MonoBehaviour
     }
 
     #endregion
+
+    #region Tuto
+
+    public GameObject tutorialDisplay;
+
+    public void InitTuto()
+    {
+        tutorialDisplay.gameObject.SetActive(true);
+        controls.UIControls.MenuReturn.performed += OnYRetourne;
+    }
+
+    public void OnYRetourne(InputAction.CallbackContext context)
+    {
+        tutorialDisplay.SetActive(false);
+        controls.UIControls.MenuReturn.performed -= OnYRetourne;
+        CurrentMenuState = MenuState.MainMenu;
+    }
+    #endregion
+
+    #region Credits
+
+    public GameObject credits;
+
+    public void InitCredits()
+    {
+        credits.gameObject.SetActive(true);
+        controls.UIControls.MenuReturn.performed += OnYRetourneLeRetour;
+    }
+
+    public void OnYRetourneLeRetour(InputAction.CallbackContext context)
+    {
+        credits.SetActive(false);
+        controls.UIControls.MenuReturn.performed -= OnYRetourneLeRetour;
+        CurrentMenuState = MenuState.MainMenu;
+    }
+
+    #endregion
+
 }
 
 [Serializable]

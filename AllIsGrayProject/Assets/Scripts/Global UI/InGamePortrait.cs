@@ -32,6 +32,7 @@ public class InGamePortrait : MonoBehaviour
     public void Init(PlayerHandler player)
     {
         linkedPlayer = player;
+        portrait.sprite = basePortrait;
         currentSettings = GameManager.currentGameInstance.currentSettings;
         player.PlayerDead += UpdateStock;
         player.PlayerBenched += Death;

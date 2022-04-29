@@ -41,7 +41,7 @@ public class PlayerHandler : MonoBehaviour
         input.enabled = false;
         playerShield.ShieldInit();
         playerSkin.InitColor(skinColor);
-        playerTag.text = "P" + index.ToString();
+        playerTag.text = "P" + (index+1).ToString();
         playerTag.color = skinColor.mainColor;
     }
 
@@ -64,7 +64,7 @@ public class PlayerHandler : MonoBehaviour
         playerMove.transform.position = currentGameInstance.FindRespawnPoint(this).position;
         respawnSource.Play();
         CameraShake.instance.ShakeCamera(2, 0.5f);
-        GetComponent<Rumbler>().StopRumble();
+        GetComponentInChildren<Rumbler>().StopRumble();
         StartCoroutine(startAndStopParticleSystem());
 
     }
