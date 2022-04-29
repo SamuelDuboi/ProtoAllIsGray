@@ -8288,7 +8288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043225323022419829, guid: bd294ad4c74fbc74db284beb53df6c6a, type: 3}
       propertyPath: propulsionForce
-      value: -20
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1043225323022419838, guid: bd294ad4c74fbc74db284beb53df6c6a, type: 3}
       propertyPath: m_Name
@@ -13556,7 +13556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043225323022419829, guid: bd294ad4c74fbc74db284beb53df6c6a, type: 3}
       propertyPath: propulsionForce
-      value: 20
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 1043225323022419838, guid: bd294ad4c74fbc74db284beb53df6c6a, type: 3}
       propertyPath: m_Name
