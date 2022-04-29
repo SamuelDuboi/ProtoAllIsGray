@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class GameInstanceHandler : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class GameInstanceHandler : MonoBehaviour
         {
             var player = Instantiate(playerPrefab);
             allActivePlayer.Add(player);
-            player.InitPlayer(this, colorBank.skinColors[i]);
+            player.InitPlayer(this, colorBank.skinColors[i], GameManager.Instance.playerDevices[i]);
         }
     }
 

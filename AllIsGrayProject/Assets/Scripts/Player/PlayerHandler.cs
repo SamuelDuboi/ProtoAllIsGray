@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using System;
+using UnityEngine.InputSystem;
 
 public class PlayerHandler : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerHandler : MonoBehaviour
     public PlayerMovement playerMove;
     public ShieldBehavior playerShield;
     public PlayerColorSkinHandler playerSkin;
+    public PlayerInput input;
+    public InputDevice device;
 
     public int deathCount;
     public int currentScore;
@@ -20,11 +23,12 @@ public class PlayerHandler : MonoBehaviour
     public Action PlayerDead;
     public Action PlayerBenched;
 
-    public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor)
+    public void InitPlayer(GameInstanceHandler instance, PlayerColorBank.ColorPair skinColor, InputDevice _device)
     {
         currentGameInstance = instance;
         RespawnPlayer();
-        //Assign Controler;
+        input.SwitchCurrentControlScheme(new InputDevice[0]);
+        device = _device;
         playerShield.ShieldInit();
         playerSkin.InitColor(skinColor);
     }

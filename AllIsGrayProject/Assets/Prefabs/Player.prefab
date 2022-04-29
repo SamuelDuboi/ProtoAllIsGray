@@ -419,7 +419,19 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d3d724a2-1525-411c-aa42-cafae86121a4
     m_ActionName: PlayerMainActions/Fire[/XInputControllerWindows/rightTrigger]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebfd673d-ec90-40e5-b617-adbfaf9a3122
+    m_ActionName: UIControls/MenuValidate[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5f77447a-f39c-4344-ad18-501fe8a1fa82
+    m_ActionName: UIControls/MenuReturn[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b951e6df-497f-40d0-9183-c6adf7848910
+    m_ActionName: UIControls/Start[/XInputControllerWindows/start,/Keyboard/enter]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: PlayerControl
   m_DefaultActionMap: PlayerMainActions
   m_SplitScreenIndex: -1
@@ -967,6 +979,7 @@ MonoBehaviour:
   playerMove: {fileID: 2481340437093062123}
   playerShield: {fileID: 1088264442746836671}
   playerSkin: {fileID: 8242065694041517128}
+  input: {fileID: 2481340437093062122}
   deathCount: 0
   currentScore: 0
   playerIndex: 0

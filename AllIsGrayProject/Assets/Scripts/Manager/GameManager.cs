@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void StageEnter(Scene _scene, LoadSceneMode _mode)
     {
+        currentGameInstance.InitSession(instanceSettings);
         SceneManager.sceneLoaded -= StageEnter;
         sceneManagementUI.FadeOutEnds += StartSession;
         sceneManagementUI.StartFadeOut();
