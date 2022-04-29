@@ -17,6 +17,7 @@ public class Door : MonoBehaviour
     private AudioSource source;
     public AudioClip openSound;
     public AudioClip closeSound;
+    public GameObject light;
 
     private IEnumerator Start()
     {
@@ -62,7 +63,11 @@ public class Door : MonoBehaviour
         }
         if (!needKey)
         {
-            yield return new WaitForSeconds(timeStayOpen);
+            yield return new WaitForSeconds(timeStayOpen-2);
+            light.SetActive(true);
+            yield return new WaitForSeconds(2);
+            light.SetActive(false);
+
             StartCoroutine(Close());
         }
     }
@@ -76,7 +81,10 @@ public class Door : MonoBehaviour
         }
         if (!needKey)
         {
-            yield return new WaitForSeconds(timeStayClose);
+            yield return new WaitForSeconds(timeStayClose-2);
+            light.SetActive(true);
+            yield return new WaitForSeconds(2);
+            light.SetActive(false);
             StartCoroutine(Open());
         }
     }
