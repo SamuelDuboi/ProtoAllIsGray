@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_JaugeSniper
+  m_Name: M_JaugeSniperGamma
   m_Shader: {fileID: -6465566751694194690, guid: aa63212b87cecd140aee2ca9f49ca8ed, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -53,5 +53,5 @@ Material:
     - _offset: 0.5
     m_Colors:
     - _Color: {r: 1, g: 0.1754186, b: 0, a: 0}
-    - _color: {r: 1.0530477, g: 0.027566692, b: 0, a: 0}
+    - _color: {r: 0.33487135, g: 0.19379672, b: 0.6132076, a: 0}
   m_BuildTextureStacks: []
