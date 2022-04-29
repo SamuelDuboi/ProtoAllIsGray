@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionPanel: {fileID: 7985897072052916231}
-  fadeInTime: 2
-  fadeOutTime: 2
+  fadeInTime: 1.7
+  fadeOutTime: 1.7
 --- !u!223 &7985897071641060313
 Canvas:
   m_ObjectHideFlags: 0

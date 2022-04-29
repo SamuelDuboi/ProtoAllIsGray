@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Cinemachine;
+using System;
 
 [RequireComponent(typeof(AudioSource))]
 public class ShieldBehavior : MonoBehaviour
@@ -21,6 +22,9 @@ public class ShieldBehavior : MonoBehaviour
     public List<AudioClip> clips;
     public AudioSource hitSource;
     private Rumbler rumbler;
+
+    public Action DamageTaken;
+
     private void Start()
     {
         rumbler = GetComponent<Rumbler>();
@@ -63,7 +67,7 @@ public class ShieldBehavior : MonoBehaviour
     }
     public void TakeDamage(Movable colObject)
     {
-        hitSource.clip = clips[Random.Range(0, clips.Count)];
+        hitSource.clip = clips[UnityEngine.Random.Range(0, clips.Count)];
         hitSource.Play();
         currentShieldAmount += colObject.damageOnPlayer;
         var propForce = currentShieldAmount / maxShieldAmount;
@@ -74,10 +78,11 @@ public class ShieldBehavior : MonoBehaviour
         rumbler.RumbleConstant(propForce, propForce * 2, 0.1f);
         rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
         ShowShield();
+        DamageTaken?.Invoke();
     }
     public void TakeDamage(float value, Movable colObject)
     {
-        hitSource.clip = clips[Random.Range(0, clips.Count)];
+        hitSource.clip = clips[UnityEngine.Random.Range(0, clips.Count)];
         hitSource.Play();
         currentShieldAmount += value;
         var propForce = currentShieldAmount / maxShieldAmount;
@@ -87,6 +92,7 @@ public class ShieldBehavior : MonoBehaviour
         direction.Normalize();
         rgb.AddForce(-direction * propulsionForce, ForceMode.Impulse);
         ShowShield();
+        DamageTaken?.Invoke();
     }
     public float GetPropulsionForce()
     {

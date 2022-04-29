@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class GameInstanceHandler : MonoBehaviour
 {
@@ -13,16 +14,14 @@ public class GameInstanceHandler : MonoBehaviour
     public List<PlayerHandler> benchedPlayer = new List<PlayerHandler>();
     public Transform[] allSpawnPoints;
 
+    [Space]
+    public InGameUI gameUI;
+
     public float currentTimer;
 
     private void Awake()
     {
         GameManager.Instance.ReferenceGameInstance(this);
-    }
-
-    private void Start()
-    {
-        InitSession(currentSettings);
     }
 
     private void Update()
@@ -42,20 +41,27 @@ public class GameInstanceHandler : MonoBehaviour
     {
         var colorBank = GameManager.Instance.colorBank;
         currentSettings = settings;
-        currentTimer = settings.gameTimer;
+        currentTimer = settings.gameTimer * 60;
 
         for (int i = 0; i < settings.playerAmount; i++)
         {
             var player = Instantiate(playerPrefab);
-            player.GetComponentInChildren<PlayerMovement>().gameObject.layer = 9 + i;
             allActivePlayer.Add(player);
-            player.InitPlayer(this, colorBank.skinColors[i]);
+            player.InitPlayer(this, colorBank.skinColors[i], GameManager.Instance.playerDevices[i], i);
         }
     }
 
     public void StartSession()
     {
+        gameUI.LaunchOpenning();
+        gameUI.OpenningEnds += StartGameplay;
+    }
 
+    public void StartGameplay()
+    {
+        gameUI.InitHUD();
+        foreach (PlayerHandler player in allActivePlayer)
+            player.EnablePlayer();
     }
 
     public void EndSession()
